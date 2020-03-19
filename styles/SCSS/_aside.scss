@@ -1,0 +1,87 @@
+aside {
+	@include flexCol(space-between, stretch);
+	height: 80vh;
+	width: 27.5%;
+	margin: 0;
+	padding-top: 20px;
+	background: $white;
+	border-radius: 20px 0 0 20px;
+	box-shadow: 0 0 10px 5px #ccdce3;
+	text-align: center;
+
+	.imgContainer {
+		width: 70%;
+		margin: 0 15%;
+	}
+
+	img {
+		border-radius: 50%;
+	}
+
+	p {
+		font-size: 1.6rem;
+		text-transform: capitalize;
+	}
+
+	span {
+		font-weight: bold;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		color: $color5;
+		margin-bottom: 10px;
+	}
+}
+
+nav {
+	@include flexCol(center, stretch);
+	border-radius: 0 0 0 20px;
+	overflow: hidden;
+	position: relative;
+    text-align: left;
+
+	a,
+	.fas {
+		font-size: 2rem;
+		padding: 10px;
+	}
+
+	a {
+		position: relative;
+		z-index: 2;
+	}
+
+	.fas {
+		position: relative;
+		margin: 0 10px;
+		color: $white;
+	}
+
+	li {
+		width: 100%;
+        position: relative;
+        transition: color 0.3s;
+    }
+    
+    li:hover {
+        color: $white;
+    }
+
+	li:after {
+		content: " ";
+		position: absolute;
+		width: calc(100% - 65.6px);
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: $white;
+        transition: width 0.4s;
+        border-top: 0.5px solid #f2f1f1;
+        border-bottom: 0.5px solid #f2f1f1;
+    }
+
+	li:hover:after {
+		width: 0%;
+	}
+}

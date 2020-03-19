@@ -1,0 +1,65 @@
+html {
+	font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+ul,
+li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	border: none;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+body {
+	
+	position: relative;
+	background: $lightBackground;
+	font-family: $mainStack;
+}
+
+.wrapper {
+	width: 80%;
+	max-width: 1080px;
+	margin:10vh auto 0;
+	@include flexRow(space-between, center);
+}
+
+*[class*="1"] {
+	background: $color1;
+}
+*[class*="2"] {
+	background: $color2;
+}
+*[class*="3"] {
+	background: $color3;
+}
+*[class*="4"] {
+	background: $color4;
+}
+*[class*="5"] {
+	background: $color5;
+}

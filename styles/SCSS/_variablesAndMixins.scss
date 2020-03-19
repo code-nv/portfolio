@@ -1,0 +1,64 @@
+// variables
+// $color3: #873D48;
+$color1: #fe5e41;
+$color2: #FF9F1C;
+$color3: #ffbf69;
+$color4: #44f0c2;
+$color5: #6ea9f2;
+// $color6: #fe938c;
+$white: #FAFAFA;
+$black: #151515;
+$lightBackground: #F7F4F3;
+
+// wcag 3 contrast
+// $color1: #fb5b38;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+$headingStack: "Abril Fatface", cursive;
+$mainStack: 'Roboto', sans-serif;
+
+//mixins
+@mixin flexRow($justify: center, $align: center) {
+	display: flex;
+	flex-direction: row;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin flexCol($justify: center, $align: center) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+//media query mixins
+@mixin maxWidth950 {
+	@media (max-width: 950px) {
+		@content;
+	}
+}
+// major break
+@mixin maxWidth740 {
+	@media (max-width: 740px) {
+		@content;
+	}
+}
+
+@mixin maxWidth600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin maxWidth500 {
+	@media (max-width: 500px) {
+		@content;
+	}
+}
+
+// this is an empty class that I was using the @extend rule to experiment with for future reference vs using mixins. I say empty class because it's not in the html markup but I am using it in my partials
+.padding {
+	padding: 100px 0;
+}
