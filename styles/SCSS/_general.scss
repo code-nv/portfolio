@@ -35,17 +35,9 @@ img {
 }
 
 body {
-	
 	position: relative;
 	background: $lightBackground;
 	font-family: $mainStack;
-}
-
-.wrapper {
-	width: 80%;
-	max-width: 1080px;
-	margin:10vh auto 0;
-	@include flexRow(space-between, center);
 }
 
 *[class*="1"] {

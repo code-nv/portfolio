@@ -1,16 +1,154 @@
 header {
 	@include flexRow(center, flex-start);
 	position: fixed;
-	top:0;
+	top: 0;
 	width: 100%;
 
 	.decoration {
 		font-family: $mainStack;
 		width: 20%;
 		text-align: center;
-		height: 5px;
+		height: 25px;
 		font-size: 0;
 		line-height: 0;
 		margin: 0;
+		// animation: preloader 2s ease;
+		color: transparent;
+
+		&1 {
+			animation-delay: 0.5s;
+		}
+		&2 {
+			animation-delay: 1s;
+		}
+		&3 {
+			animation-delay: 1.5s;
+		}
+		&4 {
+			animation-delay: 2s;
+		}
+		&5 {
+			animation-delay: 2.5s;
+		}
+	}
+}
+
+@keyframes preloader {
+	0%,
+	100% {
+		height: 5px;
+		font-size: 2rem;
+	}
+	5%,
+	95% {
+		border-radius: 0 0 40% 40%;
+	}
+	50% {
+		color: $white;
+		line-height: 1.6;
+	}
+	50% {
+		height: 30px;
+	}
+}
+
+.wave {
+	position: absolute;
+	width: 20.1%;
+	height: 25px;
+	top: 0;
+	background: transparent;
+	// outline: 1px solid red;
+}
+
+.waveStart {
+	width: 100%;
+	border-radius: 0;
+	right: 0;
+	top: 15px;
+	background: $lightBackground;
+	box-shadow: none;
+	animation: waveStart 3.33s linear forwards;
+
+}
+.waveMid {
+	box-shadow: 0 15px 0 0 $lightBackground;
+	border-radius: 0 0 50% 50%;
+	animation: waveMid 4s linear forwards;
+}
+
+.waveEnd {
+	border-radius: 0;
+	left: 0%;
+	top: 15px;
+	width: 0;
+	background: $lightBackground;
+	box-shadow: none;
+	animation: waveEnd 3.34s linear forwards;
+	animation-delay: 0.66s;
+}
+
+@keyframes waveStart {
+	0% {
+		width: 100%;
+		// right:0;
+	}
+	100% {
+		width: 0%;
+		// right:0;
+	}
+}
+
+@keyframes waveEnd {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes waveMid {
+	0% {
+		left: -20%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+// @keyframes waveStart {
+// 	0% {
+// 		width: 80%;
+// 	}
+// 	20% {
+// 		left: 40%;
+// 	}
+// 	68%, 100% {
+// 		left: 100%;
+// 		width: 0;
+// 	}
+// }
+
+// @keyframes waveMid {
+// 	0% {
+// 		width: 20%;
+// 	}
+
+// 	20% {
+// 		width: 40%;
+// 		left: 0;
+// 	}
+// 	100% {
+// 		width: 40%;
+// 		left: 100%;
+// 	}
+// }
+
+@keyframes waveEnd {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
 	}
 }

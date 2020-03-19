@@ -296,25 +296,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.wrapper {
-  width: 80%;
-  max-width: 1080px;
-  margin: 10vh auto 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 *[class*="1"] {
   background: #fe5e41;
 }
@@ -358,10 +339,179 @@ header .decoration {
   font-family: "Roboto", sans-serif;
   width: 20%;
   text-align: center;
-  height: 5px;
+  height: 25px;
   font-size: 0;
   line-height: 0;
   margin: 0;
+  color: transparent;
+}
+
+header .decoration1 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+header .decoration2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+header .decoration3 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+header .decoration4 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+header .decoration5 {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+@-webkit-keyframes preloader {
+  0%,
+  100% {
+    height: 5px;
+    font-size: 2rem;
+  }
+  5%,
+  95% {
+    border-radius: 0 0 40% 40%;
+  }
+  50% {
+    color: #FAFAFA;
+    line-height: 1.6;
+  }
+  50% {
+    height: 30px;
+  }
+}
+
+@keyframes preloader {
+  0%,
+  100% {
+    height: 5px;
+    font-size: 2rem;
+  }
+  5%,
+  95% {
+    border-radius: 0 0 40% 40%;
+  }
+  50% {
+    color: #FAFAFA;
+    line-height: 1.6;
+  }
+  50% {
+    height: 30px;
+  }
+}
+
+.wave {
+  position: absolute;
+  width: 20.1%;
+  height: 25px;
+  top: 0;
+  background: transparent;
+}
+
+.waveStart {
+  width: 100%;
+  border-radius: 0;
+  right: 0;
+  top: 15px;
+  background: #F7F4F3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-animation: waveStart 3.33s linear forwards;
+          animation: waveStart 3.33s linear forwards;
+}
+
+.waveMid {
+  -webkit-box-shadow: 0 15px 0 0 #F7F4F3;
+          box-shadow: 0 15px 0 0 #F7F4F3;
+  border-radius: 0 0 50% 50%;
+  -webkit-animation: waveMid 4s linear forwards;
+          animation: waveMid 4s linear forwards;
+}
+
+.waveEnd {
+  border-radius: 0;
+  left: 0%;
+  top: 15px;
+  width: 0;
+  background: #F7F4F3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-animation: waveEnd 3.34s linear forwards;
+          animation: waveEnd 3.34s linear forwards;
+  -webkit-animation-delay: 0.66s;
+          animation-delay: 0.66s;
+}
+
+@-webkit-keyframes waveStart {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes waveStart {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes waveEnd {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes waveEnd {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes waveMid {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes waveMid {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes waveEnd {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 aside {
@@ -380,7 +530,7 @@ aside {
           align-items: stretch;
   height: 80vh;
   width: 27.5%;
-  margin: 0;
+  margin-top: 10vh;
   padding-top: 20px;
   background: #FAFAFA;
   border-radius: 20px 0 0 20px;
@@ -479,14 +629,38 @@ nav li:hover:after {
   width: 0%;
 }
 
+.wrapper {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 main {
-  width: 67.5%;
+  height: 100vh;
+  width: 72.5%;
   position: relative;
+  overflow-y: scroll;
+  scroll-padding-top: 10vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 
 button {
-  position: absolute;
-  right: 0;
+  position: fixed;
+  right: calc(10% + 50px);
   width: 50px;
   height: 50px;
   background: blue;
@@ -518,29 +692,39 @@ button:active {
 
 .toggle {
   border-radius: 0 20px 0 0;
-  top: 0;
+  top: 10vh;
   background: #151515;
 }
 
 .print {
-  bottom: 60px;
+  bottom: calc(10vh + 60px);
   background: #151515;
 }
 
 .download {
-  bottom: 0;
   border-radius: 0 0 20px 0;
   background: #6ea9f2;
+  bottom: 10vh;
 }
 
-.content {
+section {
   height: 80vh;
+  margin: 15vh 0 0 3%;
   background: #FAFAFA;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
   border-radius: 0;
-  width: calc(100% - 60px);
+  width: calc(93% - 50px);
   overflow-y: scroll;
+  scroll-snap-align: start;
+}
+
+section:first-of-type {
+  margin-top: 10vh;
+}
+
+section:last-of-type {
+  margin-bottom: 10vh;
 }
 
 section h2 {

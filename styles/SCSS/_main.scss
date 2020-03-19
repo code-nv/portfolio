@@ -1,11 +1,22 @@
+.wrapper {
+	width: 80%;
+	max-width: 1080px;
+	margin: 0 auto;
+	@include flexRow(flex-start, flex-start);
+}
+
 main {
-	width: 67.5%;
-	position: relative;
+    height: 100vh;
+    width: 72.5%;
+    position: relative;
+    overflow-y: scroll;
+    scroll-padding-top: 10vh;
+    scroll-snap-type: y mandatory;
 }
 
 button {
-	position: absolute;
-	right: 0;
+	position: fixed;
+    right: calc(10% + 50px);
 	width: 50px;
 	height: 50px;
     background: blue;
@@ -31,26 +42,18 @@ button:active {
 
 .toggle {
     border-radius: 0 20px 0 0;
-    top: 0;
+    top: 10vh;
     background: $black;
 }
 
 .print {
-    bottom: 60px;
+    bottom: calc(10vh + 60px);
     background: $black;
 }
 
 .download {
-    bottom: 0;
     border-radius: 0 0 20px 0;
     background: $color5;
+    bottom: 10vh;
 }
 
-.content {
-    height: 80vh;
-    background: $white;
-    box-shadow: 0 0 10px 5px #ccdce3;
-	border-radius: 0;
-    width: calc(100% - 60px);
-    overflow-y: scroll;
-}
