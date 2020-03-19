@@ -41,27 +41,30 @@ nav {
 	position: relative;
     text-align: left;
 
-	a,
-	.fas {
+	a{
 		font-size: 2rem;
 		padding: 10px;
-	}
-
-	a {
 		position: relative;
 		z-index: 2;
+		width: 100%;
 	}
 
 	.fas {
-		position: relative;
-		margin: 0 10px;
+		// margin: 0 40px 0 10px;
+		// margin: 0 10% 0 2.5%;
+		margin-left: calc(5% - 10px);
+		margin-right: 10%;
 		color: $white;
 	}
 
 	li {
-		width: 100%;
         position: relative;
-        transition: color 0.3s;
+		transition: color 0.3s;
+		
+		span {
+			display: inline-block;
+			width:20%;
+		}
     }
     
     li:hover {
@@ -71,7 +74,7 @@ nav {
 	li:after {
 		content: " ";
 		position: absolute;
-		width: calc(100% - 65.6px);
+		width: calc(90% - 20px);
 		height: 100%;
 		top: 0;
 		right: 0;
@@ -79,9 +82,21 @@ nav {
         transition: width 0.4s;
         border-top: 0.5px solid #f2f1f1;
         border-bottom: 0.5px solid #f2f1f1;
-    }
+	}
+	
+	span {
+		width:20%;
+		padding: 0 5%;
+	}
 
-	li:hover:after {
+	// li:hover:after,
+	li.activeNav:after {
 		width: 0%;
+	}
+li:hover {
+	color: $color1;
+}
+	li.activeNav {
+		color: $white;
 	}
 }

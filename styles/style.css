@@ -292,7 +292,7 @@ img {
 
 body {
   position: relative;
-  background: #F7F4F3;
+  background: #f7f4f3;
   font-family: "Roboto", sans-serif;
 }
 
@@ -301,7 +301,7 @@ body {
 }
 
 *[class*="2"] {
-  background: #FF9F1C;
+  background: #ff9f1c;
 }
 
 *[class*="3"] {
@@ -339,10 +339,12 @@ header .decoration {
   font-family: "Roboto", sans-serif;
   width: 20%;
   text-align: center;
-  height: 25px;
+  height: 5px;
   font-size: 0;
   line-height: 0;
   margin: 0;
+  -webkit-animation: preloader 1.8s ease;
+          animation: preloader 1.8s ease;
   color: transparent;
 }
 
@@ -352,23 +354,23 @@ header .decoration1 {
 }
 
 header .decoration2 {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 header .decoration3 {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
 header .decoration4 {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 
 header .decoration5 {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 @-webkit-keyframes preloader {
@@ -379,13 +381,11 @@ header .decoration5 {
   }
   5%,
   95% {
-    border-radius: 0 0 40% 40%;
   }
   50% {
-    color: #FAFAFA;
+    color: #fafafa;
     line-height: 1.6;
-  }
-  50% {
+    border-radius: 0 0 20px 20px;
     height: 30px;
   }
 }
@@ -398,119 +398,12 @@ header .decoration5 {
   }
   5%,
   95% {
-    border-radius: 0 0 40% 40%;
   }
   50% {
-    color: #FAFAFA;
+    color: #fafafa;
     line-height: 1.6;
-  }
-  50% {
+    border-radius: 0 0 20px 20px;
     height: 30px;
-  }
-}
-
-.wave {
-  position: absolute;
-  width: 20.1%;
-  height: 25px;
-  top: 0;
-  background: transparent;
-}
-
-.waveStart {
-  width: 100%;
-  border-radius: 0;
-  right: 0;
-  top: 15px;
-  background: #F7F4F3;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-animation: waveStart 3.33s linear forwards;
-          animation: waveStart 3.33s linear forwards;
-}
-
-.waveMid {
-  -webkit-box-shadow: 0 15px 0 0 #F7F4F3;
-          box-shadow: 0 15px 0 0 #F7F4F3;
-  border-radius: 0 0 50% 50%;
-  -webkit-animation: waveMid 4s linear forwards;
-          animation: waveMid 4s linear forwards;
-}
-
-.waveEnd {
-  border-radius: 0;
-  left: 0%;
-  top: 15px;
-  width: 0;
-  background: #F7F4F3;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-animation: waveEnd 3.34s linear forwards;
-          animation: waveEnd 3.34s linear forwards;
-  -webkit-animation-delay: 0.66s;
-          animation-delay: 0.66s;
-}
-
-@-webkit-keyframes waveStart {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-
-@keyframes waveStart {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-
-@-webkit-keyframes waveEnd {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes waveEnd {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes waveMid {
-  0% {
-    left: -20%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes waveMid {
-  0% {
-    left: -20%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes waveEnd {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
   }
 }
 
@@ -532,7 +425,7 @@ aside {
   width: 27.5%;
   margin-top: 10vh;
   padding-top: 20px;
-  background: #FAFAFA;
+  background: #fafafa;
   border-radius: 20px 0 0 20px;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
@@ -583,50 +476,64 @@ nav {
   text-align: left;
 }
 
-nav a,
-nav .fas {
+nav a {
   font-size: 2rem;
   padding: 10px;
-}
-
-nav a {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 nav .fas {
-  position: relative;
-  margin: 0 10px;
-  color: #FAFAFA;
+  margin-left: calc(5% - 10px);
+  margin-right: 10%;
+  color: #fafafa;
 }
 
 nav li {
-  width: 100%;
   position: relative;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
+nav li span {
+  display: inline-block;
+  width: 20%;
+}
+
 nav li:hover {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 nav li:after {
   content: " ";
   position: absolute;
-  width: calc(100% - 65.6px);
+  width: calc(90% - 20px);
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   -webkit-transition: width 0.4s;
   transition: width 0.4s;
   border-top: 0.5px solid #f2f1f1;
   border-bottom: 0.5px solid #f2f1f1;
 }
 
-nav li:hover:after {
+nav span {
+  width: 20%;
+  padding: 0 5%;
+}
+
+nav li.activeNav:after {
   width: 0%;
+}
+
+nav li:hover {
+  color: #fe5e41;
+}
+
+nav li.activeNav {
+  color: #fafafa;
 }
 
 .wrapper {
@@ -667,7 +574,7 @@ button {
   -webkit-box-shadow: 0 0 10px 2px #ccdce3;
           box-shadow: 0 0 10px 2px #ccdce3;
   font-size: 1.4rem;
-  color: #FAFAFA;
+  color: #fafafa;
   -webkit-transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s;
@@ -675,7 +582,7 @@ button {
 }
 
 button.lightMode {
-  background: #F7F4F3;
+  background: #f7f4f3;
   color: #151515;
 }
 
@@ -709,14 +616,14 @@ button:active {
 
 section {
   height: 80vh;
-  margin: 15vh 0 0 3%;
-  background: #FAFAFA;
+  margin: 10vh 0 20vh 3%;
+  background: #fafafa;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
   border-radius: 0;
   width: calc(93% - 50px);
-  overflow-y: scroll;
   scroll-snap-align: start;
+  padding-top: 20px;
 }
 
 section:first-of-type {
@@ -731,7 +638,7 @@ section h2 {
   width: 30%;
   padding: 10px 0 10px 20px;
   margin-top: 20px;
-  color: #FAFAFA;
+  color: #fafafa;
   text-transform: capitalize;
 }
 

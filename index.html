@@ -12,7 +12,9 @@
 			integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
 			crossorigin="anonymous"
 		></script>
-
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js">
+		</script>
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
@@ -21,10 +23,10 @@
 			<div class="decoration decoration2">unique solutions</div>
 			<div class="decoration decoration3">to</div>
 			<div class="decoration decoration4">complex problems</div>
-            <div class="decoration decoration5"></div>
-            <div class="wave waveStart"></div>
-            <div class="wave waveMid"></div>
-            <div class="wave waveEnd"></div>
+			<div class="decoration decoration5"></div>
+			<div class="wave waveStart"></div>
+			<div class="wave waveMid"></div>
+			<div class="wave waveEnd"></div>
 		</header>
 		<div class="wrapper">
 			<aside>
@@ -35,25 +37,30 @@
 				<h1>Front End Web Developer</h1>
 				<nav>
 					<ul>
-						<li class="nav1">
-							<i class="fas fa-address-card"></i>
-							<a href="#aboutMe">About Me</a>
+						<li class="nav1 activeNav">
+							<a href="#aboutMe" class="aboutMeLink">
+								<span><i class="fas fa-address-card"></i></span>About Me</a
+							>
 						</li>
 						<li class="nav2">
-							<i class="fas fa-briefcase"></i>
-							<a href="#portfolio">Portfolio</a>
+							<a href="#portfolio" class="portfolioLink">
+								<span><i class="fas fa-briefcase"></i></span>Portfolio</a
+							>
 						</li>
 						<li class="nav3">
-							<i class="fas fa-cog"></i>
-							<a href="#skills">Skills</a>
+							<a href="#skills" class="skillsLink">
+								<span><i class="fas fa-cog"></i></span>Skills</a
+							>
 						</li>
 						<li class="nav4">
-							<i class="fas fa-bars"></i>
-							<a href="#resume">Resume</a>
+							<a href="#resume" class="resumeLink">
+								<span><i class="fas fa-bars"></i></span>Resume</a
+							>
 						</li>
 						<li class="nav5">
-							<i class="fas fa-envelope"></i>
-							<a href="#contact"> Contact</a>
+							<a href="#contact" class="contactLink">
+								<span><i class="fas fa-envelope"></i></span>Contact</a
+							>
 						</li>
 					</ul>
 				</nav>
@@ -73,7 +80,7 @@
 					<i class="fas fa-download"></i>
 				</button>
 
-				<div class="content">
+				<!-- <div class="content"> -->
 					<section class="section aboutMe" id="aboutMe">
 						<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
 						<div class="highlightContainer">
@@ -87,12 +94,16 @@
 								<li><span>email</span><span>: nickrenoe@gmail.com</span></li>
 								<li><span>favourite food</span>: <span>broccoli</span></li>
 							</ul>
-                        </div>
-                        <p>
-                            I’m a thrill seeker who’s afraid of butterflies. I bring the creativity of the music industry and the
-                            precision of journalism to a webpage near you. I’m finding unique solutions to complex problems and I’m
-                            doing it all while making the worst puns you’ve never heard before.
-                        </p>
+						</div>
+						<p>
+							<!-- I’m a thrill seeker who’s afraid of butterflies. I bring the creativity of the music industry and the
+							precision of journalism to a webpage near you. I’m finding unique solutions to complex problems and I’m
+                            doing it all while making the worst puns you’ve never heard before. -->
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eveniet quas, dolorem, est ducimus
+							cupiditate eum, autem pariatur provident doloribus odio quisquam animi. Eveniet fuga sed dolorem quaerat!
+							Enim, minus. Unde dolore eaque, accusamus iste minus officia exercitationem accusantium! Accusantium sunt
+							saepe rem reiciendis ducimus laudantium. Nisi at nihil cum.
+						</p>
 					</section>
 					<section class="section portfolio" id="portfolio">
 						<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
@@ -106,7 +117,7 @@
 					<section class="section contact" id="contact">
 						<h2 class="header5"><i class="fas fa-envelope"></i> contact me</h2>
 					</section>
-                </div>
+				<!-- </div> -->
 			</main>
 			<footer></footer>
 		</div>

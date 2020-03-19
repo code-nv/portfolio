@@ -1,12 +1,12 @@
 section {
         height: 80vh;
-        margin: 15vh 0 0 3%;
+        margin: 10vh 0 20vh 3%;
         background: $white;
         box-shadow: 0 0 10px 5px #ccdce3;
         border-radius: 0;
         width: calc(93% - 50px);
-        overflow-y: scroll;
         scroll-snap-align: start;
+        padding-top: 20px;
 
         &:first-of-type {
             margin-top: 10vh;
