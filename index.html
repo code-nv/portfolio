@@ -7,14 +7,21 @@
 		<title>Document</title>
 		<script src="https://kit.fontawesome.com/8ffef1b7fa.js" crossorigin="anonymous"></script>
 
+		<!-- jquery -->
 		<script
 			src="https://code.jquery.com/jquery-3.4.0.min.js"
 			integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
 			crossorigin="anonymous"
 		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js">
-		</script>
+		<!-- scrolling functionality -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+        
+        <!-- devicon library -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+		/>
+		<!-- scss styles -->
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
@@ -81,42 +88,94 @@
 				</button>
 
 				<!-- <div class="content"> -->
-					<section class="section aboutMe" id="aboutMe">
-						<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
-						<div class="highlightContainer">
-							<div class="contentImgContainer">
-								<img src="./assets/nickReynoProfile.png" alt="Profile photo of Nick Reyno" />
-							</div>
-
-							<ul>
-								<li><span>name</span><span>: Nick Reyno</span></li>
-								<li><span>pronouns</span><span>: he/him</span></li>
-								<li><span>email</span><span>: nickrenoe@gmail.com</span></li>
-								<li><span>favourite food</span>: <span>broccoli</span></li>
-							</ul>
+				<section class="section aboutMe" id="aboutMe">
+					<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
+					<div class="highlightContainer">
+						<div class="contentImgContainer">
+							<img src="./assets/nickReynoProfile.png" alt="Profile photo of Nick Reyno" />
 						</div>
-						<p>
-							<!-- I’m a thrill seeker who’s afraid of butterflies. I bring the creativity of the music industry and the
-							precision of journalism to a webpage near you. I’m finding unique solutions to complex problems and I’m
-                            doing it all while making the worst puns you’ve never heard before. -->
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eveniet quas, dolorem, est ducimus
-							cupiditate eum, autem pariatur provident doloribus odio quisquam animi. Eveniet fuga sed dolorem quaerat!
-							Enim, minus. Unde dolore eaque, accusamus iste minus officia exercitationem accusantium! Accusantium sunt
-							saepe rem reiciendis ducimus laudantium. Nisi at nihil cum.
-						</p>
-					</section>
-					<section class="section portfolio" id="portfolio">
-						<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
-					</section>
-					<section class="section skills" id="skills">
-						<h2 class="header3"><i class="fas fa-cog"></i> skills</h2>
-					</section>
-					<section class="section resume" id="resume">
-						<h2 class="header4"><i class="fas fa-bars"></i> resume</h2>
-					</section>
-					<section class="section contact" id="contact">
-						<h2 class="header5"><i class="fas fa-envelope"></i> contact me</h2>
-					</section>
+
+						<ul>
+							<li><span>name</span><span>: Nick Reyno</span></li>
+							<li><span>pronouns</span><span>: he/him</span></li>
+							<li><span>email</span><span>: nickrenoe@gmail.com</span></li>
+							<li><span>favourite food</span>: <span>broccoli</span></li>
+						</ul>
+					</div>
+					<p>
+						I’m a thrill seeker who’s afraid of butterflies. I bring the creativity of the music industry and the
+						precision of journalism to a webpage near you. I’m finding unique solutions to complex problems and I’m
+						doing it all while making the worst puns you’ve never heard before.
+					</p>
+				</section>
+				<section class="section portfolio" id="portfolio">
+					<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
+				</section>
+				<section class="section skills" id="skills">
+					<h2 class="header3"><i class="fas fa-cog"></i> skills</h2>
+					<ul>
+						<li>
+							<div class="skill1">
+                                <i class="devicon-html5-plain"></i> 
+                            </div>
+							<h3>HTML</h3>
+						</li>
+						<li>
+							<div class="skill2">
+                                <i class="devicon-css3-plain"></i>
+                            </div>
+							<h3>CSS</h3>
+						</li>
+						<li>
+							<div class="skill3">
+                                <i class="fab fa-sass"></i>
+                            </div>
+							<h3>SCSS</h3>
+						</li>
+						<li>
+							<div class="skill4">
+                                <i class="devicon-javascript-plain"></i>
+                            </div>
+							<h3>Javascript</h3>
+						</li>
+						<li>
+							<div class="skill5">
+                                <i class="devicon-jquery-plain"></i>
+                            </div>
+							<h3>jQuery</h3>
+						</li>
+						<li>
+							<div class="skill6">
+                                <i class="devicon-react-original"></i>
+                            </div>
+							<h3>React</h3>
+						</li>
+						<li>
+							<div class="skill7">
+                                <img src="./assets/firebase.svg" alt="firebase">
+                            </div>
+							<h3>Firebase</h3>
+						</li>
+						<li>
+							<div class="skill8"></div>
+							<h3></h3>
+						</li>
+						<li>
+							<div class="skill9"></div>
+							<h3></h3>
+						</li>
+						<li>
+							<div class="skill10"></div>
+							<h3></h3>
+						</li>
+					</ul>
+				</section>
+				<section class="section resume" id="resume">
+					<h2 class="header4"><i class="fas fa-bars"></i> resume</h2>
+				</section>
+				<section class="section contact" id="contact">
+					<h2 class="header5"><i class="fas fa-envelope"></i> contact me</h2>
+				</section>
 				<!-- </div> -->
 			</main>
 			<footer></footer>
