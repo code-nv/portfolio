@@ -43,6 +43,7 @@ app.navActive = function() {
 
 app.init = function() {
 	app.navActive();
+
 	$("a").on("click", function(e) {
 		e.preventDefault();
 		app.anchorNav(this);
@@ -53,6 +54,11 @@ app.init = function() {
 			app.navActive();
 		}, 300);
 	});
+
+	$('h3').on('click',function(){
+		$('.resume h3').removeClass('activeResume');
+		$(this).addClass('activeResume');
+	})
 };
 
 $(function() {

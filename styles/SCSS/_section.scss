@@ -22,6 +22,7 @@ section {
 		margin-top: 20px;
 		color: $white;
 		text-transform: capitalize;
+		font-size: 2.2rem;
 
 		i {
 			margin-right: 5px;
@@ -71,60 +72,103 @@ section.aboutMe {
 	}
 }
 
+///////////////////////////////////////////////////////
 section.skills {
 	ul {
 		margin: 20px;
 		@include flexRow(center, center);
-        flex-wrap: wrap;
-        text-align: center;
-        height: 80%;
+		flex-wrap: wrap;
+		text-align: center;
+		height: 80%;
 	}
 
 	li {
 		width: calc(20% - 10px);
 		margin: 5px;
-        box-shadow: 0 0 10px 2px #ccdce3;
-        padding: 10px;
-        height: 40%;
+		box-shadow: 0 0 10px 2px #ccdce3;
+		padding: 10px;
+		height: 40%;
 
 		div {
 			width: 100%;
-            padding: 10px 0;
-            margin-bottom: 10px;
+			padding: 10px 0;
+			margin-bottom: 10px;
 		}
 
 		i {
-            font-size: 7rem;
-            background: transparent;
-            color: $white;
-            // color: $black;
-        }
-        
-        img {
-            height: 70px;
-            width: auto;
-            margin: 0 auto;
-        }
-    }
-    h3 {
-        font-size: 1.6rem;
-        background: transparent;
-        text-shadow: 0px 0px 1px #ccdce3;
+			font-size: 7rem;
+			background: transparent;
+			color: $white;
+			// color: $black;
+		}
 
-        &.skill1 {
-            color: $color1;
-        }
-        &.skill2 {
-            color: $color2;
-        }
-        &.skill3 {
-            color: $color3;
-        }
-        &.skill4 {
-            color: $color4;
-        }
-        &.skill5 {
-            color: $color5;
-        }
-    }
+		img {
+			height: 70px;
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+	h3 {
+		font-size: 1.6rem;
+		background: transparent;
+		text-shadow: 0px 0px 1px #ccdce3;
+
+		&.skill1 {
+			color: $color1;
+		}
+		&.skill2 {
+			color: $color2;
+		}
+		&.skill3 {
+			color: $color3;
+		}
+		&.skill4 {
+			color: $color4;
+		}
+		&.skill5 {
+			color: $color5;
+		}
+	}
+}
+
+///////////////////////////////////////////////////////
+section.resume {
+	padding-bottom: 0;
+
+	h3 {
+		position: relative;
+		display: inline-block;
+		width: calc(100% - 20px);
+		padding: 10px 20px;
+		font-size: 2rem;
+		color: $white;
+
+		span {
+			position: absolute;
+			top: 16px;
+			right: 20px;
+			display: inline-block;
+			border-right: 2px solid $white;
+			border-bottom: 2px solid $white;
+			width: 10px;
+			height: 10px;
+			transform: rotate(-45deg);
+			transform-origin: center;
+			transition: transform 0.2s;
+		}
+	}
+	.resumeInfo {
+		position: relative;
+		height: 0;
+		transition: all 1s;
+	}
+
+	h3.activeResume span {
+		transform: rotate(45deg);
+	}
+
+	h3.activeResume + .resumeInfo {
+		position: relative;
+		height: calc(80vh - 257px);
+	}
 }
