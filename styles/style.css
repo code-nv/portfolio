@@ -653,7 +653,7 @@ section p {
   text-align: justify;
 }
 
-section .highlightContainer {
+section.aboutMe .highlightContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -671,12 +671,12 @@ section .highlightContainer {
   border-bottom: 1px solid grey;
 }
 
-section ul {
+section.aboutMe ul {
   width: 50%;
   font-size: 1.4rem;
 }
 
-section ul li {
+section.aboutMe ul li {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -693,19 +693,93 @@ section ul li {
           align-items: center;
 }
 
-section ul span:nth-child(odd) {
+section.aboutMe ul span:nth-child(odd) {
   font-weight: bold;
 }
 
-section ul span {
+section.aboutMe ul span {
   width: 50%;
 }
 
-section .contentImgContainer {
+section.aboutMe .contentImgContainer {
   width: 30%;
   padding: 20px;
 }
 
-section .contentImgContainer img {
+section.aboutMe .contentImgContainer img {
   border-radius: 0;
+}
+
+section.skills ul {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  height: 80%;
+}
+
+section.skills li {
+  width: calc(20% - 10px);
+  margin: 5px;
+  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
+          box-shadow: 0 0 10px 2px #ccdce3;
+  padding: 10px;
+  height: 40%;
+}
+
+section.skills li div {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+section.skills li i {
+  font-size: 7rem;
+  background: transparent;
+  color: #fafafa;
+}
+
+section.skills li img {
+  height: 70px;
+  width: auto;
+  margin: 0 auto;
+}
+
+section.skills h3 {
+  font-size: 1.6rem;
+  background: transparent;
+  text-shadow: 0px 0px 1px #ccdce3;
+}
+
+section.skills h3.skill1 {
+  color: #fe5e41;
+}
+
+section.skills h3.skill2 {
+  color: #ff9f1c;
+}
+
+section.skills h3.skill3 {
+  color: #ffbf69;
+}
+
+section.skills h3.skill4 {
+  color: #44f0c2;
+}
+
+section.skills h3.skill5 {
+  color: #6ea9f2;
 }

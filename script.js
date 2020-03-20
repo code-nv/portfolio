@@ -42,6 +42,7 @@ app.navActive = function() {
 };
 
 app.init = function() {
+	app.navActive();
 	$("a").on("click", function(e) {
 		e.preventDefault();
 		app.anchorNav(this);

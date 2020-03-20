@@ -1,70 +1,130 @@
 section {
-        height: 80vh;
-        margin: 10vh 0 20vh 3%;
-        background: $white;
-        box-shadow: 0 0 10px 5px #ccdce3;
-        border-radius: 0;
-        width: calc(93% - 50px);
-        scroll-snap-align: start;
-        padding-top: 20px;
+	height: 80vh;
+	margin: 10vh 0 20vh 3%;
+	background: $white;
+	box-shadow: 0 0 10px 5px #ccdce3;
+	border-radius: 0;
+	width: calc(93% - 50px);
+	scroll-snap-align: start;
+	padding-top: 20px;
 
-        &:first-of-type {
-            margin-top: 10vh;
-        }
+	&:first-of-type {
+		margin-top: 10vh;
+	}
 
-        &:last-of-type {
-            margin-bottom: 10vh;
-        }
-    
+	&:last-of-type {
+		margin-bottom: 10vh;
+	}
+
 	h2 {
-        width: 30%;
-        padding: 10px 0 10px 20px;
-        margin-top: 20px;
-        color: $white;
-        text-transform: capitalize;
+		width: 30%;
+		padding: 10px 0 10px 20px;
+		margin-top: 20px;
+		color: $white;
+		text-transform: capitalize;
 
-        i {
-            margin-right: 5px;
+		i {
+			margin-right: 5px;
+		}
+	}
+
+	p {
+		font-size: 1.6rem;
+		margin: 20px;
+		color: #707070;
+		text-align: justify;
+	}
+}
+
+section.aboutMe {
+	.highlightContainer {
+		@include flexRow(space-between, center);
+		width: 100%;
+		border-bottom: 1px solid grey;
+	}
+
+	ul {
+		width: 50%;
+		font-size: 1.4rem;
+
+		li {
+			width: 80%;
+			@include flexRow(space-between, center);
+		}
+
+		span:nth-child(odd) {
+			font-weight: bold;
+		}
+
+		span {
+			width: 50%;
+		}
+	}
+
+	.contentImgContainer {
+		width: 30%;
+		padding: 20px;
+
+		img {
+			border-radius: 0;
+		}
+	}
+}
+
+section.skills {
+	ul {
+		margin: 20px;
+		@include flexRow(center, center);
+        flex-wrap: wrap;
+        text-align: center;
+        height: 80%;
+	}
+
+	li {
+		width: calc(20% - 10px);
+		margin: 5px;
+        box-shadow: 0 0 10px 2px #ccdce3;
+        padding: 10px;
+        height: 40%;
+
+		div {
+			width: 100%;
+            padding: 10px 0;
+            margin-bottom: 10px;
+		}
+
+		i {
+            font-size: 7rem;
+            background: transparent;
+            color: $white;
+            // color: $black;
         }
-    }
-
-    p {
-        font-size: 1.6rem;
-        margin: 20px;
-        color:#707070;
-        text-align: justify;
-    }
-    
-    .highlightContainer {
-        @include flexRow(space-between, center);
-        width: 100%;
-        border-bottom: 1px solid grey;
-    }
-
-    ul {
-        width: 50%;
-        font-size: 1.4rem;
         
-        li {
-            width: 80%;
-            @include flexRow(space-between, center);
-        }
-
-        span:nth-child(odd){
-            font-weight: bold;
-        }
-
-        span {
-            width: 50%;
+        img {
+            height: 70px;
+            width: auto;
+            margin: 0 auto;
         }
     }
+    h3 {
+        font-size: 1.6rem;
+        background: transparent;
+        text-shadow: 0px 0px 1px #ccdce3;
 
-    .contentImgContainer {
-        width: 30%;
-        padding: 20px;
-
-        img {
-            border-radius: 0;
+        &.skill1 {
+            color: $color1;
+        }
+        &.skill2 {
+            color: $color2;
+        }
+        &.skill3 {
+            color: $color3;
+        }
+        &.skill4 {
+            color: $color4;
+        }
+        &.skill5 {
+            color: $color5;
         }
     }
 }
