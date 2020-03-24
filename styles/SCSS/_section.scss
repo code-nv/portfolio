@@ -1,7 +1,6 @@
 section {
 	height: 80vh;
 	margin: 10vh 0 20vh 3%;
-	background: $white;
 	box-shadow: 0 0 10px 5px #ccdce3;
 	border-radius: 0;
 	width: calc(93% - 50px);
@@ -81,11 +80,24 @@ section.skills {
 		text-align: center;
 		height: 80%;
 	}
+	&.lightTheme li {
+		box-shadow: 0 0 10px 2px #ccdce3;
+	}
+	&.darkTheme li {
+		background: $black;
+		box-shadow: none;
 
+		h3 {
+			text-shadow: none;
+		}
+
+		i {
+			color: $black;
+		}
+	}
 	li {
 		width: calc(20% - 10px);
 		margin: 5px;
-		box-shadow: 0 0 10px 2px #ccdce3;
 		padding: 10px;
 		height: 40%;
 
@@ -99,7 +111,6 @@ section.skills {
 			font-size: 7rem;
 			background: transparent;
 			color: $white;
-			// color: $black;
 		}
 
 		img {

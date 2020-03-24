@@ -24,7 +24,7 @@
 		<!-- scss styles -->
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
-	<body>
+	<body class="lightThemeBody">
 		<header>
 			<div class="decoration decoration1"></div>
 			<div class="decoration decoration2">unique solutions</div>
@@ -36,7 +36,7 @@
 			<div class="wave waveEnd"></div>
 		</header>
 		<div class="wrapper">
-			<aside>
+			<aside class="lightTheme">
 				<div class="imgContainer">
 					<img src="./assets/profileZoom.png" alt="profile picture of Nick Reyno" />
 				</div>
@@ -44,27 +44,27 @@
 				<h1>Front End Web Developer</h1>
 				<nav>
 					<ul>
-						<li class="nav1">
+						<li class="nav1 lightThemeAfter">
 							<a href="#aboutMe" class="aboutMeLink">
 								<span><i class="fas fa-address-card"></i></span>About Me</a
 							>
 						</li>
-						<li class="nav2">
+						<li class="nav2 lightThemeAfter">
 							<a href="#portfolio" class="portfolioLink">
 								<span><i class="fas fa-briefcase"></i></span>Portfolio</a
 							>
 						</li>
-						<li class="nav3">
+						<li class="nav3 lightThemeAfter">
 							<a href="#skills" class="skillsLink">
 								<span><i class="fas fa-cog"></i></span>Skills</a
 							>
 						</li>
-						<li class="nav4">
+						<li class="nav4 lightThemeAfter">
 							<a href="#resume" class="resumeLink">
 								<span><i class="fas fa-bars"></i></span>Resume</a
 							>
 						</li>
-						<li class="nav5">
+						<li class="nav5 lightThemeAfter">
 							<a href="#contact" class="contactLink">
 								<span><i class="fas fa-envelope"></i></span>Contact</a
 							>
@@ -88,7 +88,7 @@
 				</button>
 
 				<!-- <div class="content"> -->
-				<section class="section aboutMe" id="aboutMe">
+				<section class="section aboutMe lightTheme" id="aboutMe">
 					<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
 					<div class="highlightContainer">
 						<div class="contentImgContainer">
@@ -108,10 +108,10 @@
 						doing it all while making the worst puns you’ve never heard before.
 					</p>
 				</section>
-				<section class="section portfolio" id="portfolio">
+				<section class="section portfolio lightTheme" id="portfolio">
 					<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
 				</section>
-				<section class="section skills" id="skills">
+				<section class="section skills lightTheme" id="skills">
 					<h2 class="header3"><i class="fas fa-cog"></i> skills</h2>
 					<ul>
 						<li>
@@ -152,7 +152,7 @@
 						</li>
 						<li>
 							<div class="skill2">
-								<img src="./assets/firebase.svg" alt="firebase" />
+								<img class="firebaseSVG" src="./assets/firebase.svg" alt="firebase" />
 							</div>
 							<h3 class="skill2">Firebase</h3>
 						</li>
@@ -164,7 +164,7 @@
 						</li>
 						<li>
 							<div class="skill4">
-								<img src="./assets/responsiveDesign.svg" alt="responsive design" />
+								<img class="responsiveSVG" src="./assets/responsiveDesign.svg" alt="responsive design" />
 							</div>
 							<h3 class="skill4">Responsive Design</h3>
 						</li>
@@ -188,10 +188,11 @@
 						</li> -->
 					</ul>
 				</section>
-				<section class="section resume" id="resume">
+				<section class="section resume lightTheme" id="resume">
 					<h2 class="header4"><i class="fas fa-bars"></i> resume</h2>
 					<h3 class="resume1 activeResume">Employment <span></span></h3>
 					<div class="resumeInfo">
+						<h4>Production Crew Team Lead</h4>
 						<h4>DJM Productions</h4>
 						<p><time datetime="2016-08-01">August, 2016</time> - <time datetime="2019-10-01">October, 2019</time>.</p>
 						<ul>
@@ -199,8 +200,25 @@
 								Led a team of 15 technicians to implement new techniques and practices to increase efficiency and morale
 								across team members.
 							</li>
-							<li>represented the company when interacting with clients and site managers</li>
-							<li>retained and grew the client list through excellent execution of shows</li>
+							<li>Effectively operated various computer and audio systems under high pressure timelines</li>
+							<li>
+								Created sustainable growth of the freelancer and client lists through excellent execution of shows and
+								networking opportunities
+							</li>
+						</ul>
+						<h4>Sales Associate</h4>
+						<h4>Zumiez</h4>
+						<p>
+							<time datetime="2018-02-01">February, 2018</time> - <time datetime="2019-02-01">February, 2019</time>.
+						</p>
+						<ul>
+							<li>
+								Met and exceeded sales goals, ranking top sales associate repeatedly
+							</li>
+							<li>Optimized sales using our POS systems and online inventories</li>
+							<li>
+								Maintained and organized the sales floor ensuring product and inventory were moving
+							</li>
 						</ul>
 					</div>
 					<h3 class="resume2">Education <span></span></h3>
@@ -210,7 +228,7 @@
 					<h3 class="resume5">Achievements <span></span></h3>
 					<div class="resumeInfo"></div>
 				</section>
-				<section class="section contact" id="contact">
+				<section class="section contact lightTheme" id="contact">
 					<h2 class="header5"><i class="fas fa-envelope"></i> contact me</h2>
 				</section>
 				<!-- </div> -->

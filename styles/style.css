@@ -292,8 +292,27 @@ img {
 
 body {
   position: relative;
-  background: #f7f4f3;
   font-family: "Roboto", sans-serif;
+}
+
+.lightTheme {
+  background: #fafafa;
+  -webkit-box-shadow: 0 0 10px 5px #ccdce3;
+          box-shadow: 0 0 10px 5px #ccdce3;
+}
+
+.darkTheme {
+  background: #212121;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.lightThemeBody {
+  background: #f7f4f3;
+}
+
+.darkThemeBody {
+  background: #19191b;
 }
 
 *[class*="1"] {
@@ -425,10 +444,7 @@ aside {
   width: 27.5%;
   margin-top: 10vh;
   padding-top: 20px;
-  background: #fafafa;
   border-radius: 20px 0 0 20px;
-  -webkit-box-shadow: 0 0 10px 5px #ccdce3;
-          box-shadow: 0 0 10px 5px #ccdce3;
   text-align: center;
 }
 
@@ -499,10 +515,27 @@ nav li {
 nav li span {
   display: inline-block;
   width: 20%;
+  padding: 0 5%;
 }
 
-nav li:hover {
-  color: #fafafa;
+nav li:not(.activeNav).nav1:hover {
+  color: #fe5e41;
+}
+
+nav li:not(.activeNav).nav2:hover {
+  color: #ff9f1c;
+}
+
+nav li:not(.activeNav).nav3:hover {
+  color: #ffbf69;
+}
+
+nav li:not(.activeNav).nav4:hover {
+  color: #44f0c2;
+}
+
+nav li:not(.activeNav).nav5:hover {
+  color: #6ea9f2;
 }
 
 nav li:after {
@@ -512,24 +545,27 @@ nav li:after {
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #fafafa;
   -webkit-transition: width 0.4s;
   transition: width 0.4s;
-  border-top: 0.5px solid #f2f1f1;
-  border-bottom: 0.5px solid #f2f1f1;
 }
 
-nav span {
-  width: 20%;
-  padding: 0 5%;
+nav li.lightThemeAfter:after {
+  background: #fafafa;
+  border-bottom: 0.5px solid #f2f1f1;
+  border-top: 0.5px solid #f2f1f1;
+}
+
+nav li.darkThemeAfter {
+  color: #fafafa;
+}
+
+nav li.darkThemeAfter:after {
+  background: #1e1e20;
+  border: none;
 }
 
 nav li.activeNav:after {
   width: 0%;
-}
-
-nav li:hover {
-  color: #fe5e41;
 }
 
 nav li.activeNav {
@@ -570,20 +606,23 @@ button {
   right: calc(10% + 50px);
   width: 50px;
   height: 50px;
-  background: blue;
-  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
-          box-shadow: 0 0 10px 2px #ccdce3;
   font-size: 1.4rem;
   color: #fafafa;
+  background: #2e2e2e;
   -webkit-transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s;
   transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
 }
 
-button.lightMode {
-  background: #f7f4f3;
-  color: #151515;
+button.lightTheme {
+  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
+          box-shadow: 0 0 10px 2px #ccdce3;
+}
+
+button.darkTheme {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 button:hover {
@@ -600,12 +639,10 @@ button:active {
 .toggle {
   border-radius: 0 20px 0 0;
   top: 10vh;
-  background: #151515;
 }
 
 .print {
   bottom: calc(10vh + 60px);
-  background: #151515;
 }
 
 .download {
@@ -617,7 +654,6 @@ button:active {
 section {
   height: 80vh;
   margin: 10vh 0 20vh 3%;
-  background: #fafafa;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
   border-radius: 0;
@@ -732,11 +768,28 @@ section.skills ul {
   height: 80%;
 }
 
+section.skills.lightTheme li {
+  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
+          box-shadow: 0 0 10px 2px #ccdce3;
+}
+
+section.skills.darkTheme li {
+  background: #2e2e2e;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+section.skills.darkTheme li h3 {
+  text-shadow: none;
+}
+
+section.skills.darkTheme li i {
+  color: #2e2e2e;
+}
+
 section.skills li {
   width: calc(20% - 10px);
   margin: 5px;
-  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
-          box-shadow: 0 0 10px 2px #ccdce3;
   padding: 10px;
   height: 40%;
 }

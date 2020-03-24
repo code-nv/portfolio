@@ -36,8 +36,26 @@ img {
 
 body {
 	position: relative;
-	background: $lightBackground;
 	font-family: $mainStack;
+}
+
+.lightTheme {
+	background: $white;
+	box-shadow: 0 0 10px 5px #ccdce3;
+}
+
+.darkTheme {
+	// background: #1e1e20;
+	background: #212121;
+	box-shadow: none;
+}
+
+.lightThemeBody {
+	background: $lightBackground;
+}
+
+.darkThemeBody {
+	background: $darkBackground;
 }
 
 *[class*="1"] {

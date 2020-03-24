@@ -17,6 +17,21 @@ app.anchorNav = function(linkClicked) {
 	return false;
 };
 
+$(`button.toggle`).on("click", function() {
+	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
+	$("body").toggleClass("lightThemeBody darkThemeBody");
+	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
+	
+	if( $('body').hasClass('darkThemeBody') === true) {
+		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
+		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
+	} else {
+		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
+		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
+	}
+	
+});
+
 app.preScroll = function() {
 	$("main").css("scroll-snap-type", "none");
 };
@@ -55,10 +70,10 @@ app.init = function() {
 		}, 300);
 	});
 
-	$('h3').on('click',function(){
-		$('.resume h3').removeClass('activeResume');
-		$(this).addClass('activeResume');
-	})
+	$("h3").on("click", function() {
+		$(".resume h3").removeClass("activeResume");
+		$(this).addClass("activeResume");
+	});
 };
 
 $(function() {

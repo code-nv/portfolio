@@ -19,16 +19,17 @@ button {
     right: calc(10% + 50px);
 	width: 50px;
 	height: 50px;
-    background: blue;
-    box-shadow: 0 0 10px 2px #ccdce3;
     font-size: 1.4rem;
     color: $white;
+    background: $black;
     transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s;
-}
 
-button.lightMode {
-    background: $lightBackground;
-    color: $black;
+    &.lightTheme {
+        box-shadow: 0 0 10px 2px #ccdce3;
+    }
+    &.darkTheme {
+        box-shadow: none;
+    }
 }
 
 button:hover {
@@ -43,12 +44,10 @@ button:active {
 .toggle {
     border-radius: 0 20px 0 0;
     top: 10vh;
-    background: $black;
 }
 
 .print {
     bottom: calc(10vh + 60px);
-    background: $black;
 }
 
 .download {
