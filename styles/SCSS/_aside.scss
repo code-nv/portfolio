@@ -88,7 +88,7 @@ nav {
 			height: 100%;
 			top: 0;
 			right: 0;
-			transition: width 0.4s;
+			transition: width 0.4s, background 0.5s, border 0.5s;
 		}
 		&.lightThemeAfter:after {
 			background: $white;
@@ -101,10 +101,9 @@ nav {
 		}
 
 		&.darkThemeAfter:after {
-			background: #1e1e20;
-			// border-bottom: 0.5px solid #505050;
-			// border-top: 0.5px solid #505050;
-			border:none;
+			background: #212121;
+			border-bottom: 0.5px solid #212121;
+			border-top: 0.5px solid #212121;
 		}
 
 		&.activeNav:after {

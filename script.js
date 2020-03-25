@@ -21,15 +21,15 @@ $(`button.toggle`).on("click", function() {
 	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
 	$("body").toggleClass("lightThemeBody darkThemeBody");
 	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
-	
-	if( $('body').hasClass('darkThemeBody') === true) {
+	$(".toggle i").toggleClass("hide show");
+
+	if ($("body").hasClass("darkThemeBody") === true) {
 		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
 	} else {
 		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
 	}
-	
 });
 
 app.preScroll = function() {
@@ -68,6 +68,10 @@ app.init = function() {
 		setTimeout(() => {
 			app.navActive();
 		}, 300);
+	});
+
+	$(window).on("resize", function() {
+		app.anchorNav(".activeNav a");
 	});
 
 	$("h3").on("click", function() {

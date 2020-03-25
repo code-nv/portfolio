@@ -1,0 +1,45 @@
+@include maxWidth1080 {
+	.wrapper {
+		width: 100%;
+	}
+	button {
+		left: initial;
+		right: 2%;
+	}
+
+	section.skills {
+        ul {
+            margin: 0;
+        }
+		li {
+            width: 20%;
+            margin: 5px 0;
+			i {
+				font-size: calc(1rem + 4vw);
+			}
+			img {
+				height: calc(1rem + 4vw);
+			}
+        }
+        &.lightTheme li {
+        box-shadow: none;
+        position: relative;
+        // border: 1px solid #ccdce3;
+        }
+	}
+}
+
+@include maxWidth840 {
+    section.skills {
+        li {
+            width:25%;
+            height: 30%;
+        }
+    }
+}
+
+@include maxWidth600 {
+}
+
+@include maxWidth500 {
+}

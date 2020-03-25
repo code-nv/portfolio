@@ -42,20 +42,23 @@ body {
 .lightTheme {
 	background: $white;
 	box-shadow: 0 0 10px 5px #ccdce3;
+	transition: background 0.5s, box-shadow 0.5s;
 }
 
 .darkTheme {
-	// background: #1e1e20;
 	background: #212121;
-	box-shadow: none;
+	box-shadow: 0 0 10px 5px #212121;
+	transition: background 0.5s, box-shadow 0.5s;
 }
 
 .lightThemeBody {
 	background: $lightBackground;
+	transition: background 0.5s;
 }
 
 .darkThemeBody {
 	background: $darkBackground;
+	transition: background 0.5s;
 }
 
 *[class*="1"] {

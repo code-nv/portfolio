@@ -299,20 +299,32 @@ body {
   background: #fafafa;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
+  -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
 .darkTheme {
   background: #212121;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: 0 0 10px 5px #212121;
+          box-shadow: 0 0 10px 5px #212121;
+  -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
 .lightThemeBody {
   background: #f7f4f3;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
 }
 
 .darkThemeBody {
   background: #19191b;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
 }
 
 *[class*="1"] {
@@ -352,6 +364,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 
 header .decoration {
@@ -545,8 +558,8 @@ nav li:after {
   height: 100%;
   top: 0;
   right: 0;
-  -webkit-transition: width 0.4s;
-  transition: width 0.4s;
+  -webkit-transition: width 0.4s, background 0.5s, border 0.5s;
+  transition: width 0.4s, background 0.5s, border 0.5s;
 }
 
 nav li.lightThemeAfter:after {
@@ -560,8 +573,9 @@ nav li.darkThemeAfter {
 }
 
 nav li.darkThemeAfter:after {
-  background: #1e1e20;
-  border: none;
+  background: #212121;
+  border-bottom: 0.5px solid #212121;
+  border-top: 0.5px solid #212121;
 }
 
 nav li.activeNav:after {
@@ -573,8 +587,7 @@ nav li.activeNav {
 }
 
 .wrapper {
-  width: 80%;
-  max-width: 1080px;
+  width: 1080px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,6 +602,8 @@ nav li.activeNav {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  outline: 1px solid red;
+  padding-left: 20px;
 }
 
 main {
@@ -603,30 +618,26 @@ main {
 
 button {
   position: fixed;
-  right: calc(10% + 50px);
+  left: calc(50% + 470px);
   width: 50px;
   height: 50px;
   font-size: 1.4rem;
   color: #fafafa;
-  background: #2e2e2e;
-  -webkit-transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
-  transition: font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
-  transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s;
-  transition: box-shadow 0.2s, transform 0.2s, font-size 0.4s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
+  -webkit-transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
+  transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
 }
 
 button.lightTheme {
   -webkit-box-shadow: 0 0 10px 2px #ccdce3;
           box-shadow: 0 0 10px 2px #ccdce3;
+  background: #2e2e2e;
 }
 
 button.darkTheme {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-button:hover {
-  font-size: 1.7rem;
 }
 
 button:active {
@@ -645,10 +656,36 @@ button:active {
   bottom: calc(10vh + 60px);
 }
 
-.download {
+.lightTheme.download,
+.darkTheme.download {
   border-radius: 0 0 20px 0;
   background: #6ea9f2;
   bottom: 10vh;
+}
+
+button:hover i {
+  font-size: 1.7rem;
+}
+
+button:hover i.fa-sun {
+  font-size: 2rem;
+}
+
+button i {
+  -webkit-transition: font-size 0.4s;
+  transition: font-size 0.4s;
+}
+
+button i.show {
+  display: inline;
+}
+
+button i.hide {
+  display: none;
+}
+
+button i.fa-sun {
+  font-size: 1.6rem;
 }
 
 section {
@@ -792,6 +829,10 @@ section.skills li {
   margin: 5px;
   padding: 10px;
   height: 40%;
+  -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, -webkit-box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s;
+  transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
 section.skills li div {
@@ -885,4 +926,39 @@ section.resume h3.activeResume span {
 section.resume h3.activeResume + .resumeInfo {
   position: relative;
   height: calc(80vh - 257px);
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    width: 100%;
+  }
+  button {
+    left: initial;
+    right: 2%;
+  }
+  section.skills ul {
+    margin: 0;
+  }
+  section.skills li {
+    width: 20%;
+    margin: 5px 0;
+  }
+  section.skills li i {
+    font-size: calc(1rem + 4vw);
+  }
+  section.skills li img {
+    height: calc(1rem + 4vw);
+  }
+  section.skills.lightTheme li {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: relative;
+  }
+}
+
+@media (max-width: 840px) {
+  section.skills li {
+    width: 25%;
+    height: 30%;
+  }
 }
