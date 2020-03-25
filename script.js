@@ -28,10 +28,11 @@ $(`button.toggle`).on("click", function() {
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
 		$("p").css("color", "#AAAAAA");
 		$("section li, h4").css("color", "#eee");
+		$("h4 + p").removeAttr("style");
 	} else {
 		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
-		$("p, section li, h4").removeAttr('style');
+		$("p, section li, h4").removeAttr("style");
 	}
 });
 
