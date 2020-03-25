@@ -145,6 +145,7 @@ section.skills {
 
 ///////////////////////////////////////////////////////
 section.resume {
+	overflow-y: hidden;
 	padding-bottom: 0;
 
 	h3 {
@@ -169,10 +170,52 @@ section.resume {
 			transition: transform 0.2s;
 		}
 	}
+
+	p {
+		font-size: 1.2rem;
+		margin: 0;
+	}
+
+	h4 {
+		font-size: 1.6rem;
+		span {
+			font-style: italic;
+			font-weight: normal;
+			font-size: 1.4rem;
+		}
+	}
+
+	li {
+		font-size: 1.2rem;
+	}
+
+	.bulletPoint {
+		position: relative;
+		margin: 0;
+		transition: margin 0.5s;
+	}
+
+	.bulletPoint:before {
+		content: " ";
+		width: 1.5rem;
+		height: 1.5rem;
+		line-height: 0.5;
+		position: absolute;
+		top: 0;
+		left: -28px;
+		border-radius: 50%;
+	}
+
 	.resumeInfo {
 		position: relative;
 		height: 0;
-		transition: all 1s;
+		transition: height 0.5s, margin 0.5s;
+		background: inherit;
+		color: inherit;
+		padding: 0 20px;
+	}
+	.resumeInfo > ul {
+		padding: 20px;
 	}
 
 	h3.activeResume span {
@@ -182,5 +225,34 @@ section.resume {
 	h3.activeResume + .resumeInfo {
 		position: relative;
 		height: calc(80vh - 257px);
+
+		.bulletPoint {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.employment {
+	p {
+		color: $color1;
+	}
+
+	> ul {
+		border-left: 2px solid $color1;
+	}
+	.bulletPoint:before {
+		background: $color1;
+	}
+}
+.education {
+	p {
+		color: $color2;
+	}
+
+	> ul {
+		border-left: 2px solid $color2;
+	}
+	.bulletPoint:before {
+		background: $color1;
 	}
 }

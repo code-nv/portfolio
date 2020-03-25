@@ -2,7 +2,6 @@
 	width: 1080px;
 	margin: 0 auto;
     @include flexRow(flex-start, flex-start);
-    outline: 1px solid red;
     padding-left: 20px;
 }
 

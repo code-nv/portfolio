@@ -284,6 +284,10 @@ a {
   color: inherit;
 }
 
+p {
+  color: #414141;
+}
+
 img {
   display: block;
   width: 100%;
@@ -602,7 +606,6 @@ nav li.activeNav {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  outline: 1px solid red;
   padding-left: 20px;
 }
 
@@ -880,6 +883,7 @@ section.skills h3.skill5 {
 }
 
 section.resume {
+  overflow-y: hidden;
   padding-bottom: 0;
 }
 
@@ -911,11 +915,55 @@ section.resume h3 span {
   transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
+section.resume p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+section.resume h4 {
+  font-size: 1.6rem;
+}
+
+section.resume h4 span {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+section.resume li {
+  font-size: 1.2rem;
+}
+
+section.resume .bulletPoint {
+  position: relative;
+  margin: 0;
+  -webkit-transition: margin 0.5s;
+  transition: margin 0.5s;
+}
+
+section.resume .bulletPoint:before {
+  content: " ";
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0.5;
+  position: absolute;
+  top: 0;
+  left: -28px;
+  border-radius: 50%;
+}
+
 section.resume .resumeInfo {
   position: relative;
   height: 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: height 0.5s, margin 0.5s;
+  transition: height 0.5s, margin 0.5s;
+  background: inherit;
+  color: inherit;
+  padding: 0 20px;
+}
+
+section.resume .resumeInfo > ul {
+  padding: 20px;
 }
 
 section.resume h3.activeResume span {
@@ -926,6 +974,34 @@ section.resume h3.activeResume span {
 section.resume h3.activeResume + .resumeInfo {
   position: relative;
   height: calc(80vh - 257px);
+}
+
+section.resume h3.activeResume + .resumeInfo .bulletPoint {
+  margin-bottom: 20px;
+}
+
+.employment p {
+  color: #fe5e41;
+}
+
+.employment > ul {
+  border-left: 2px solid #fe5e41;
+}
+
+.employment .bulletPoint:before {
+  background: #fe5e41;
+}
+
+.education p {
+  color: #ff9f1c;
+}
+
+.education > ul {
+  border-left: 2px solid #ff9f1c;
+}
+
+.education .bulletPoint:before {
+  background: #fe5e41;
 }
 
 @media (max-width: 1080px) {

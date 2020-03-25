@@ -26,9 +26,12 @@ $(`button.toggle`).on("click", function() {
 	if ($("body").hasClass("darkThemeBody") === true) {
 		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
+		$("p").css("color", "#AAAAAA");
+		$("section li, h4").css("color", "#eee");
 	} else {
 		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
+		$("p, section li, h4").removeAttr('style');
 	}
 });
 
