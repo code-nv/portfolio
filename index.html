@@ -78,6 +78,15 @@
 					<i class="fas fa-sun hide"></i>
 					<i class="fas fa-moon show"></i>
 				</button>
+				<button class="social twitter lightTheme">
+					<i class="fab fa-twitter"></i>
+				</button>
+				<button class="social linkedIn lightTheme">
+					<i class="target fab fa-linkedin-in"></i>
+				</button>
+				<button class="social facebook lightTheme">
+					<i class="fab fa-facebook-f"></i>
+				</button>
 				<button class="print lightTheme">
 					<i class="fas fa-print"></i>
 				</button>
@@ -88,26 +97,56 @@
 				<!-- <div class="content"> -->
 				<section class="section aboutMe lightTheme" id="aboutMe">
 					<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
-					<div class="highlightContainer">
+					<!-- <div class="highlightContainer">
 						<div class="contentImgContainer">
 							<img src="./assets/nickReynoProfile.png" alt="Profile photo of Nick Reyno" />
 						</div>
-
+							<h2 class="intro">Hi I'm Nick Reyno</h2>
 						<ul>
 							<li><span>name</span><span>: Nick Reyno</span></li>
 							<li><span>pronouns</span><span>: he/him</span></li>
 							<li><span>email</span><span>: nickrenoe@gmail.com</span></li>
 							<li><span>favourite food</span>: <span>broccoli</span></li>
 						</ul>
-					</div>
+					</div> -->
 					<p>
-						I’m a thrill seeker who’s afraid of butterflies. I bring the creativity of the music industry and the
+						I'm bringing the creativity of the music industry and the
 						precision of journalism to a webpage near you. I’m finding unique solutions to complex problems and I’m
 						doing it all while making the worst puns you’ve never heard before.
 					</p>
 				</section>
 				<section class="section portfolio lightTheme" id="portfolio">
 					<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
+					<div class="portfolioContainer">
+						<div class="projectContainer projectOne">
+							<div class="project1Image imgContainer">
+								<img src="./assets/portfolioDefault.png" alt="project 1">
+								</div>
+							<h3>What do you No?</h3>
+							<p>English learning tool built in react that utilizes firebase and an API</p>
+						</div>
+						<div class="projectContainer projectTwo">
+							<div class="project2Image imgContainer">
+								<img src="./assets/portfolioDefault.png" alt="project 2">
+								</div>
+							<h3>Casino Reyno</h3>
+							<p>Classic blackjack built in jQuery with SCSS</p>
+						</div>
+						<div class="projectContainer projectThree">
+							<div class="project3Image imgContainer">
+								<img src="./assets/portfolioDefault.png" alt="project 3">
+								</div>
+							<h3>Mix me a Drink</h3>
+							<p>mixology app utilizing API for filtered restuls</p>
+						</div>
+						<div class="projectContainer projectFour">
+							<div class="project4Image imgContainer">
+								<img src="./assets/portfolioDefault.png" alt="project 4">
+								</div>
+							<h3>Willow PSD</h3>
+							<p>multi-page PSD conversion</p>
+						</div>
+					</div>
 				</section>
 				<section class="section skills lightTheme" id="skills">
 					<h2 class="header3"><i class="fas fa-cog"></i> skills</h2>
@@ -153,12 +192,11 @@
 								<img class="firebaseSVG" src="./assets/firebase.svg" alt="firebase" />
 							</div>
 							<h3 class="skill2">Firebase</h3>
-						</li>
-						<li>
+						</li>	<li>
 							<div class="skill3">
-								<i class="fas fa-universal-access"></i>
+								<i class="devicon-git-plain"></i>
 							</div>
-							<h3 class="skill3">Accessible Design</h3>
+							<h3 class="skill3">Git</h3>
 						</li>
 						<li>
 							<div class="skill4">
@@ -168,10 +206,11 @@
 						</li>
 						<li>
 							<div class="skill5">
-								<i class="devicon-git-plain"></i>
+								<i class="fas fa-universal-access"></i>
 							</div>
-							<h3 class="skill5">Git</h3>
+							<h3 class="skill5">Accessible Design</h3>
 						</li>
+					
 						<!-- <li >
 							<div class="skill2">
 								<i class="devicon-github-plain"></i>
@@ -201,24 +240,9 @@
 										Created sustainable growth through excellent execution of shows and networking opportunities
 									</li>
 									<li>
-										Implemented new techniques and practices to increase efficiency and morale across team members
+										Deployed new techniques and practices increasing efficiency and morale across crew
 									</li>
 									<li>Effectively operated various computer and audio systems under high pressure timelines</li>
-								</ul>
-							</li>
-							<li class="bulletPoint">
-								<h4>Sales Associate <span>– Zumiez</span></h4>
-								<p>
-									<time datetime="2018-02-01">February, 2018</time> - <time datetime="2019-02-01">February, 2019</time>
-								</p>
-								<ul>
-									<li>
-										Met and exceeded sales goals, ranking top sales associate repeatedly
-									</li>
-									<li>Optimized sales using our POS systems and online inventories</li>
-									<li>
-										Maintained and organized the sales floor ensuring product and inventory were moving
-									</li>
 								</ul>
 							</li>
 							<li class="bulletPoint">
@@ -238,6 +262,21 @@
 									<li>Edited writer’s articles ensuring consistent quality and formatting across the board</li>
 								</ul>
 							</li>
+							<li class="bulletPoint">
+								<h4>Storefront Service Manager <span>– Walmart</span></h4>
+								<p>
+									<time datetime="2013-09-01">September, 2013</time> -
+									<time datetime="2014-10-01">November, 2014</time>
+								</p>
+								<ul>
+									<li>
+										Orchestrated break schedules and money transfers for a team of 24 cashiers
+									</li>
+									<li>
+										Increased credit card applications 20% by providing clear and effective training of staff
+									</li>
+								</ul>
+							</li>
 						</ul>
 						<!-- end ul main list -->
 					</div>
@@ -245,28 +284,47 @@
 					<div class="resumeInfo education">
 						<ul>
 							<li class="bulletPoint">
+								<h4>Web Development Certification – <span>Juno College of Technology</span></h4>
+								<p><time datetime="2020-01-01">January 2020</time> - <time datetime="2020-04-01">April 2020</time></p>
+							</li>
+							<li class="bulletPoint">
+								<h4>Part Time Javascript Fundamentals – <span>Juno College of Technology</span></h4>
+								<p>
+									<time datetime="2019-10-01">October 2019</time> - <time datetime="2019-12-01">December 2019</time>
+								</p>
+							</li>
+							<li class="bulletPoint">
+								<h4>Full Time Web Development Fundamentals – <span>Juno College of Technology</span></h4>
+								<p><time datetime="2019-07-01">July 2019</time> - <time datetime="2019-08-01">August 2019</time></p>
+							</li>
+							<li class="bulletPoint">
+								<h4>Audio Engineering Diploma – <span>Fanshawe College</span></h4>
+								<p><time datetime="2014-09-01">September 2014</time> - <time datetime="2016-05-01">May 2016</time></p>
+							</li>
+							<!-- <li class="bulletPoint">
 								<h4>Juno College of Technology</h4>
 								<p>
-									Web Development Certificate <time datetime="2020-01-01">January, 2020</time> -
-									<time datetime="2020-03-01">February, 2019</time>
+									Web Development Certificate | <time datetime="2020-01-01">January 2020</time> -
+									<time datetime="2020-03-01">February 2019</time>
 								</p>
 
 								<p>
-									Part-Time JavaScript <time datetime="2019-10-01">October, 2019</time> -
-									<time datetime="2019-12-01">December, 2019</time>
+									Part-Time JavaScript | <time datetime="2019-10-01">October 2019</time> -
+									<time datetime="2019-12-01">December 2019</time>
 								</p>
 								<p>
-									Full-Time Web Development <time datetime="2019-07-01">July, 2019</time> -
-									<time datetime="2019-08-01">August, 2019</time>
+									Full-Time Web Development | <time datetime="2019-07-01">July 2019</time> -
+									<time datetime="2019-08-01">August 2019</time>
 								</p>
 							</li>
 							<li class="bulletPoint">
 								<h4>Fanshawe College</h4>
 								<p>
-									Audio Engineering Diploma <time datetime="2014-09-01">September, 2014</time> -
-									<time datetime="2016-04-01">April, 2016</time>
+									Audio Engineering Diploma | <time datetime="2014-09-01">September 2014</time> -
+									<time datetime="2016-05-01">May 2016</time>
 								</p>
-							</li>
+								<p>MusiCounts Fred Sherratt National Award | <time datetime="2016-06-01">June 2016</time></p>
+							</li> -->
 						</ul>
 					</div>
 					<h3 class="resume3">Soft Skills <span></span></h3>
@@ -279,18 +337,19 @@
 						</ul>
 					</div>
 
-					<h3 class="resume5">Achievements <span></span></h3>
-					<div class="resumeInfo"></div>
+					<!-- <h3 class="resume5">Achievements <span></span></h3>
+					<div class="resumeInfo"></div> -->
 				</section>
 				<section class="section contact lightTheme" id="contact">
-					<h2 class="header5"><i class="fas fa-envelope"></i> contact me</h2>
-					<form action="#" name="contactMe">
-						<label for="name">name</label>
-						<input type="text" name="name" id="name" />
-						<label for="email">email</label>
-						<input type="email" name="email" id="email" />
-						<label for="message">your message</label>
-						<textarea name="message" id="message"></textarea>
+					<h2 class="header5"><i class="fas fa-envelope"></i> contact</h2>
+					<form class="lightTheme" action="#" name="contact">
+						<label class="srOnly" for="name">name</label>
+						<input type="text" name="name" id="name" placeholder="name" />
+						<label class="srOnly" for="email">email</label>
+						<input type="email" name="email" id="email" placeholder="email" />
+						<label class="srOnly" for="message">your message</label>
+						<textarea name="message" id="message" placeholder="test"></textarea>
+						<input type="submit" value="send">
 					</form>
 				</section>
 				<!-- </div> -->

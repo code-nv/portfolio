@@ -1,8 +1,8 @@
 .wrapper {
 	width: 1080px;
 	margin: 0 auto;
-    @include flexRow(flex-start, flex-start);
-    padding-left: 20px;
+	@include flexRow(flex-start, flex-start);
+	padding-left: 20px;
 }
 
 main {
@@ -16,16 +16,16 @@ main {
 
 button {
 	position: fixed;
-    left: calc(50% + 470px);
+	left: calc(50% + 470px);
 	width: 50px;
 	height: 50px;
 	font-size: 1.4rem;
-	color: $white;
+    color: $white;
 	transition: box-shadow 0.2s, transform 0.2s;
 
 	&.lightTheme {
-		box-shadow: 0 0 10px 2px #ccdce3;
-		background: $black;
+        box-shadow: 0 0 10px 2px #ccdce3;
+        background: #2e2e2e;
 	}
 	&.darkTheme {
 		box-shadow: none;
@@ -39,23 +39,49 @@ button:active {
 
 .toggle {
 	border-radius: 0 20px 0 0;
-	top: 10vh;
+    top: 10vh;
+    // background: $color1;
+}
+
+.twitter {
+	// background: $color5;
+	font-size: 1.5rem;
+    top: calc(50vh - 85px);
+}
+
+.linkedIn {
+    top: calc(50vh - 25px);
+    font-size: 1.7rem;
+	// background: $color4;
+}
+
+.facebook {
+    top: calc(50vh + 35px);
+}
+
+button.social {
+    background: $color5;
 }
 
 .print {
 	bottom: calc(10vh + 60px);
+	// background: $color3;
 }
 
 .lightTheme.download,
 .darkTheme.download {
 	border-radius: 0 0 20px 0;
-	background: $color5;
+	// background: $color4;
 	bottom: 10vh;
 }
 
 button:hover i {
 	font-size: 1.7rem;
-	&.fa-sun {
+	&.fa-sun,
+	&.fa-twitter {
+		font-size: 2rem;
+	}
+	&.fa-linkedin-in {
 		font-size: 2rem;
 	}
 }

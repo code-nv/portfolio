@@ -1,5 +1,6 @@
 section {
 	height: 80vh;
+	min-height: 501.4px;
 	margin: 10vh 0 20vh 3%;
 	box-shadow: 0 0 10px 5px #ccdce3;
 	border-radius: 0;
@@ -17,8 +18,8 @@ section {
 
 	h2 {
 		width: 30%;
+		min-width: 170px;
 		padding: 10px 0 10px 20px;
-		margin-top: 20px;
 		color: $white;
 		text-transform: capitalize;
 		font-size: 2.2rem;
@@ -32,15 +33,30 @@ section {
 		font-size: 1.6rem;
 		margin: 20px;
 		color: #707070;
-		text-align: justify;
 	}
 }
 
 section.aboutMe {
 	.highlightContainer {
-		@include flexRow(space-between, center);
+		@include flexRow(flex-start, center);
 		width: 100%;
-		border-bottom: 1px solid grey;
+		// border-bottom: 1px solid grey;
+	}
+	.intro {
+		font-size: 4rem;
+		color: $color1;
+		padding: 0;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
+	}
+	p {
+		font-size: 2rem;
+		word-spacing: 1px;
+		text-align: center;
+		width: 80%;
+		margin: 40px auto;
 	}
 
 	ul {
@@ -63,11 +79,61 @@ section.aboutMe {
 
 	.contentImgContainer {
 		width: 30%;
+		min-width: 170px;
 		padding: 20px;
 
 		img {
 			border-radius: 0;
 		}
+	}
+}
+
+////////////////////////////////////////////////////////
+.portfolio {
+	&Container {
+		@include flexRow(center, center);
+		flex-wrap: wrap;
+		height: calc(100% - 65.3px);
+	}
+
+	.projectContainer {
+		width: 50%;
+		height: 50%;
+		padding: 10px;
+	}
+	.imgContainer {
+		padding:20px;
+		position: relative;
+		margin: 0 auto;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		
+	}
+
+	.project {
+		&1Image {
+			background: radial-gradient(circle, $color1 55%, #fafafa 50%);
+		}
+		&2Image {
+			background: radial-gradient(circle, $color2 55%, #fafafa 50%);
+		}
+		&3Image {
+			background: radial-gradient(circle, $color3 55%, #fafafa 50%);
+		}
+		&4Image {
+			background: radial-gradient(circle, $color4 55%, #fafafa 50%);
+		}
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	h3,
+	p {
+		position: absolute;
 	}
 }
 
@@ -144,7 +210,7 @@ section.skills {
 }
 
 ///////////////////////////////////////////////////////
-section.resume {
+.resume {
 	overflow-y: hidden;
 	padding-bottom: 0;
 
@@ -186,7 +252,7 @@ section.resume {
 	}
 
 	li {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 	}
 
 	.bulletPoint {
@@ -215,7 +281,8 @@ section.resume {
 		padding: 0 20px;
 	}
 	.resumeInfo > ul {
-		padding: 20px;
+		padding: 10px 0 10px 20px;
+		height: 100%;
 	}
 
 	h3.activeResume span {
@@ -224,10 +291,10 @@ section.resume {
 
 	h3.activeResume + .resumeInfo {
 		position: relative;
-		height: calc(80vh - 257px);
+		height: calc(80vh - 194px);
 
 		.bulletPoint {
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -245,7 +312,17 @@ section.resume {
 	}
 }
 .education {
+	li {
+		font-size: 1.6rem;
+		font-weight: bold;
+		span {
+			font-style: italic;
+			font-weight: normal;
+			font-size: 1.4rem;
+		}
+	}
 	p {
+		font-weight: normal;
 		color: $color2;
 	}
 
@@ -254,5 +331,61 @@ section.resume {
 	}
 	.bulletPoint:before {
 		background: $color1;
+	}
+}
+
+.contact {
+	@include flexCol(space-between, flex-start);
+	padding: 20px 0;
+
+	form {
+		@include flexRow(center, center);
+		flex-wrap: wrap;
+		font-size: 2rem;
+		margin: 20px;
+	}
+
+	input {
+		width: calc(50% - 10px);
+		margin: 0;
+
+		&:first-of-type {
+			margin-right: 20px;
+		}
+	}
+
+	textarea {
+		width: 100%;
+		height: 200px;
+		resize: none;
+	}
+
+	input,
+	textarea {
+		border-radius: 5px;
+		padding: 10px;
+		border: none;
+		border: 2px solid $color5;
+		margin-top: 20px;
+	}
+	input[type="submit"] {
+		width: 100%;
+		background: $color5;
+	}
+	form.lightTheme {
+		box-shadow: none;
+	}
+
+	form.darkTheme {
+		input,
+		textarea {
+			color: $white;
+			background: #555;
+		}
+
+		::placeholder {
+			color: $white;
+			opacity: 0.7;
+		}
 	}
 }
