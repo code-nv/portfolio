@@ -1084,7 +1084,7 @@ section.skills h3.skill5 {
   margin-bottom: 10px;
 }
 
-.employment p {
+.employment .duration {
   color: #fe5e41;
 }
 
@@ -1104,7 +1104,6 @@ section.skills h3.skill5 {
 .education li span {
   font-style: italic;
   font-weight: normal;
-  font-size: 1.4rem;
 }
 
 .education p {
