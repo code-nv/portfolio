@@ -27,9 +27,9 @@
 	<body class="lightThemeBody">
 		<header>
 			<div class="decoration decoration1"></div>
-			<div class="decoration decoration2">unique solutions</div>
-			<div class="decoration decoration3">to</div>
-			<div class="decoration decoration4">complex problems</div>
+			<div class="decoration decoration2"></div>
+			<div class="decoration decoration3"></div>
+			<div class="decoration decoration4"></div>
 			<div class="decoration decoration5"></div>
 			<div class="wave waveStart"></div>
 			<div class="wave waveMid"></div>
@@ -96,6 +96,7 @@
 				<!-- <div class="content"> -->
 				<section class="section aboutMe lightTheme" id="aboutMe">
 					<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
+					<div class="aboutMeContainer">
 					<!-- <div class="highlightContainer">
 						<div class="contentImgContainer">
 							<img src="./assets/nickReynoProfile.png" alt="Profile photo of Nick Reyno" />
@@ -108,45 +109,76 @@
 							<li><span>favourite food</span>: <span>broccoli</span></li>
 						</ul>
 					</div> -->
-					<p>
+					<p class="blurb">
 						I'm bringing the creativity of the music industry and the precision of journalism to a webpage near you. I’m
 						finding unique solutions to complex problems and I’m doing it all while making the worst puns you’ve never
 						heard before.
 					</p>
+					<!-- <h3>Why Choose Me?</h3>
+					<ul>
+						<li>Critical analysis</li>
+						<li>Creative problem solving</li>
+						<li>Highly adaptable</li>
+						<li>Strong interpersonal skills</li>
+					</ul> -->
+				</div>
 				</section>
 				<section class="section portfolio lightTheme" id="portfolio">
 					<h2 class="header2"><i class="fas fa-briefcase"></i> portfolio</h2>
+
 					<div class="portfolioContainer">
 						<div class="projectContainer projectOne">
 							<div class="project1Image imgContainer">
 								<img src="./assets/portfolioDefault.png" alt="project 1" />
 							</div>
-							<h3>What do you No?</h3>
-							<p>English learning tool built in react that utilizes firebase and an API</p>
+
+							<div class="infoContainer">
+								<h3>What do you No?</h3>
+								<p>English learning tool built in react that utilizes firebase and an API</p>
+								<a href="#" rel="noopener">live link</a> <a href="#" rel="noopener">github</a>
+							</div>
 						</div>
+						<!-- end of project 1 -->
+
 						<div class="projectContainer projectTwo">
 							<div class="project2Image imgContainer">
 								<img src="./assets/portfolioDefault.png" alt="project 2" />
 							</div>
-							<h3>Casino Reyno</h3>
-							<p>Classic blackjack built in jQuery with SCSS</p>
+							<div class="infoContainer">
+								<h3>Casino Reyno</h3>
+								<p>Classic blackjack built in jQuery with SCSS</p>
+								<a href="#" rel="noopener">live link</a> <a href="#" rel="noopener">github</a>
+							</div>
 						</div>
+						<!-- end of project 2 -->
+
 						<div class="projectContainer projectThree">
 							<div class="project3Image imgContainer">
 								<img src="./assets/portfolioDefault.png" alt="project 3" />
 							</div>
-							<h3>Mix me a Drink</h3>
-							<p>mixology app utilizing API for filtered restuls</p>
+							<div class="infoContainer">
+								<h3>Mix me a Drink</h3>
+								<p>mixology app utilizing API for filtered results</p>
+								<a href="#" rel="noopener">live link</a> <a href="#" rel="noopener">github</a>
+							</div>
 						</div>
+						<!-- end of project 3 -->
+
 						<div class="projectContainer projectFour">
 							<div class="project4Image imgContainer">
 								<img src="./assets/portfolioDefault.png" alt="project 4" />
 							</div>
-							<h3>Willow PSD</h3>
-							<p>multi-page PSD conversion</p>
+							<div class="infoContainer">
+								<h3>Willow PSD</h3>
+								<p>multi-page PSD conversion</p>
+								<a href="#" rel="noopener">live link</a> <a href="#" rel="noopener">github</a>
+							</div>
 						</div>
+						<!-- end of project 4 -->
 					</div>
+					<!-- end of portfolio container -->
 				</section>
+				<!-- end of portfolio section -->
 				<section class="section skills lightTheme" id="skills">
 					<h2 class="header3"><i class="fas fa-cog"></i> skills</h2>
 					<ul>
@@ -248,9 +280,9 @@
 									<time datetime="2016-09-01">September, 2016</time>
 								</p>
 								<p>
-									I grew our readership through creatively written articles that
-									resonated well with the readers. I also edited colleague's stories to ensure they met our strict formatting
-									guide and weekly deadlines. Several of my articles were nominated for industry awards.
+									I grew our readership through creatively written articles that resonated well with the readers. I also
+									edited colleague's stories to ensure they met our strict formatting guide and weekly deadlines.
+									Several of my articles were nominated for industry awards.
 								</p>
 							</li>
 							<li class="bulletPoint">
@@ -259,7 +291,10 @@
 									<time datetime="2013-09-01">September, 2013</time> -
 									<time datetime="2014-10-01">November, 2014</time>
 								</p>
-								<p>I increased Walmart Mastercard applications by 20% through clear and effective training of new staff. I also wrote break schedules and money transfers for a team of 24 cashiers. </p>
+								<p>
+									I increased Walmart Mastercard applications by 20% through clear and effective training of new staff.
+									I also wrote break schedules and money transfers for a team of 24 cashiers.
+								</p>
 							</li>
 						</ul>
 						<!-- end ul main list -->
@@ -291,39 +326,18 @@
 									<time datetime="2014-09-01">September 2014</time> - <time datetime="2016-05-01">May 2016</time>
 								</p>
 							</li>
-							<!-- <li class="bulletPoint">
-								<h4>Juno College of Technology</h4>
-								<p>
-									Web Development Certificate | <time datetime="2020-01-01">January 2020</time> -
-									<time datetime="2020-03-01">February 2019</time>
-								</p>
-
-								<p>
-									Part-Time JavaScript | <time datetime="2019-10-01">October 2019</time> -
-									<time datetime="2019-12-01">December 2019</time>
-								</p>
-								<p>
-									Full-Time Web Development | <time datetime="2019-07-01">July 2019</time> -
-									<time datetime="2019-08-01">August 2019</time>
-								</p>
-							</li>
-							<li class="bulletPoint">
-								<h4>Fanshawe College</h4>
-								<p>
-									Audio Engineering Diploma | <time datetime="2014-09-01">September 2014</time> -
-									<time datetime="2016-05-01">May 2016</time>
-								</p>
-								<p>MusiCounts Fred Sherratt National Award | <time datetime="2016-06-01">June 2016</time></p>
-							</li> -->
 						</ul>
 					</div>
-					<h3 class="resume3">Soft Skills <span></span></h3>
-					<div class="resumeInfo">
+					<h3 class="resume3">Community Involvement <span></span></h3>
+					<div class="resumeInfo communityInvolvement">
 						<ul>
-							<li>Critical analysis</li>
-							<li>Creative problem solving</li>
-							<li>Highly adaptable</li>
-							<li>Strong interpersonal skills</li>
+							<li class="bulletPoint">
+								<h4>Lucknow's Music in the Fields <span>– (Lucknow, ON)</span></h4>
+								<p class="duration"><time datetime="2017-08-01">August, 2017</time> - Present</p>
+								<p>
+									Part of the festival production crew for this non-profit music event that directly supports local charities, hospitals, schools, and regional projects. To date, the festival has donated over 1.3 million dollars to fight cystic fibrosis and is one of the largest Kinsmen events in Ontario.
+								</p>
+							</li>
 						</ul>
 					</div>
 

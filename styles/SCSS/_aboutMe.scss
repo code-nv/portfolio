@@ -1,0 +1,58 @@
+.aboutMe {
+
+	&Container {
+		width: 100%;
+		height: auto;
+		padding: 0 20px 20px;
+	}
+	.intro {
+		font-size: 4rem;
+		color: $color1;
+		padding: 0;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
+	}
+	.blurb {
+		font-size: 2rem;
+		word-spacing: 1px;
+		text-align: center;
+		width: 100%;
+		margin: 40px auto;
+		border-bottom: 1px solid grey;
+		padding-bottom: 20px;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+	}
+
+	ul {
+		width: 50%;
+		font-size: 1.4rem;
+
+		li {
+			width: 80%;
+			@include flexRow(space-between, center);
+		}
+
+		span:nth-child(odd) {
+			font-weight: bold;
+		}
+
+		span {
+			width: 50%;
+		}
+	}
+
+	.contentImgContainer {
+		width: 30%;
+		min-width: 170px;
+		padding: 20px;
+
+		img {
+			border-radius: 0;
+		}
+	}
+}

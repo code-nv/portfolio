@@ -1,0 +1,70 @@
+.skills {
+	ul {
+		margin: 20px;
+		@include flexRow(center, center);
+		flex-wrap: wrap;
+		text-align: center;
+		height: 80%;
+	}
+	&.lightTheme li {
+		box-shadow: 0 0 10px 2px #ccdce3;
+	}
+	&.darkTheme li {
+		background: $black;
+		box-shadow: none;
+
+		h3 {
+			text-shadow: none;
+		}
+
+		i {
+			color: $black;
+		}
+	}
+	li {
+		width: calc(20% - 10px);
+		margin: 5px;
+		padding: 10px;
+		height: 40%;
+		transition: background 0.5s, box-shadow 0.5s;
+
+		div {
+			width: 100%;
+			padding: 10px 0;
+			margin-bottom: 10px;
+		}
+
+		i {
+			font-size: 7rem;
+			background: transparent;
+			color: $white;
+		}
+
+		img {
+			height: 70px;
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+	h3 {
+		font-size: 1.6rem;
+		background: transparent;
+		text-shadow: 0px 0px 1px #ccdce3;
+
+		&.skill1 {
+			color: $color1;
+		}
+		&.skill2 {
+			color: $color2;
+		}
+		&.skill3 {
+			color: $color3;
+		}
+		&.skill4 {
+			color: $color4;
+		}
+		&.skill5 {
+			color: $color5;
+		}
+	}
+}

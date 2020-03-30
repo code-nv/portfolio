@@ -1,0 +1,112 @@
+.portfolio {
+	&Container {
+		@include flexRow(center, center);
+		flex-wrap: wrap;
+		height: calc(100% - 65.3px);
+		width: calc(100% - 20px);
+		margin: 10px auto;
+	}
+
+	.projectContainer {
+		position: relative;
+		width: calc(50% - 20px);
+		height: calc(50% - 20px);
+		margin: 10px;
+		padding: 10px;
+		perspective: 1000px;
+
+		img {
+			transition: all 0.3s linear;
+			transition-delay: 0.3s;
+		}
+	}
+	.imgContainer {
+		padding: 20px;
+		position: relative;
+		margin: 0 auto;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		perspective: 300px;
+	}
+
+	.infoContainer {
+		@include flexRow(center,center);
+		flex-wrap: wrap;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: 20px;
+		text-align: center;
+		transform: rotateX(-90deg);
+		transition: all 0.3s linear;
+		text-align: center;
+
+		h3 {
+			width: 100%;
+			font-size: 2rem;
+			// position: relative;
+		}
+
+		a {
+			font-size: 1.8rem;
+			padding: 10px;
+			border-bottom: 2px solid $white;
+			margin: 0 20px;
+			width: 80px;
+		}
+	}
+
+	// set this back to a hover pseudo
+	.projectContainer:hover .infoContainer {
+		transform: translateX(0);
+		transition-delay: 0.3s;
+	}
+
+	.projectContainer:hover img {
+		transform: rotateX(90deg);
+		transform-origin: center;
+		transition-delay: 0s;
+	}
+
+	.projectOne {
+		.imgContainer {
+			background: radial-gradient(circle, $color1 55%, transparent 55%);
+		}
+		.infoContainer {
+			background: $color1;
+		}
+	}
+	.projectTwo {
+		.imgContainer {
+			background: radial-gradient(circle, $color2 55%, transparent 55%);
+		}
+		.infoContainer {
+			background: $color2;
+		}
+	}
+	.projectThree {
+		.imgContainer {
+			background: radial-gradient(circle, $color3 55%, transparent 55%);
+		}
+		.infoContainer {
+			background: $color3;
+		}
+	}
+	.projectFour {
+		.imgContainer {
+			background: radial-gradient(circle, $color4 55%, transparent 55%);
+		}
+		.infoContainer {
+			background: $color4;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}

@@ -417,8 +417,7 @@ header .decoration5 {
   50% {
     color: #fafafa;
     line-height: 1.6;
-    border-radius: 0 0 20px 20px;
-    height: 30px;
+    height: 15px;
   }
 }
 
@@ -434,8 +433,7 @@ header .decoration5 {
   50% {
     color: #fafafa;
     line-height: 1.6;
-    border-radius: 0 0 20px 20px;
-    height: 30px;
+    height: 15px;
   }
 }
 
@@ -752,24 +750,13 @@ section p {
   color: #707070;
 }
 
-section.aboutMe .highlightContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.aboutMeContainer {
   width: 100%;
+  height: auto;
+  padding: 0 20px 20px;
 }
 
-section.aboutMe .intro {
+.aboutMe .intro {
   font-size: 4rem;
   color: #fe5e41;
   padding: 0;
@@ -780,20 +767,26 @@ section.aboutMe .intro {
   width: auto;
 }
 
-section.aboutMe p {
+.aboutMe .blurb {
   font-size: 2rem;
   word-spacing: 1px;
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin: 40px auto;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
 }
 
-section.aboutMe ul {
+.aboutMe h3 {
+  font-size: 1.8rem;
+}
+
+.aboutMe ul {
   width: 50%;
   font-size: 1.4rem;
 }
 
-section.aboutMe ul li {
+.aboutMe ul li {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -810,21 +803,21 @@ section.aboutMe ul li {
           align-items: center;
 }
 
-section.aboutMe ul span:nth-child(odd) {
+.aboutMe ul span:nth-child(odd) {
   font-weight: bold;
 }
 
-section.aboutMe ul span {
+.aboutMe ul span {
   width: 50%;
 }
 
-section.aboutMe .contentImgContainer {
+.aboutMe .contentImgContainer {
   width: 30%;
   min-width: 170px;
   padding: 20px;
 }
 
-section.aboutMe .contentImgContainer img {
+.aboutMe .contentImgContainer img {
   border-radius: 0;
 }
 
@@ -845,12 +838,25 @@ section.aboutMe .contentImgContainer img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: calc(100% - 65.3px);
+  width: calc(100% - 20px);
+  margin: 10px auto;
 }
 
 .portfolio .projectContainer {
-  width: 50%;
-  height: 50%;
+  position: relative;
+  width: calc(50% - 20px);
+  height: calc(50% - 20px);
+  margin: 10px;
   padding: 10px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.portfolio .projectContainer img {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .portfolio .imgContainer {
@@ -860,22 +866,99 @@ section.aboutMe .contentImgContainer img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  -webkit-perspective: 300px;
+          perspective: 300px;
 }
 
-.portfolio .project1Image {
-  background: radial-gradient(circle, #fe5e41 55%, #fafafa 50%);
+.portfolio .infoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  text-align: center;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  text-align: center;
 }
 
-.portfolio .project2Image {
-  background: radial-gradient(circle, #ff9f1c 55%, #fafafa 50%);
+.portfolio .infoContainer h3 {
+  width: 100%;
+  font-size: 2rem;
 }
 
-.portfolio .project3Image {
-  background: radial-gradient(circle, #ffbf69 55%, #fafafa 50%);
+.portfolio .infoContainer a {
+  font-size: 1.8rem;
+  padding: 10px;
+  border-bottom: 2px solid #fafafa;
+  margin: 0 20px;
+  width: 80px;
 }
 
-.portfolio .project4Image {
-  background: radial-gradient(circle, #44f0c2 55%, #fafafa 50%);
+.portfolio .projectContainer:hover .infoContainer {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.portfolio .projectContainer:hover img {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.portfolio .projectOne .imgContainer {
+  background: radial-gradient(circle, #fe5e41 55%, transparent 55%);
+}
+
+.portfolio .projectOne .infoContainer {
+  background: #fe5e41;
+}
+
+.portfolio .projectTwo .imgContainer {
+  background: radial-gradient(circle, #ff9f1c 55%, transparent 55%);
+}
+
+.portfolio .projectTwo .infoContainer {
+  background: #ff9f1c;
+}
+
+.portfolio .projectThree .imgContainer {
+  background: radial-gradient(circle, #ffbf69 55%, transparent 55%);
+}
+
+.portfolio .projectThree .infoContainer {
+  background: #ffbf69;
+}
+
+.portfolio .projectFour .imgContainer {
+  background: radial-gradient(circle, #44f0c2 55%, transparent 55%);
+}
+
+.portfolio .projectFour .infoContainer {
+  background: #44f0c2;
 }
 
 .portfolio img {
@@ -885,12 +968,7 @@ section.aboutMe .contentImgContainer img {
      object-fit: contain;
 }
 
-.portfolio h3,
-.portfolio p {
-  position: absolute;
-}
-
-section.skills ul {
+.skills ul {
   margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -911,26 +989,26 @@ section.skills ul {
   height: 80%;
 }
 
-section.skills.lightTheme li {
+.skills.lightTheme li {
   -webkit-box-shadow: 0 0 10px 2px #ccdce3;
           box-shadow: 0 0 10px 2px #ccdce3;
 }
 
-section.skills.darkTheme li {
+.skills.darkTheme li {
   background: #2e2e2e;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-section.skills.darkTheme li h3 {
+.skills.darkTheme li h3 {
   text-shadow: none;
 }
 
-section.skills.darkTheme li i {
+.skills.darkTheme li i {
   color: #2e2e2e;
 }
 
-section.skills li {
+.skills li {
   width: calc(20% - 10px);
   margin: 5px;
   padding: 10px;
@@ -941,47 +1019,47 @@ section.skills li {
   transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
-section.skills li div {
+.skills li div {
   width: 100%;
   padding: 10px 0;
   margin-bottom: 10px;
 }
 
-section.skills li i {
+.skills li i {
   font-size: 7rem;
   background: transparent;
   color: #fafafa;
 }
 
-section.skills li img {
+.skills li img {
   height: 70px;
   width: auto;
   margin: 0 auto;
 }
 
-section.skills h3 {
+.skills h3 {
   font-size: 1.6rem;
   background: transparent;
   text-shadow: 0px 0px 1px #ccdce3;
 }
 
-section.skills h3.skill1 {
+.skills h3.skill1 {
   color: #fe5e41;
 }
 
-section.skills h3.skill2 {
+.skills h3.skill2 {
   color: #ff9f1c;
 }
 
-section.skills h3.skill3 {
+.skills h3.skill3 {
   color: #ffbf69;
 }
 
-section.skills h3.skill4 {
+.skills h3.skill4 {
   color: #44f0c2;
 }
 
-section.skills h3.skill5 {
+.skills h3.skill5 {
   color: #6ea9f2;
 }
 
@@ -1117,6 +1195,18 @@ section.skills h3.skill5 {
 
 .education .bulletPoint:before {
   background: #fe5e41;
+}
+
+.communityInvolvement .duration {
+  color: #ffbf69;
+}
+
+.communityInvolvement > ul {
+  border-left: 2px solid #ffbf69;
+}
+
+.communityInvolvement .bulletPoint:before {
+  background: #ffbf69;
 }
 
 .contact {
