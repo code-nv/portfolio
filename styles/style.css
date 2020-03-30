@@ -889,6 +889,7 @@ section p {
   position: absolute;
   width: 100%;
   height: 100%;
+  visibility: hidden;
   top: 0;
   left: 0;
   padding: 20px;
@@ -918,6 +919,7 @@ section p {
           transform: translateX(0);
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  visibility: visible;
 }
 
 .portfolio .projectContainer:hover img {
