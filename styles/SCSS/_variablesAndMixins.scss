@@ -1,8 +1,4 @@
-@mixin maxWidth1080 {
-	@media (max-width: 1080px) {
-		@content;
-	}
-} // variables
+ // variables
 $color1: #fe5e41;
 $color2: #ff9f1c;
 $color3: #ffbf69;
@@ -37,6 +33,17 @@ $mainStack: "Roboto", sans-serif;
 }
 
 //media query mixins
+@mixin maxWidth1140 {
+	@media (max-width: 1140px) {
+		@content;
+	}
+}
+
+@mixin maxWidth1025 {
+	@media (max-width: 1025px) {
+		@content;
+	}
+}
 
 // major break
 @mixin maxWidth840 {

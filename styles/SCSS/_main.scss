@@ -1,31 +1,42 @@
 .wrapper {
-	width: 1080px;
+	width: 100%;
+	max-width: 1500px;
 	margin: 0 auto;
-	@include flexRow(flex-start, flex-start);
+	@include flexRow(center, flex-start);
 	padding-left: 20px;
 }
 
 main {
 	height: 100vh;
-	width: 72.5%;
+	width: 65%;
 	position: relative;
-	overflow-y: scroll;
+	overflow: scroll;
 	scroll-padding-top: 10vh;
 	scroll-snap-type: y mandatory;
 }
-
-button {
+.buttonContainer {
+	@include flexCol(space-between, center);
+	height: 80vh;
+	margin-top: 10vh;
 	position: fixed;
-	left: calc(50% + 470px);
+	right: 10%;
+	z-index: 2;
+
+	&Sub {
+		@include flexCol(space-between, center);
+	}
+}
+button {
 	width: 50px;
 	height: 50px;
 	font-size: 1.4rem;
-    color: $white;
+	margin: 2.5px 0;
+	color: $white;
 	transition: box-shadow 0.2s, transform 0.2s;
 
 	&.lightTheme {
-        box-shadow: 0 0 10px 2px #ccdce3;
-        background: #2e2e2e;
+		box-shadow: 0 0 10px 2px #ccdce3;
+		background: #2e2e2e;
 	}
 	&.darkTheme {
 		box-shadow: none;
@@ -39,39 +50,23 @@ button:active {
 
 .toggle {
 	border-radius: 0 20px 0 0;
-    top: 10vh;
-    // background: $color1;
 }
 
 .twitter {
-	// background: $color5;
 	font-size: 1.5rem;
-    top: calc(50vh - 85px);
 }
 
 .linkedIn {
-    top: calc(50vh - 25px);
-    font-size: 1.7rem;
-	// background: $color4;
-}
-
-.facebook {
-    top: calc(50vh + 35px);
+	font-size: 1.7rem;
 }
 
 button.social {
-    background: $color5;
-}
-
-.print {
-	bottom: calc(10vh + 60px);
-	// background: $color3;
+	background: $color5;
 }
 
 .lightTheme.download,
 .darkTheme.download {
 	border-radius: 0 0 20px 0;
-	// background: $color4;
 	bottom: 10vh;
 }
 

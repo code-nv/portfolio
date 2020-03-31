@@ -1,29 +1,28 @@
-@include maxWidth1080 {
+@include maxWidth1140 {
 	.wrapper {
 		width: 100%;
-		padding-left: 10px;
+		padding: 0;
+		justify-content: flex-start;
 	}
-	button {
-		left: initial;
-		right: 10px;
+	.buttonContainer {
+		right: 40px;
 	}
 
 	section {
 		margin-left: 10px;
-		width: calc(100% - 80px);
+		width: calc(99.5% - 110px);
 	}
 
 	aside {
-		width: 22.5%;
-
+		margin-left: 40px;
+		width: 20%;
 		.imgContainer {
 			width: 85%;
 		}
 	}
 	main {
-		width: 77.5%;
+		width: calc(80%);
 	}
-
 	section.skills {
 		ul {
 			margin: 0;
@@ -41,26 +40,76 @@
 		&.lightTheme li {
 			box-shadow: none;
 			position: relative;
-			// border: 1px solid #ccdce3;
 		}
 	}
 }
 
-@include maxWidth840 {
-	section.aboutMe .highlightContainer {
-		padding-top: 20px;
-		flex-direction: column;
-
-		.intro {
-			position: relative;
-			left: initial;
-			transform: none;
+@include maxWidth1025 {
+	header {
+		.decoration {
+			height: 0;
+			animation: none;
 		}
 	}
+
+	.wrapper {
+		position: relative;
+		display: block;
+		outline: 1px solid red;
+		margin: 0;
+	}
+
+	.lightTheme {
+		box-shadow: none;
+	}
+	aside {
+		width: 100%;
+		height: auto;
+		margin: 0;
+		left: 0;
+		top: 0;
+		position: fixed;
+		z-index: 2;
+
+		.imgContainer {
+			display: none;
+		}
+		span {
+			width: auto;
+		}
+		li:after {
+			// display: none;
+		}
+	}
+
+	nav {
+		position: relative;
+		border-radius: 0;
+	}
+	main,
+	section {
+		width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+	.buttonContainer {
+		display: none;
+		margin: 0;
+		right: initial;
+	}
+
 	section.skills {
 		li {
 			width: 25%;
 			height: 30%;
+		}
+	}
+
+	.portfolio {
+		.projectContainer,
+		.imgContainer {
+			perspective: none;
 		}
 	}
 }
@@ -79,7 +128,8 @@
 		scroll-padding-top: 20px;
 	}
 	aside,
-	section {
+	section,
+	.buttonContainer {
 		height: calc(100vh - 40px);
 		margin-top: 20px;
 		margin-bottom: 20px;
@@ -194,9 +244,9 @@
 		border-left: 2px solid $color3;
 
 		li {
-            width: calc(33% - 10px);
-            margin: 5px;
-            height: 125px;
+			width: calc(33% - 10px);
+			margin: 5px;
+			height: 125px;
 		}
 	}
 	.resume {

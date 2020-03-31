@@ -16,16 +16,21 @@
 	}
 	.blurb {
 		font-size: 2rem;
-		word-spacing: 1px;
-		text-align: center;
+		text-align: left;
 		width: 100%;
 		margin: 40px auto;
 		border-bottom: 1px solid grey;
 		padding-bottom: 20px;
+
+		span {
+			color: $color1;
+			font-weight: bold;
+		}
 	}
 
 	h3 {
 		font-size: 1.8rem;
+		margin: 20px 0;
 	}
 
 	ul {
@@ -33,8 +38,11 @@
 		font-size: 1.4rem;
 
 		li {
+			margin: 10px 0;
 			width: 80%;
-			@include flexRow(space-between, center);
+		}
+		i {
+			margin-right: 5px;
 		}
 
 		span:nth-child(odd) {

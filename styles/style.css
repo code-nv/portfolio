@@ -452,8 +452,9 @@ aside {
       -ms-flex-align: stretch;
           align-items: stretch;
   height: 80vh;
-  width: 27.5%;
+  width: 25%;
   margin-top: 10vh;
+  margin-left: 10%;
   padding-top: 20px;
   border-radius: 20px 0 0 20px;
   text-align: center;
@@ -466,7 +467,7 @@ aside .imgContainer {
 
 aside img {
   border-radius: 50%;
-  max-width: 100%;
+  max-width: 225px;
   max-height: 100%;
   margin: 0 auto;
 }
@@ -481,8 +482,9 @@ aside span {
 
 aside h1 {
   font-size: 2rem;
+  line-height: 1;
   color: #6ea9f2;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 nav {
@@ -503,14 +505,13 @@ nav {
   overflow: hidden;
   position: relative;
   text-align: left;
-  min-height: 215px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
 nav a {
   font-size: 2rem;
-  padding: 5.5px;
+  padding: 2.5px;
   position: relative;
   z-index: 2;
   width: 100%;
@@ -557,7 +558,7 @@ nav li:not(.activeNav).nav5:hover {
 nav li:after {
   content: " ";
   position: absolute;
-  width: calc(90% - 30px);
+  width: calc(90% - 25px);
   height: 100%;
   top: 0;
   right: 0;
@@ -590,7 +591,8 @@ nav li.activeNav {
 }
 
 .wrapper {
-  width: 1080px;
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -599,9 +601,9 @@ nav li.activeNav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -610,20 +612,56 @@ nav li.activeNav {
 
 main {
   height: 100vh;
-  width: 72.5%;
+  width: 65%;
   position: relative;
-  overflow-y: scroll;
+  overflow: scroll;
   scroll-padding-top: 10vh;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
 }
 
-button {
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+  margin-top: 10vh;
   position: fixed;
-  left: calc(50% + 470px);
+  right: 10%;
+  z-index: 2;
+}
+
+.buttonContainerSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
   width: 50px;
   height: 50px;
   font-size: 1.4rem;
+  margin: 2.5px 0;
   color: #fafafa;
   -webkit-transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
@@ -651,29 +689,18 @@ button:active {
 
 .toggle {
   border-radius: 0 20px 0 0;
-  top: 10vh;
 }
 
 .twitter {
   font-size: 1.5rem;
-  top: calc(50vh - 85px);
 }
 
 .linkedIn {
-  top: calc(50vh - 25px);
   font-size: 1.7rem;
-}
-
-.facebook {
-  top: calc(50vh + 35px);
 }
 
 button.social {
   background: #6ea9f2;
-}
-
-.print {
-  bottom: calc(10vh + 60px);
 }
 
 .lightTheme.download,
@@ -713,12 +740,11 @@ button i.fa-sun {
 
 section {
   height: 80vh;
-  min-height: 501.4px;
-  margin: 10vh 0 20vh 3%;
+  margin: 10vh 20px 20vh;
   -webkit-box-shadow: 0 0 10px 5px #ccdce3;
           box-shadow: 0 0 10px 5px #ccdce3;
   border-radius: 0;
-  width: calc(93% - 50px);
+  width: calc(79.5% - 40px);
   scroll-snap-align: start;
   padding-top: 20px;
 }
@@ -769,16 +795,21 @@ section p {
 
 .aboutMe .blurb {
   font-size: 2rem;
-  word-spacing: 1px;
-  text-align: center;
+  text-align: left;
   width: 100%;
   margin: 40px auto;
   border-bottom: 1px solid grey;
   padding-bottom: 20px;
 }
 
+.aboutMe .blurb span {
+  color: #fe5e41;
+  font-weight: bold;
+}
+
 .aboutMe h3 {
   font-size: 1.8rem;
+  margin: 20px 0;
 }
 
 .aboutMe ul {
@@ -787,20 +818,12 @@ section p {
 }
 
 .aboutMe ul li {
+  margin: 10px 0;
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.aboutMe ul i {
+  margin-right: 5px;
 }
 
 .aboutMe ul span:nth-child(odd) {
@@ -932,7 +955,7 @@ section p {
 }
 
 .portfolio .projectOne .imgContainer {
-  background: radial-gradient(circle, #fe5e41 55%, transparent 55%);
+  background: radial-gradient(circle, #fe5e41 50%, transparent 50%);
 }
 
 .portfolio .projectOne .infoContainer {
@@ -940,7 +963,7 @@ section p {
 }
 
 .portfolio .projectTwo .imgContainer {
-  background: radial-gradient(circle, #ff9f1c 55%, transparent 55%);
+  background: radial-gradient(circle, #ff9f1c 50%, transparent 50%);
 }
 
 .portfolio .projectTwo .infoContainer {
@@ -948,7 +971,7 @@ section p {
 }
 
 .portfolio .projectThree .imgContainer {
-  background: radial-gradient(circle, #ffbf69 55%, transparent 55%);
+  background: radial-gradient(circle, #ffbf69 50%, transparent 50%);
 }
 
 .portfolio .projectThree .infoContainer {
@@ -956,7 +979,7 @@ section p {
 }
 
 .portfolio .projectFour .imgContainer {
-  background: radial-gradient(circle, #44f0c2 55%, transparent 55%);
+  background: radial-gradient(circle, #44f0c2 50%, transparent 50%);
 }
 
 .portfolio .projectFour .infoContainer {
@@ -1308,27 +1331,30 @@ section p {
   opacity: 0.7;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1140px) {
   .wrapper {
     width: 100%;
-    padding-left: 10px;
+    padding: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
-  button {
-    left: initial;
-    right: 10px;
+  .buttonContainer {
+    right: 40px;
   }
   section {
     margin-left: 10px;
-    width: calc(100% - 80px);
+    width: calc(99.5% - 110px);
   }
   aside {
-    width: 22.5%;
+    margin-left: 40px;
+    width: 20%;
   }
   aside .imgContainer {
     width: 85%;
   }
   main {
-    width: 77.5%;
+    width: calc(80%);
   }
   section.skills ul {
     margin: 0;
@@ -1350,23 +1376,60 @@ section p {
   }
 }
 
-@media (max-width: 840px) {
-  section.aboutMe .highlightContainer {
-    padding-top: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+@media (max-width: 1025px) {
+  header .decoration {
+    height: 0;
+    -webkit-animation: none;
+            animation: none;
   }
-  section.aboutMe .highlightContainer .intro {
+  .wrapper {
     position: relative;
-    left: initial;
-    -webkit-transform: none;
-            transform: none;
+    display: block;
+    outline: 1px solid red;
+    margin: 0;
+  }
+  .lightTheme {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  aside {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 2;
+  }
+  aside .imgContainer {
+    display: none;
+  }
+  aside span {
+    width: auto;
+  }
+  nav {
+    position: relative;
+    border-radius: 0;
+  }
+  main,
+  section {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .buttonContainer {
+    display: none;
+    margin: 0;
+    right: initial;
   }
   section.skills li {
     width: 25%;
     height: 30%;
+  }
+  .portfolio .projectContainer,
+  .portfolio .imgContainer {
+    -webkit-perspective: none;
+            perspective: none;
   }
 }
 
@@ -1379,7 +1442,8 @@ section p {
     scroll-padding-top: 20px;
   }
   aside,
-  section {
+  section,
+  .buttonContainer {
     height: calc(100vh - 40px);
     margin-top: 20px;
     margin-bottom: 20px;
