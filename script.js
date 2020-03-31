@@ -88,6 +88,7 @@ app.init = function() {
 		$(this).addClass("activeResume");
 	});
 
+	// get rid if tabs
 	$(".mobileMenu").on("click", function() {
 		app.toggleMobileMenu();
 	});

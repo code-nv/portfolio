@@ -1400,6 +1400,7 @@ section p {
             box-shadow: none;
   }
   aside {
+    display: block;
     padding: 0;
     width: 100%;
     height: auto;
@@ -1408,60 +1409,67 @@ section p {
     top: 0;
     position: fixed;
     z-index: 2;
+    border-radius: 0;
+  }
+  aside.lightTheme, aside.darkTheme {
+    background: transparent;
   }
   aside .imgContainer {
     display: none;
   }
-  aside span {
-    width: auto;
-  }
   aside nav {
-    position: relative;
+    text-align: center;
     border-radius: 0;
-  }
-  aside .mobileMenu {
-    padding-left: 70px;
-    display: block;
-    background: #fe5e41;
-    text-align: left;
+    height: auto;
+    padding: 0;
+    top: 0;
     width: 100%;
-    font-size: 2rem;
-    z-index: 3;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  }
+  aside ul {
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  aside .mobileMenu:active {
-    -webkit-transform: none;
-            transform: none;
-  }
-  aside .mobileMenu.active .dropDown {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  aside .dropDown {
-    left: 20px;
-  }
-  aside li:after {
-    width: calc(100% - 60px);
+  aside li {
+    width: 20%;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+    height: 45px;
   }
   aside li span {
-    width: 30px;
-    padding: 0 20px;
-    margin-right: 22.5px;
+    display: none;
   }
-  aside .mobileCollapse {
-    position: relative;
-    height: 0;
-    -webkit-transition: height 0.3s;
-    transition: height 0.3s;
+  aside li:after {
+    width: 0%;
   }
-  aside .mobileExpand {
-    height: 220px;
-    -webkit-transition: height 0.3s;
-    transition: height 0.3s;
-    -webkit-box-shadow: 0 5px 5px black;
-            box-shadow: 0 5px 5px black;
+  aside li:hover {
+    height: 55px;
+  }
+  aside li:hover a {
+    color: #2e2e2e;
+  }
+  aside li.activeNav {
+    background: transparent;
+    color: black;
+  }
+  aside li.activeNav:after {
+    width: 100%;
+    border: none;
+  }
+  aside a {
+    padding: 10px 5px;
+    font-size: 1.8rem;
   }
   main,
   section {

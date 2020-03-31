@@ -63,6 +63,7 @@
 		box-shadow: none;
 	}
 	aside {
+		display: block;
 		padding: 0;
 		width: 100%;
 		height: auto;
@@ -71,66 +72,60 @@
 		top: 0;
 		position: fixed;
 		z-index: 2;
+		border-radius: 0;
+
+		&.lightTheme,
+		&.darkTheme {
+			background: transparent;
+		}
 
 		.imgContainer {
 			display: none;
 		}
-		span {
-			width: auto;
-		}
 
 		nav {
-			position: relative;
+			text-align: center;
 			border-radius: 0;
-		}
-
-		.mobileMenu {
-			padding-left: 70px;
-			display: block;
-			background: $color1;
-			text-align: left;
+			height: auto;
+			padding: 0;
+			top: 0;
 			width: 100%;
-			font-size: 2rem;
-			z-index: 3;
-			box-shadow: none;
+		}
+		ul {
 			margin: 0;
-
-			&:active {
-				transform: none;
+			@include flexRow(center, flex-start);
+		}
+		li {
+			width: 20%;
+			transition: height 0.3s;
+			height: 45px;
+			span {
+				display: none;
 			}
-
-			&.active {
-				.dropDown {
-					transform: rotate(45deg);
+			&:after {
+				width: 0%;
+			}
+			&:hover {
+				height: 55px;
+			}
+			&:hover a {
+				color: $black;
+			}
+			&.activeNav {
+				background: transparent;
+				color: black;
+				&:after {
+					width:100%;
+					border:none;
 				}
 			}
+			
 		}
-		.dropDown {
-			left: 20px
+		a {
+			padding: 10px 5px;
+			font-size: 1.8rem;
 		}
-
-		li {
-			&:after {
-				width: calc(100% - 60px);
-			}
-			span {
-				width: 30px;
-				padding: 0 20px;
-				margin-right: 22.5px;
-			}
-		}
-		.mobile {
-			&Collapse {
-				position: relative;
-				height: 0;
-				transition: height 0.3s;
-			}
-			&Expand {
-				height: 220px;
-				transition: height 0.3s;
-				box-shadow: 0 5px 5px black;
-			}
-		}
+	
 	}
 	main,
 	section {
