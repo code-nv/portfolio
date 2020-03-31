@@ -27,13 +27,6 @@ aside {
 		text-transform: capitalize;
 		margin: 5px;
 	}
-
-	h1 {
-		font-size: 2rem;
-		line-height: 1;
-		color: $color5;
-		margin: 0;
-	}
 }
 
 nav {
@@ -43,6 +36,10 @@ nav {
 	position: relative;
 	text-align: left;
 	flex-shrink: 0;
+
+	.mobileMenu {
+		display: none;
+	}
 
 	a {
 		font-size: 2rem;

@@ -5,20 +5,16 @@
 		height: auto;
 		padding: 0 20px 20px;
 	}
-	.intro {
-		font-size: 4rem;
-		color: $color1;
-		padding: 0;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		width: auto;
+	h1 {
+		font-size: 3rem;
+		margin: 20px 0;
+		text-align: center;
 	}
 	.blurb {
 		font-size: 2rem;
 		text-align: left;
 		width: 100%;
-		margin: 40px auto;
+		margin: 20px auto;
 		border-bottom: 1px solid grey;
 		padding-bottom: 20px;
 
@@ -30,16 +26,20 @@
 
 	h3 {
 		font-size: 1.8rem;
-		margin: 20px 0;
+		margin: 20px auto 10px;
+		// width: 80%;
+		// padding-left:10px;
 	}
 
 	ul {
-		width: 50%;
+		@include flexRow(flex-start, center);
+		margin: 0 auto;
+		flex-wrap: wrap;
 		font-size: 1.4rem;
 
 		li {
-			margin: 10px 0;
-			width: 80%;
+			width: calc(50% - 20px);
+			margin: 7.5px 10px 7.5px 0;
 		}
 		i {
 			margin-right: 5px;

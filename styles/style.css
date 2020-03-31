@@ -480,13 +480,6 @@ aside span {
   margin: 5px;
 }
 
-aside h1 {
-  font-size: 2rem;
-  line-height: 1;
-  color: #6ea9f2;
-  margin: 0;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -507,6 +500,10 @@ nav {
   text-align: left;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+nav .mobileMenu {
+  display: none;
 }
 
 nav a {
@@ -782,22 +779,17 @@ section p {
   padding: 0 20px 20px;
 }
 
-.aboutMe .intro {
-  font-size: 4rem;
-  color: #fe5e41;
-  padding: 0;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: auto;
+.aboutMe h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  text-align: center;
 }
 
 .aboutMe .blurb {
   font-size: 2rem;
   text-align: left;
   width: 100%;
-  margin: 40px auto;
+  margin: 20px auto;
   border-bottom: 1px solid grey;
   padding-bottom: 20px;
 }
@@ -809,17 +801,32 @@ section p {
 
 .aboutMe h3 {
   font-size: 1.8rem;
-  margin: 20px 0;
+  margin: 20px auto 10px;
 }
 
 .aboutMe ul {
-  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-size: 1.4rem;
 }
 
 .aboutMe ul li {
-  margin: 10px 0;
-  width: 80%;
+  width: calc(50% - 20px);
+  margin: 7.5px 10px 7.5px 0;
 }
 
 .aboutMe ul i {
@@ -1088,21 +1095,7 @@ section p {
   color: #6ea9f2;
 }
 
-.resume {
-  overflow-y: hidden;
-  padding-bottom: 0;
-}
-
-.resume h3 {
-  position: relative;
-  display: inline-block;
-  width: calc(100% - 20px);
-  padding: 10px 20px;
-  font-size: 2rem;
-  color: #fafafa;
-}
-
-.resume h3 span {
+.dropDown {
   position: absolute;
   top: 16px;
   right: 20px;
@@ -1119,6 +1112,20 @@ section p {
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.resume {
+  overflow-y: hidden;
+  padding-bottom: 0;
+}
+
+.resume h3 {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 20px);
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #fafafa;
 }
 
 .resume p {
@@ -1393,6 +1400,7 @@ section p {
             box-shadow: none;
   }
   aside {
+    padding: 0;
     width: 100%;
     height: auto;
     margin: 0;
@@ -1407,9 +1415,53 @@ section p {
   aside span {
     width: auto;
   }
-  nav {
+  aside nav {
     position: relative;
     border-radius: 0;
+  }
+  aside .mobileMenu {
+    padding-left: 70px;
+    display: block;
+    background: #fe5e41;
+    text-align: left;
+    width: 100%;
+    font-size: 2rem;
+    z-index: 3;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0;
+  }
+  aside .mobileMenu:active {
+    -webkit-transform: none;
+            transform: none;
+  }
+  aside .mobileMenu.active .dropDown {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  aside .dropDown {
+    left: 20px;
+  }
+  aside li:after {
+    width: calc(100% - 60px);
+  }
+  aside li span {
+    width: 30px;
+    padding: 0 20px;
+    margin-right: 22.5px;
+  }
+  aside .mobileCollapse {
+    position: relative;
+    height: 0;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+  }
+  aside .mobileExpand {
+    height: 220px;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+    -webkit-box-shadow: 0 5px 5px black;
+            box-shadow: 0 5px 5px black;
   }
   main,
   section {
@@ -1430,129 +1482,5 @@ section p {
   .portfolio .imgContainer {
     -webkit-perspective: none;
             perspective: none;
-  }
-}
-
-@media (max-height: 630px) {
-  header .decoration {
-    -webkit-animation-iteration-count: 0;
-            animation-iteration-count: 0;
-  }
-  main {
-    scroll-padding-top: 20px;
-  }
-  aside,
-  section,
-  .buttonContainer {
-    height: calc(100vh - 40px);
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  section {
-    scroll-snap-align: start;
-    margin-bottom: 50px;
-  }
-  section:first-of-type {
-    margin-top: 20px;
-  }
-  section:last-of-type {
-    margin-bottom: 20px;
-  }
-  .resume h3.activeResume + .resumeInfo {
-    position: relative;
-    height: calc(100vh - 234px);
-  }
-  .toggle {
-    top: 20px;
-  }
-  .lightTheme.download,
-  .darkTheme.download {
-    bottom: 20px;
-  }
-  .print {
-    bottom: 80px;
-  }
-  .lightTheme,
-  button.lightTheme {
-    -webkit-box-shadow: 0px 2px 4px #ccdce3;
-            box-shadow: 0px 2px 4px #ccdce3;
-  }
-}
-
-@media (max-width: 840px), (max-height: 590px) {
-  body.lightThemeBody {
-    background: #fafafa;
-  }
-  body.darkThemeBody {
-    background: #212121;
-  }
-  .wrapper {
-    padding: 0;
-  }
-  aside,
-  main {
-    height: calc(100vh - 5px);
-    margin: 5px 0 0;
-  }
-  aside,
-  section {
-    border-radius: 0;
-  }
-  aside,
-  nav,
-  .lightTheme.download,
-  .darkTheme.download,
-  .toggle {
-    border-radius: 0;
-  }
-  aside {
-    width: 30%;
-  }
-  main {
-    scroll-padding-top: 0px;
-  }
-  button {
-    right: 0;
-  }
-  section {
-    height: auto;
-    min-height: calc(100vh - 5px);
-    margin: 0;
-    width: calc(100% - 50px);
-  }
-  section:first-of-type {
-    margin-top: 0;
-  }
-  .lightTheme {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .aboutMe {
-    border-left: 2px solid #fe5e41;
-  }
-  .portfolio {
-    border-left: 2px solid #ff9f1c;
-  }
-  section.skills {
-    border-left: 2px solid #ffbf69;
-  }
-  section.skills li {
-    width: calc(33% - 10px);
-    margin: 5px;
-    height: 125px;
-  }
-  .resume {
-    border-left: 2px solid #44f0c2;
-  }
-  .resume h3.activeResume + .resumeInfo {
-    position: relative;
-    height: calc(100vh - 200px);
-  }
-  .resume .resume3 {
-    -webkit-box-shadow: 0px 1px 0px 0px #ffbf69;
-            box-shadow: 0px 1px 0px 0px #ffbf69;
-  }
-  .contact {
-    border-left: 2px solid #6ea9f2;
   }
 }

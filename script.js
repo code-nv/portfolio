@@ -60,6 +60,11 @@ app.navActive = function() {
 	}
 };
 
+app.toggleMobileMenu = function() {
+	$(".mobileMenu").toggleClass("active");
+	$("nav ul").toggleClass("mobileCollapse mobileExpand");
+};
+
 app.init = function() {
 	app.navActive();
 
@@ -81,6 +86,10 @@ app.init = function() {
 	$("h3").on("click", function() {
 		$(".resume h3").removeClass("activeResume");
 		$(this).addClass("activeResume");
+	});
+
+	$(".mobileMenu").on("click", function() {
+		app.toggleMobileMenu();
 	});
 };
 

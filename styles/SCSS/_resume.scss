@@ -1,3 +1,17 @@
+.dropDown {
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	display: inline-block;
+	border-right: 2px solid $white;
+	border-bottom: 2px solid $white;
+	width: 10px;
+	height: 10px;
+	transform: rotate(-45deg);
+	transform-origin: center;
+	transition: transform 0.2s;
+}
+
 .resume {
 	overflow-y: hidden;
 	padding-bottom: 0;
@@ -9,20 +23,6 @@
 		padding: 10px 20px;
 		font-size: 2rem;
 		color: $white;
-
-		span {
-			position: absolute;
-			top: 16px;
-			right: 20px;
-			display: inline-block;
-			border-right: 2px solid $white;
-			border-bottom: 2px solid $white;
-			width: 10px;
-			height: 10px;
-			transform: rotate(-45deg);
-			transform-origin: center;
-			transition: transform 0.2s;
-		}
 	}
 
 	p {
