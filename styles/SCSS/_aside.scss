@@ -32,7 +32,7 @@ aside {
 nav {
 	@include flexCol(center, stretch);
 	border-radius: 0 0 0 20px;
-	overflow: hidden;
+	// overflow: hidden;
 	position: relative;
 	text-align: left;
 	flex-shrink: 0;
@@ -58,6 +58,10 @@ nav {
 	li {
 		position: relative;
 		transition: color 0.3s;
+
+		&:last-of-type {
+			border-radius: 0 0 0 20px;
+		}
 
 		span {
 			display: inline-block;

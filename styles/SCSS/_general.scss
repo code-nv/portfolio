@@ -80,3 +80,7 @@ body {
 *[class*="5"] {
 	background: $color5;
 }
+
+a:focus {
+outline: 2px dashed skyblue;
+}
