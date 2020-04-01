@@ -103,7 +103,11 @@
 				display: none;
 			}
 			&:after {
-				width: 0%;
+				height: 0%;
+				top:100%;
+				left:3px;
+				width:calc(100% - 6px);
+				transition: all 0.3s;
 			}
 			&:hover {
 				height: 55px;
@@ -112,11 +116,13 @@
 				color: $black;
 			}
 			&.activeNav {
-				background: transparent;
+				// background: transparent;
 				color: black;
 				&:after {
-					width:100%;
-					border:none;
+					height: calc(100% - 3px);
+					top: 3px;
+					left: 3px;
+					width: 100%;
 				}
 			}
 			
@@ -132,6 +138,16 @@
 		width: 100%;
 		height: auto;
 		margin: 0;
+	}
+
+	section.aboutMe {
+		margin-top: 40px;
+		margin-bottom: 0;
+	}
+
+	section .portfolioContainer,
+	section.contact {
+		margin-bottom:0;
 	}
 
 	.buttonContainer {

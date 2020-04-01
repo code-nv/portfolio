@@ -45,18 +45,23 @@ app.postScroll = function() {
 };
 
 app.navActive = function() {
-	let scrolled = $("main").scrollTop();
-	$("li").removeClass("activeNav");
-	if (scrolled > 3.5 * window.innerHeight) {
-		$(".nav5").addClass("activeNav");
-	} else if (scrolled > 2.5 * window.innerHeight) {
-		$(".nav4").addClass("activeNav");
-	} else if (scrolled > 1.5 * window.innerHeight) {
-		$(".nav3").addClass("activeNav");
-	} else if (scrolled > 0.5 * window.innerHeight) {
-		$(".nav2").addClass("activeNav");
-	} else if (scrolled >= 0) {
-		$(".nav1").addClass("activeNav");
+	if (window.innerWidth <= 1025) {
+		app.mobileNavActive();
+	} else {
+		let scrolled = $("main").scrollTop();
+
+		$("li").removeClass("activeNav");
+		if (scrolled > 3.5 * window.innerHeight) {
+			$(".nav5").addClass("activeNav");
+		} else if (scrolled > 2.5 * window.innerHeight) {
+			$(".nav4").addClass("activeNav");
+		} else if (scrolled > 1.5 * window.innerHeight) {
+			$(".nav3").addClass("activeNav");
+		} else if (scrolled > 0.5 * window.innerHeight) {
+			$(".nav2").addClass("activeNav");
+		} else if (scrolled >= 0) {
+			$(".nav1").addClass("activeNav");
+		}
 	}
 };
 
@@ -73,7 +78,7 @@ app.init = function() {
 		app.anchorNav(this);
 	});
 
-	$("main").on("scroll", function() {
+	$(window).on("scroll", function() {
 		setTimeout(() => {
 			app.navActive();
 		}, 300);
