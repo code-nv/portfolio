@@ -4,7 +4,14 @@ footer {
 	margin-top: 10vh;
 	position: fixed;
 	right: 10%;
-	z-index: 2;
+    z-index: 2;
+
+    &.lightTheme,
+    &.darkTheme {
+        background: transparent;
+        box-shadow: none;
+    }
+
 
 	div {
 		@include flexCol(space-between, center);
@@ -54,13 +61,13 @@ button.social {
 	bottom: 10vh;
 }
 
-button:hover i {
+button:hover {
 	font-size: 1.7rem;
-	&.fa-sun,
-	&.fa-twitter {
+	i.fa-sun,
+	&.twitter {
 		font-size: 2rem;
 	}
-	&.fa-linkedin-in {
+	&.linkedIn {
 		font-size: 2rem;
 	}
 }

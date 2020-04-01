@@ -307,8 +307,8 @@ body {
 
 .darkTheme {
   background: #212121;
-  -webkit-box-shadow: 0 0 10px 5px #212121;
-          box-shadow: 0 0 10px 5px #212121;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, box-shadow 0.5s;
@@ -345,10 +345,6 @@ body {
 
 *[class*="5"] {
   background: #6ea9f2;
-}
-
-a:focus {
-  outline: 2px dashed skyblue;
 }
 
 header {
@@ -1253,6 +1249,12 @@ footer {
   z-index: 2;
 }
 
+footer.lightTheme, footer.darkTheme {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 footer div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1321,15 +1323,15 @@ button.social {
   bottom: 10vh;
 }
 
-button:hover i {
+button:hover {
   font-size: 1.7rem;
 }
 
-button:hover i.fa-sun, button:hover i.fa-twitter {
+button:hover i.fa-sun, button:hover.twitter {
   font-size: 2rem;
 }
 
-button:hover i.fa-linkedin-in {
+button:hover.linkedIn {
   font-size: 2rem;
 }
 
@@ -1358,7 +1360,7 @@ button i.fa-sun {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  .buttonContainer {
+  footer {
     right: 40px;
   }
   section {
@@ -1473,23 +1475,23 @@ button i.fa-sun {
     top: 100%;
     left: 3px;
     width: calc(100% - 6px);
-    display: none;
+    -webkit-transition: height 0.3s, top 0.3s;
+    transition: height 0.3s, top 0.3s;
   }
-  aside li:hover {
+  aside li:hover:not(.activeNav),
+  aside li:hover:not(.activeNav) a {
     height: 55px;
-    border: none;
-  }
-  aside li:hover a {
-    color: #2e2e2e;
+    color: black;
   }
   aside li.activeNav {
     color: #2e2e2e;
+    -webkit-transition: height 0.3s, top 0.3s;
+    transition: height 0.3s, top 0.3s;
   }
   aside li.activeNav:hover {
     height: 45px;
   }
   aside li.activeNav:after {
-    display: block;
     height: calc(100% - 3px);
     top: 3px;
     left: 3px;
@@ -1510,16 +1512,15 @@ button i.fa-sun {
     padding-bottom: 54.5px;
     margin-bottom: 0;
   }
+  section.darkTheme {
+    background: #19191b;
+  }
   section.aboutMe {
     margin-top: 0;
   }
   section .portfolioContainer,
   section.contact {
     margin-bottom: 0;
-  }
-  footer {
-    margin: 0;
-    right: initial;
   }
   section.skills li {
     width: 25%;
@@ -1529,5 +1530,66 @@ button i.fa-sun {
   .portfolio .imgContainer {
     -webkit-perspective: none;
             perspective: none;
+  }
+  footer {
+    height: auto;
+    position: fixed;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    right: initial;
+  }
+  footer.lightTheme {
+    background: #2e2e2e;
+  }
+  footer.darkTheme {
+    background: #2e2e2e;
+  }
+  footer .toggle {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  footer div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer button {
+    height: 40px;
+    width: 80px;
+    margin: 0;
+    border: none;
+    font-size: 2rem;
+  }
+  footer button.lightTheme {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  footer button.darkTheme {
+    background: #2e2e2e;
+  }
+  footer button:hover {
+    font-size: 2rem;
+  }
+  footer button.social {
+    background: inherit;
+  }
+  footer .utilitiesContainer {
+    width: 240px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  footer .lightTheme.download,
+  footer .darkTheme.download {
+    border-radius: 0;
   }
 }

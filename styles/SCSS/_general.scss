@@ -51,7 +51,8 @@ body {
 
 .darkTheme {
 	background: #212121;
-	box-shadow: 0 0 10px 5px #212121;
+	// box-shadow: 0 0 10px 5px #212121;
+	box-shadow: none;
 	transition: background 0.5s, box-shadow 0.5s;
 }
 
@@ -79,8 +80,4 @@ body {
 }
 *[class*="5"] {
 	background: $color5;
-}
-
-a:focus {
-outline: 2px dashed skyblue;
 }

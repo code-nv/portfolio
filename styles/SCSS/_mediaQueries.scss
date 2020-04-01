@@ -4,7 +4,7 @@
 		padding: 0;
 		justify-content: flex-start;
 	}
-	.buttonContainer {
+	footer {
 		right: 40px;
 	}
 
@@ -107,7 +107,6 @@
 			&.lightThemeAfter:after {
 				border: none;
 			}
-			
 
 			span {
 				display: none;
@@ -118,24 +117,22 @@
 				top: 100%;
 				left: 3px;
 				width: calc(100% - 6px);
-				display: none;
+				transition: height 0.3s, top 0.3s;
 			}
-			&:hover {
+			&:hover:not(.activeNav),
+			&:hover:not(.activeNav) a {
 				height: 55px;
-				border: none;
-			}
-			&:hover a {
-				color: $black;
+				color: black;
 			}
 			&.activeNav {
 				color: $black;
+				transition: height 0.3s, top 0.3s;
 
 				&:hover {
 					height: 45px;
 				}
-				
+
 				&:after {
-					display: block;
 					height: calc(100% - 3px);
 					top: 3px;
 					left: 3px;
@@ -143,12 +140,14 @@
 				}
 			}
 		}
+
 		a {
 			padding: 10px 5px;
 			font-size: 1.8rem;
 		}
-
 	}
+
+
 	main,
 	section {
 		width: 100%;
@@ -160,6 +159,10 @@
 		padding-top: 54.5px;
 		padding-bottom: 54.5px;
 		margin-bottom: 0;
+		
+		&.darkTheme {
+			background: $darkBackground;
+		}
 	}
 
 	section.aboutMe {
@@ -169,11 +172,6 @@
 	section .portfolioContainer,
 	section.contact {
 		margin-bottom: 0;
-	}
-
-	footer {
-		margin: 0;
-		right: initial;
 	}
 
 	section.skills {
@@ -187,6 +185,66 @@
 		.projectContainer,
 		.imgContainer {
 			perspective: none;
+		}
+	}
+
+	footer {
+		height: auto;
+		position: fixed;
+		flex-direction: row;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		margin: 0;
+		right: initial;
+
+		&.lightTheme {
+			background: $black;
+		}
+		&.darkTheme {
+			background: $black;
+		}
+
+		.toggle {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			border-radius: 0;
+		}
+
+		div {
+			flex-direction: row;
+		}
+
+		button {
+			height: 40px;
+			width: 80px;
+			margin:0;
+			border:none;
+			font-size: 2rem;
+			&.lightTheme {
+				box-shadow: none;
+			}
+			&.darkTheme {
+				background: $black;
+			}
+			&:hover {
+				font-size: 2rem;
+			}
+		}
+
+		button.social {
+			background: inherit;
+		}
+
+		.utilitiesContainer {
+			width: 240px;
+			justify-content: flex-start;
+		}
+
+		.lightTheme.download,
+		.darkTheme.download {
+			border-radius: 0;
 		}
 	}
 }
