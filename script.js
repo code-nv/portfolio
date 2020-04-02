@@ -29,27 +29,33 @@ app.postScroll = function() {
 };
 
 app.mobileNavActive = function() {
+	let scrolled = $(window).scrollTop();
+	let windowHeight = 0.75 * window.innerHeight;
+	app.checkCurrentMobile(scrolled, windowHeight);
+	$(window).on("scroll resize", function() {
+		scrolled = $(window).scrollTop();
+		app.checkCurrentMobile(scrolled, windowHeight);
+	});
+};
+
+app.checkCurrentMobile = function(scrolled, windowHeight) {
+	$("li").removeClass("activeNav");
 	let a = $(".aboutMe").offset();
 	let b = $(".portfolio").offset();
 	let c = $(".skills").offset();
 	let d = $(".resume").offset();
-	let windowHeight = 0.75 * (window.innerHeight);
-	$(window).on("scroll resize", function() {
-		let scrolled = $(window).scrollTop();
-		$("li").removeClass("activeNav");
-		if (scrolled >= d.top + 0.5 * windowHeight) {
-			$(".nav5").addClass("activeNav");
-		} else if (scrolled >= c.top + windowHeight) {
-			$(".nav4").addClass("activeNav");
-		} else if (scrolled >= b.top + windowHeight) {
-			$(".nav3").addClass("activeNav");
-		} else if (scrolled >= a.top + windowHeight) {
-			$(".nav2").addClass("activeNav");
-		} else if (scrolled >= 0) {
-			$(".nav1").addClass("activeNav");
-		}
-	});
-};
+	if (scrolled >= d.top + 0.5 * windowHeight) {
+		$(".nav5").addClass("activeNav");
+	} else if (scrolled >= c.top + windowHeight) {
+		$(".nav4").addClass("activeNav");
+	} else if (scrolled >= b.top + windowHeight) {
+		$(".nav3").addClass("activeNav");
+	} else if (scrolled >= a.top + windowHeight) {
+		$(".nav2").addClass("activeNav");
+	} else if (scrolled >= 0) {
+		$(".nav1").addClass("activeNav");
+	}
+}
 
 $(`button.toggle`).on("click", function() {
 	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
