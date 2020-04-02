@@ -90,10 +90,12 @@
 			padding: 0;
 			top: 0;
 			width: 100%;
+			box-shadow: 0 0 5px 0px #969696;
 		}
 		ul {
 			margin: 0;
 			@include flexRow(center, flex-start);
+			height: 45px;
 		}
 		li {
 			width: 20%;
@@ -147,26 +149,76 @@
 		}
 	}
 
-
-	main,
-	section {
+	main {
 		width: 100%;
+		max-width: 750px;
 		height: auto;
-		margin: 0;
+		margin: 0 auto;
+		box-shadow: 0 0 10px 5px #ccdce3;
 	}
 
 	section {
 		padding-top: 54.5px;
 		padding-bottom: 54.5px;
-		margin-bottom: 0;
-		
+		width: 100%;
+		margin: 0;
 		&.darkTheme {
 			background: $darkBackground;
 		}
+
+		h2 {
+			width: 80%;
+			text-align: center;
+			margin: 0 auto;
+			padding-left: 0;
+			color: $black;
+			position: relative;
+
+			// &:after {
+			// 	width: 100%;
+			// 	content: " ";
+			// 	position: absolute;
+			// 	left: 0;
+			// 	top: 0;
+			// 	height: 5px;
+			// 	bottom:-5px;
+			// 	background: $white;
+			// 	opacity: 0.5;
+			}
+			.fas {
+				display: none;
+			}
+		
 	}
 
 	section.aboutMe {
 		margin-top: 0;
+		height: auto;
+
+		.imgContainerMobile {
+			display: block;
+			position: relative;
+			width: calc(30% - 20px);
+			margin: 0px 20px 5px 0;
+			float: left;
+		}
+		img {
+			object-fit: contain;
+		}
+		h1 {
+			float: right;
+			margin: 20px 0 20px 30%;
+			text-align: left;
+			width: 70%;
+		}
+
+		.blurb {
+			float: right;
+			width: 70%;
+		}
+		h3 {
+			clear: both;
+		}
 	}
 
 	section .portfolioContainer,
@@ -219,8 +271,8 @@
 		button {
 			height: 40px;
 			width: 80px;
-			margin:0;
-			border:none;
+			margin: 0;
+			border: none;
 			font-size: 2rem;
 			&.lightTheme {
 				box-shadow: none;

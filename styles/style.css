@@ -658,6 +658,10 @@ section p {
   color: #707070;
 }
 
+.aboutMe .imgContainerMobile {
+  display: none;
+}
+
 .aboutMeContainer {
   width: 100%;
   height: auto;
@@ -1438,6 +1442,8 @@ button i.fa-sun {
     padding: 0;
     top: 0;
     width: 100%;
+    -webkit-box-shadow: 0 0 5px 0px #969696;
+            box-shadow: 0 0 5px 0px #969696;
   }
   aside ul {
     margin: 0;
@@ -1454,6 +1460,7 @@ button i.fa-sun {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    height: 45px;
   }
   aside li {
     width: 20%;
@@ -1501,22 +1508,61 @@ button i.fa-sun {
     padding: 10px 5px;
     font-size: 1.8rem;
   }
-  main,
-  section {
+  main {
     width: 100%;
+    max-width: 750px;
     height: auto;
-    margin: 0;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 0 10px 5px #ccdce3;
+            box-shadow: 0 0 10px 5px #ccdce3;
   }
   section {
     padding-top: 54.5px;
     padding-bottom: 54.5px;
-    margin-bottom: 0;
+    width: 100%;
+    margin: 0;
   }
   section.darkTheme {
     background: #19191b;
   }
+  section h2 {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+    color: #2e2e2e;
+    position: relative;
+  }
+  section .fas {
+    display: none;
+  }
   section.aboutMe {
     margin-top: 0;
+    height: auto;
+  }
+  section.aboutMe .imgContainerMobile {
+    display: block;
+    position: relative;
+    width: calc(30% - 20px);
+    margin: 0px 20px 5px 0;
+    float: left;
+  }
+  section.aboutMe img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section.aboutMe h1 {
+    float: right;
+    margin: 20px 0 20px 30%;
+    text-align: left;
+    width: 70%;
+  }
+  section.aboutMe .blurb {
+    float: right;
+    width: 70%;
+  }
+  section.aboutMe h3 {
+    clear: both;
   }
   section .portfolioContainer,
   section.contact {

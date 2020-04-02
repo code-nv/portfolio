@@ -1,4 +1,7 @@
 .aboutMe {
+	.imgContainerMobile {
+		display: none;
+	}
 
 	&Container {
 		width: 100%;
@@ -27,8 +30,6 @@
 	h3 {
 		font-size: 1.8rem;
 		margin: 20px auto 10px;
-		// width: 80%;
-		// padding-left:10px;
 	}
 
 	ul {
