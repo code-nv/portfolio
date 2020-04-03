@@ -88,7 +88,6 @@
 			li:hover a {
 				color: $white;
 			}
-			
 		}
 
 		.imgContainer {
@@ -113,7 +112,7 @@
 		}
 		li {
 			width: 20%;
-			transition: box-shadow 0.2s;
+			transition: all 0.2s;
 			transition-timing-function: linear;
 			height: 45px;
 			box-shadow: inset 0 0 2px 0 black;
@@ -135,8 +134,10 @@
 				top: 100%;
 				left: 3px;
 				width: calc(100% - 6px);
-				transition: height 0.3s, top 0.3s;
+				// transition: height 0.3s, top 0.3s;
+				transition: all 0.3s;
 				transition-timing-function: linear;
+				border-radius: 5px 5px 0 0;
 			}
 			&:hover {
 				&:not(.activeNav) {
@@ -148,14 +149,15 @@
 			}
 			&.activeNav {
 				color: black;
-				transition: height 0.3s, margin-top 0.3s;
+				// transition: height 0.3s, margin-top 0.3s;
+				transition: all 0.3s;
 				overflow-y: hidden;
 
 				&:before {
 					content: "";
 					width: 80%;
-					bottom: 4px;
-					height: 4px;
+					bottom: 0px;
+					height: 2px;
 					background: inherit;
 					border-radius: 2px;
 					z-index: 2;
@@ -169,16 +171,16 @@
 					left: 3px;
 					width: calc(100% - 6px);
 					border-radius: 5px 5px 0 0;
-					box-shadow: 0 0 2px 0 black;
+					box-shadow: 0 -2px 2px black;
 				}
 			}
 		}
-		li:first-of-type.activeNav:after {
+		li:first-of-type:after {
 			width: calc(100% - 3px);
 			left: 0;
 			border-radius: 0 5px 0 0;
 		}
-		li:last-of-type.activeNav:after {
+		li:last-of-type:after {
 			width: calc(100% - 3px);
 			border-radius: 5px 0 0 0;
 		}
@@ -206,44 +208,70 @@
 		padding-bottom: 54.5px;
 		width: 100%;
 		margin: 0;
-		height:auto;
+		height: auto;
 		&.darkTheme {
 			background: $darkBackground;
 		}
 
 		h2 {
-			width: 80%;
-			text-align: center;
-			margin: 20px auto;
-			padding-left: 0;
-			color: $black;
 			position: relative;
+			width: calc(100% - 40px);
+			margin: 20px auto;
+			padding: 0;
+			font-size: 4rem;
+			border-bottom: 2px solid;
+			text-transform: uppercase;
 			&[class*="header"] {
 				background: transparent;
 			}
 			&:after {
-				width: 100%;
-				content: " ";
 				position: absolute;
 				left: 0;
-				height: 5px;
-				bottom:-5px;
-				border-radius: 2px;
+				bottom: 0px;
+				opacity: 0.3;
+				font-size: 6rem;
+				line-height: 1;
+				text-transform: uppercase;
 			}
-			&[class*="1"]:after {
-				background: $color1;
+			&[class*="1"] {
+				color: $color1;
+				border-color: $color1;
+				&:after {
+					content: "about me";
+					color: desaturate($color1, 50%);
+				}
 			}
-			&[class*="2"]:after {
-				background: $color2;
+			&[class*="2"] {
+				color: $color2;
+				border-color: $color2;
+				&:after {
+					content: "portfolio";
+					color: desaturate($color2, 50%);
+				}
 			}
-			&[class*="3"]:after {
-				background: $color3;
+			&[class*="3"] {
+				color: $color3;
+				border-color: $color3;
+				&:after {
+					content: "skills";
+					color: desaturate($color3, 50%);
+				}
 			}
-			&[class*="4"]:after {
-				background: $color4;
+			&[class*="4"] {
+				color: $color4;
+				border-color: $color4;
+				&:after {
+					content: "resume";
+					color: desaturate($color4, 50%);
+				}
 			}
-			&[class*="5"]:after {
-				background: $color5;
+			&[class*="5"] {
+				color: $color5;
+				border-color: $color5;
+				&:after {
+					content: "contact";
+					color: desaturate($color5, 50%);
+				}
 			}
 
 			.fas {
@@ -282,29 +310,101 @@
 		}
 	}
 
-	section .portfolioContainer,
-	section.contact {
-		margin-bottom: 0;
-	}
-
-	section.skills {
-		li {
-			width: 25%;
-			height: 30%;
-		}
-	}
-
 	.portfolio {
+		&Container {
+			margin-bottom: 0;
+		}
 		.projectContainer,
 		.imgContainer {
 			perspective: none;
 		}
+
+		.projectContainer {
+			@include flexRow(center, center);
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+
+			&.projectOne {
+				background: $color1;
+			}
+			&.projectTwo {
+				background: $color2;
+			}
+			&.projectThree {
+				background: $color3;
+			}
+			&.projectFour {
+				background: $color4;
+			}
+
+			&.projectTwo,
+			&.projectFour {
+				flex-direction: row-reverse;
+			}
+			.infoContainer {
+				padding: 20px;
+				border-radius: 0;
+				width: 60%;
+			}
+
+			.imgContainer {
+				background: transparent;
+				border-radius: 0;
+				width: 40%;
+			}
+
+			.infoContainer,
+			&:hover .infoContainer {
+				transform: none;
+				visibility: visible;
+				position: relative;
+			}
+
+			&:hover img {
+				transform: none;
+			}
+		}
+	}
+	section.skills {
+		li {
+			width: calc(33.33% - 15px);
+			margin: 7.5px;
+			height: 50%;
+			border-radius: 5px;
+			div {
+				border-radius: 5px;
+			}
+			i {
+				font-size: calc(2rem + 4vw);
+			}
+			img {
+				height: calc(2rem + 4vw);
+			}
+		}
+		h3 {
+			font-size: 2rem;
+		}
 	}
 
 	.resume {
+		h3 {
+			margin: 0 auto;
+			width: 80%;
+		}
+		h3 + .resumeInfo,
+		h3.activeResume + .resumeInfo {
+			position: relative;
+			height: auto;
+		}
 
+		h3 span {
+			display: none;
+		}
 	}
-
+	section.contact {
+		margin-bottom: 0;
+	}
 	footer {
 		height: auto;
 		position: fixed;
@@ -366,155 +466,11 @@
 	}
 }
 
-@include maxWidth600 {
+@include maxWidth620 {
+	section.skills {
+		li {
+			width: calc(50% - 40px);
+			margin: 10px 20px;
+		}
+	}
 }
-
-// @include maxWidth500 {
-// }
-
-// @include maxHeight630 {
-// 	header .decoration {
-// 		animation-iteration-count: 0;
-// 	}
-// 	main {
-// 		scroll-padding-top: 20px;
-// 	}
-// 	aside,
-// 	section,
-// 	.buttonContainer {
-// 		height: calc(100vh - 40px);
-// 		margin-top: 20px;
-// 		margin-bottom: 20px;
-// 		// border: 2px solid #ccdce3;
-// 	}
-// 	aside,
-// 	nav {
-// 		// border-radius: 0;
-// 	}
-
-// 	section {
-// 		scroll-snap-align: start;
-// 		margin-bottom: 50px;
-
-// 		&:first-of-type {
-// 			margin-top: 20px;
-// 		}
-
-// 		&:last-of-type {
-// 			margin-bottom: 20px;
-// 		}
-// 	}
-// 	.resume h3.activeResume + .resumeInfo {
-// 		position: relative;
-// 		height: calc(100vh - 234px);
-// 	}
-
-// 	.toggle {
-// 		top: 20px;
-// 		// border-radius: 0;
-// 	}
-
-// 	.lightTheme.download,
-// 	.darkTheme.download {
-// 		bottom: 20px;
-// 		// border-radius: 0;
-// 	}
-
-// 	.print {
-// 		bottom: 80px;
-// 	}
-
-// 	.lightTheme,
-// 	button.lightTheme {
-// 		box-shadow: 0px 2px 4px #ccdce3;
-// 	}
-// }
-
-////////////////////////////////////////////////////////////////////////////////////////
-// @include maxWidth840maxHeight590 {
-// 	body.lightThemeBody {
-// 		background: $white;
-// 	}
-// 	body.darkThemeBody {
-// 		background: #212121;
-// 	}
-// 	.wrapper {
-// 		padding: 0;
-// 	}
-
-// 	aside,
-// 	main {
-// 		height: calc(100vh - 5px);
-// 		margin: 5px 0 0;
-// 	}
-// 	aside,
-// 	section {
-// 		border-radius: 0;
-// 	}
-
-// 	aside,
-// 	nav,
-// 	.lightTheme.download,
-// 	.darkTheme.download,
-// 	.toggle {
-// 		border-radius: 0;
-// 	}
-
-// 	aside {
-// 		width: 30%;
-// 	}
-
-// 	main {
-// 		scroll-padding-top: 0px;
-// 	}
-
-// 	button {
-// 		right: 0;
-// 	}
-
-// 	section {
-// 		height: auto;
-// 		min-height: calc(100vh - 5px);
-// 		margin: 0;
-// 		width: calc(100% - 50px);
-
-// 		&:first-of-type {
-// 			margin-top: 0;
-// 		}
-// 	}
-
-// 	.lightTheme {
-// 		box-shadow: none;
-// 	}
-
-// 	.aboutMe {
-// 		border-left: 2px solid $color1;
-// 	}
-// 	.portfolio {
-// 		border-left: 2px solid $color2;
-// 	}
-// 	section.skills {
-// 		border-left: 2px solid $color3;
-
-// 		li {
-// 			width: calc(33% - 10px);
-// 			margin: 5px;
-// 			height: 125px;
-// 		}
-// 	}
-// 	.resume {
-// 		border-left: 2px solid $color4;
-
-// 		h3.activeResume + .resumeInfo {
-// 			position: relative;
-// 			height: calc(100vh - 200px);
-// 		}
-
-// 		.resume3 {
-// 			box-shadow: 0px 1px 0px 0px $color3;
-// 		}
-// 	}
-// 	.contact {
-// 		border-left: 2px solid $color5;
-// 	}
-// }

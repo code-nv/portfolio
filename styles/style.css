@@ -715,7 +715,7 @@ section p {
 
 .aboutMe ul li {
   width: calc(50% - 20px);
-  margin: 7.5px 10px 7.5px 0;
+  margin: 5px 10px 5px 0;
 }
 
 .aboutMe ul i {
@@ -766,9 +766,9 @@ section p {
   width: calc(50% - 20px);
   height: calc(50% - 20px);
   margin: 10px;
-  padding: 10px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  background: transparent;
 }
 
 .portfolio .projectContainer img {
@@ -776,17 +776,15 @@ section p {
   transition: all 0.3s linear;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  border-radius: 5px;
 }
 
 .portfolio .imgContainer {
-  padding: 20px;
   position: relative;
-  margin: 0 auto;
   height: 100%;
-  width: 80%;
-  border-radius: 50%;
-  -webkit-perspective: 300px;
-          perspective: 300px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  background: transparent;
 }
 
 .portfolio .infoContainer {
@@ -811,18 +809,14 @@ section p {
   visibility: hidden;
   top: 0;
   left: 0;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   -webkit-transform: rotateX(-90deg);
           transform: rotateX(-90deg);
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   text-align: center;
-}
-
-.portfolio .infoContainer p {
-  color: #2e2e2e;
-  font-size: 1.8rem;
+  border-radius: 5px;
 }
 
 .portfolio .infoContainer h3 {
@@ -830,12 +824,67 @@ section p {
   font-size: 2rem;
 }
 
+.portfolio .infoContainer p,
+.portfolio .infoContainer li {
+  color: black;
+  font-size: 1.8rem;
+}
+
+.portfolio .infoContainer p {
+  margin: 0;
+}
+
+.portfolio .infoContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 100%;
+}
+
+.portfolio .infoContainer li {
+  width: 33%;
+  border-right: 1px solid black;
+}
+
+.portfolio .infoContainer li:last-of-type {
+  border: none;
+}
+
 .portfolio .infoContainer a {
   font-size: 1.8rem;
   padding: 10px;
-  border-bottom: 2px solid #fafafa;
-  margin: 0 20px;
-  width: 80px;
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+  border-radius: 5px;
+  background: #fafafa;
+  margin: 10px 10px;
+  width: calc(50% - 20px);
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.portfolio .infoContainer a:hover {
+  -webkit-box-shadow: 0 2px 2px 0 black;
+          box-shadow: 0 2px 2px 0 black;
+}
+
+.portfolio .infoContainer a:active {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .portfolio .projectContainer:hover .infoContainer {
@@ -855,32 +904,16 @@ section p {
           transition-delay: 0s;
 }
 
-.portfolio .projectOne .imgContainer {
-  background: radial-gradient(circle, #fe5e41 50%, transparent 50%);
-}
-
 .portfolio .projectOne .infoContainer {
   background: #fe5e41;
-}
-
-.portfolio .projectTwo .imgContainer {
-  background: radial-gradient(circle, #ff9f1c 50%, transparent 50%);
 }
 
 .portfolio .projectTwo .infoContainer {
   background: #ff9f1c;
 }
 
-.portfolio .projectThree .imgContainer {
-  background: radial-gradient(circle, #ffbf69 50%, transparent 50%);
-}
-
 .portfolio .projectThree .infoContainer {
   background: #ffbf69;
-}
-
-.portfolio .projectFour .imgContainer {
-  background: radial-gradient(circle, #44f0c2 50%, transparent 50%);
 }
 
 .portfolio .projectFour .infoContainer {
@@ -1472,10 +1505,8 @@ button i.fa-sun {
   }
   aside li {
     width: 20%;
-    -webkit-transition: -webkit-box-shadow 0.2s;
-    transition: -webkit-box-shadow 0.2s;
-    transition: box-shadow 0.2s;
-    transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
     height: 45px;
@@ -1496,10 +1527,11 @@ button i.fa-sun {
     top: 100%;
     left: 3px;
     width: calc(100% - 6px);
-    -webkit-transition: height 0.3s, top 0.3s;
-    transition: height 0.3s, top 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
     -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
+    border-radius: 5px 5px 0 0;
   }
   aside li:hover:not(.activeNav) {
     -webkit-box-shadow: none;
@@ -1510,15 +1542,15 @@ button i.fa-sun {
   }
   aside li.activeNav {
     color: black;
-    -webkit-transition: height 0.3s, margin-top 0.3s;
-    transition: height 0.3s, margin-top 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
     overflow-y: hidden;
   }
   aside li.activeNav:before {
     content: "";
     width: 80%;
-    bottom: 4px;
-    height: 4px;
+    bottom: 0px;
+    height: 2px;
     background: inherit;
     border-radius: 2px;
     z-index: 2;
@@ -1531,15 +1563,15 @@ button i.fa-sun {
     left: 3px;
     width: calc(100% - 6px);
     border-radius: 5px 5px 0 0;
-    -webkit-box-shadow: 0 0 2px 0 black;
-            box-shadow: 0 0 2px 0 black;
+    -webkit-box-shadow: 0 -2px 2px black;
+            box-shadow: 0 -2px 2px black;
   }
-  aside li:first-of-type.activeNav:after {
+  aside li:first-of-type:after {
     width: calc(100% - 3px);
     left: 0;
     border-radius: 0 5px 0 0;
   }
-  aside li:last-of-type.activeNav:after {
+  aside li:last-of-type:after {
     width: calc(100% - 3px);
     border-radius: 5px 0 0 0;
   }
@@ -1570,39 +1602,65 @@ button i.fa-sun {
     background: #19191b;
   }
   section h2 {
-    width: 80%;
-    text-align: center;
-    margin: 20px auto;
-    padding-left: 0;
-    color: #2e2e2e;
     position: relative;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 0;
+    font-size: 4rem;
+    border-bottom: 2px solid;
+    text-transform: uppercase;
   }
   section h2[class*="header"] {
     background: transparent;
   }
   section h2:after {
-    width: 100%;
-    content: " ";
     position: absolute;
     left: 0;
-    height: 5px;
-    bottom: -5px;
-    border-radius: 2px;
+    bottom: 0px;
+    opacity: 0.3;
+    font-size: 6rem;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  section h2[class*="1"] {
+    color: #fe5e41;
+    border-color: #fe5e41;
   }
   section h2[class*="1"]:after {
-    background: #fe5e41;
+    content: "about me";
+    color: #ce7f71;
+  }
+  section h2[class*="2"] {
+    color: #ff9f1c;
+    border-color: #ff9f1c;
   }
   section h2[class*="2"]:after {
-    background: #ff9f1c;
+    content: "portfolio";
+    color: #c69655;
+  }
+  section h2[class*="3"] {
+    color: #ffbf69;
+    border-color: #ffbf69;
   }
   section h2[class*="3"]:after {
-    background: #ffbf69;
+    content: "skills";
+    color: #daba8f;
+  }
+  section h2[class*="4"] {
+    color: #44f0c2;
+    border-color: #44f0c2;
   }
   section h2[class*="4"]:after {
-    background: #44f0c2;
+    content: "resume";
+    color: #77beab;
+  }
+  section h2[class*="5"] {
+    color: #6ea9f2;
+    border-color: #6ea9f2;
   }
   section h2[class*="5"]:after {
-    background: #6ea9f2;
+    content: "contact";
+    color: #96adcb;
   }
   section h2 .fas {
     display: none;
@@ -1635,18 +1693,103 @@ button i.fa-sun {
   section.aboutMe h3 {
     clear: both;
   }
-  section .portfolioContainer,
-  section.contact {
+  .portfolioContainer {
     margin-bottom: 0;
-  }
-  section.skills li {
-    width: 25%;
-    height: 30%;
   }
   .portfolio .projectContainer,
   .portfolio .imgContainer {
     -webkit-perspective: none;
             perspective: none;
+  }
+  .portfolio .projectContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .portfolio .projectContainer.projectOne {
+    background: #fe5e41;
+  }
+  .portfolio .projectContainer.projectTwo {
+    background: #ff9f1c;
+  }
+  .portfolio .projectContainer.projectThree {
+    background: #ffbf69;
+  }
+  .portfolio .projectContainer.projectFour {
+    background: #44f0c2;
+  }
+  .portfolio .projectContainer.projectTwo, .portfolio .projectContainer.projectFour {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .portfolio .projectContainer .infoContainer {
+    padding: 20px;
+    border-radius: 0;
+    width: 60%;
+  }
+  .portfolio .projectContainer .imgContainer {
+    background: transparent;
+    border-radius: 0;
+    width: 40%;
+  }
+  .portfolio .projectContainer .infoContainer,
+  .portfolio .projectContainer:hover .infoContainer {
+    -webkit-transform: none;
+            transform: none;
+    visibility: visible;
+    position: relative;
+  }
+  .portfolio .projectContainer:hover img {
+    -webkit-transform: none;
+            transform: none;
+  }
+  section.skills li {
+    width: calc(33.33% - 15px);
+    margin: 7.5px;
+    height: 50%;
+    border-radius: 5px;
+  }
+  section.skills li div {
+    border-radius: 5px;
+  }
+  section.skills li i {
+    font-size: calc(2rem + 4vw);
+  }
+  section.skills li img {
+    height: calc(2rem + 4vw);
+  }
+  section.skills h3 {
+    font-size: 2rem;
+  }
+  .resume h3 {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .resume h3 + .resumeInfo,
+  .resume h3.activeResume + .resumeInfo {
+    position: relative;
+    height: auto;
+  }
+  .resume h3 span {
+    display: none;
+  }
+  section.contact {
+    margin-bottom: 0;
   }
   footer {
     height: auto;
@@ -1708,5 +1851,12 @@ button i.fa-sun {
   footer .lightTheme.download,
   footer .darkTheme.download {
     border-radius: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  section.skills li {
+    width: calc(50% - 40px);
+    margin: 10px 20px;
   }
 }
