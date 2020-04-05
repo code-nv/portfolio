@@ -1048,7 +1048,6 @@ section p {
 
 .resume h3 {
   position: relative;
-  display: inline-block;
   width: calc(100% - 20px);
   padding: 10px 20px;
   font-size: 2rem;
@@ -1778,7 +1777,9 @@ button i.fa-sun {
   }
   .resume h3 {
     margin: 0 auto;
-    width: 80%;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    padding: 7.5px 20px;
   }
   .resume h3 + .resumeInfo,
   .resume h3.activeResume + .resumeInfo {
@@ -1787,6 +1788,19 @@ button i.fa-sun {
   }
   .resume h3 span {
     display: none;
+  }
+  .resume .resumeInfo > ul {
+    padding: 30px 0 30px 20px;
+  }
+  .resume h4 {
+    font-size: 2rem;
+  }
+  .resume h4 span {
+    font-size: 1.8rem;
+  }
+  .resume p {
+    font-size: 1.8rem;
+    line-height: 1.25;
   }
   section.contact {
     margin-bottom: 0;
