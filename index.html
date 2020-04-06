@@ -37,31 +37,37 @@
 				<div class="imgContainer">
 					<img src="./assets/profileZoom.png" alt="profile picture of Nick Reyno" />
 				</div>
+				<button class="hamburgerMenu">
+					<span class="srOnly">Menu</span>
+					<span class="bar barOne" aria-hidden="true"></span>
+					<span class="bar barTwo" aria-hidden="true"></span>
+					<span class="bar barThree" aria-hidden="true"></span>
+				</button>
 				<nav>
 					<ul class="mobileCollapse">
 						<li class="nav1 lightThemeAfter">
 							<a href="#aboutMe" class="aboutMeLink">
-								<span><i class="fas fa-address-card"></i></span>About Me</a
+								<span><i class="fas fa-address-card" aria-hidden="true"></i></span>About Me</a
 							>
 						</li>
 						<li class="nav2 lightThemeAfter">
 							<a href="#portfolio" class="portfolioLink">
-								<span><i class="fas fa-briefcase"></i></span>Portfolio</a
+								<span><i class="fas fa-briefcase" aria-hidden="true"></i></span>Portfolio</a
 							>
 						</li>
 						<li class="nav3 lightThemeAfter">
 							<a href="#skills" class="skillsLink">
-								<span><i class="fas fa-cog"></i></span>Skills</a
+								<span><i class="fas fa-cog" aria-hidden="true"></i></span>Skills</a
 							>
 						</li>
 						<li class="nav4 lightThemeAfter">
 							<a href="#resume" class="resumeLink">
-								<span><i class="fas fa-bars"></i></span>Resume</a
+								<span><i class="fas fa-bars"></i aria-hidden="true"></span>Resume</a
 							>
 						</li>
 						<li class="nav5 lightThemeAfter">
 							<a href="#contact" class="contactLink">
-								<span><i class="fas fa-envelope"></i></span>Contact</a
+								<span><i class="fas fa-envelope" aria-hidden="true"></i></span>Contact</a
 							>
 						</li>
 					</ul>
@@ -69,19 +75,19 @@
 			</aside>
 			<footer class="buttonContainer lightTheme">
 				<button class="toggle lightTheme">
-					<i class="fas fa-sun hide"></i>
-					<i class="fas fa-moon show"></i>
+					<i class="fas fa-sun hide" aria-hidden="true"><span class="srOnly">Toggle from light more do dark mode</span></i>
+					<i class="fas fa-moon show" aria-hidden="true"><span class="srOnly"> toggle from dark mode to light mode</span></i>
 				</button>
 				<div class="socialContainer">
-					<button class="social twitter lightTheme">
-						<i class="fab fa-twitter"></i>
-					</button>
-					<button class="social linkedIn lightTheme">
-						<i class="target fab fa-linkedin-in"></i>
-					</button>
-					<button class="social facebook lightTheme">
-						<i class="fab fa-facebook-f"></i>
-					</button>
+					<a class="social twitter lightTheme">
+						<i class="fab fa-twitter" aria-hidden="true"><span class="srOnly">link to my twitter</span></i>
+					</a>
+					<a class="social linkedIn lightTheme">
+						<i class="target fab fa-linkedin-in" aria-hidden="true"> <span class="srOnly">link to my linked in</span> </i>
+					</a>
+					<a class="social facebook lightTheme">
+						<i class="fab fa-facebook-f" aria-hidden="true"><span class="srOnly">link to my facebook</span></i>
+					</a>
 				</div>
 				<div class="utilitiesContainer">
 					<button class="print lightTheme">

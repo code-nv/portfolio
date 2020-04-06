@@ -4,20 +4,20 @@ footer {
 	margin-top: 10vh;
 	position: fixed;
 	right: 10%;
-    z-index: 2;
+	z-index: 2;
 
-    &.lightTheme,
-    &.darkTheme {
-        background: transparent;
-        box-shadow: none;
-    }
-
+	&.lightTheme,
+	&.darkTheme {
+		background: transparent;
+		box-shadow: none;
+	}
 
 	div {
 		@include flexCol(space-between, center);
 	}
 }
-button {
+button,
+.social {
 	width: 50px;
 	height: 50px;
 	font-size: 1.4rem;
@@ -34,7 +34,17 @@ button {
 	}
 }
 
-button:active {
+.social {
+	display: inline-block;
+	@include flexRow(center, center);
+
+	&.lightTheme {
+		background: $color5;
+	}
+}
+
+button:active,
+.social:active {
 	box-shadow: none;
 	transform: translateY(2.5px);
 }
@@ -51,17 +61,14 @@ button:active {
 	font-size: 1.7rem;
 }
 
-button.social {
-	background: $color5;
-}
-
 .lightTheme.download,
 .darkTheme.download {
 	border-radius: 0 0 20px 0;
 	bottom: 10vh;
 }
 
-button:hover {
+button:hover,
+.social:hover {
 	font-size: 1.7rem;
 	i.fa-sun,
 	&.twitter {
@@ -72,7 +79,8 @@ button:hover {
 	}
 }
 
-button i {
+button i,
+.social i {
 	transition: font-size 0.4s;
 
 	&.show {

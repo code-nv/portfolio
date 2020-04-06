@@ -1,44 +1,43 @@
 app = {};
 // let dynamicOffset = 0.05 * window.innerHeight;
 
-app.anchorNav = function(linkClicked) {
+app.anchorNav = function (linkClicked) {
 	let anchor = $(linkClicked).attr("href");
-	console.log(anchor);
 	let scrollParent;
 	window.innerWidth <= 1025 ? (scrollParent = "html") : (scrollParent = "main");
 
 	$.smoothScroll({
-		beforeScroll: function() {
+		beforeScroll: function () {
 			app.preScroll();
 		},
-		afterScroll: function() {
+		afterScroll: function () {
 			app.postScroll();
 		},
 		scrollElement: $(scrollParent),
-		scrollTarget: anchor
+		scrollTarget: anchor,
 	});
 	return false;
 };
 
-app.preScroll = function() {
+app.preScroll = function () {
 	$("main").css("scroll-snap-type", "none");
 };
 
-app.postScroll = function() {
+app.postScroll = function () {
 	$("main").css("scroll-snap-type", "y mandatory");
 };
 
-app.mobileNavActive = function() {
+app.mobileNavActive = function () {
 	let scrolled = $(window).scrollTop();
 	let windowHeight = 0.75 * window.innerHeight;
 	app.checkCurrentMobile(scrolled, windowHeight);
-	$(window).on("scroll resize", function() {
+	$(window).on("scroll resize", function () {
 		scrolled = $(window).scrollTop();
 		app.checkCurrentMobile(scrolled, windowHeight);
 	});
 };
 
-app.checkCurrentMobile = function(scrolled, windowHeight) {
+app.checkCurrentMobile = function (scrolled, windowHeight) {
 	$("li").removeClass("activeNav");
 	let a = $(".aboutMe").offset();
 	let b = $(".portfolio").offset();
@@ -55,9 +54,21 @@ app.checkCurrentMobile = function(scrolled, windowHeight) {
 	} else if (scrolled >= 0) {
 		$(".nav1").addClass("activeNav");
 	}
-}
+};
 
-$(`button.toggle`).on("click", function() {
+app.showMobile = function () {
+	$("nav").toggleClass("show");
+	app.changeBackground('nav li.activeNav');
+};
+
+app.changeBackground = function (activeLink) {
+	// if (window.innerWidth < 620 ){
+	// 	const activeColor = $(activeLink).css('background-color');
+	// 	$('nav').css('background', activeColor);
+	// } else {null}
+};
+
+$(`button.toggle`).on("click", function () {
 	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
 	$("body").toggleClass("lightThemeBody darkThemeBody");
 	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
@@ -76,7 +87,7 @@ $(`button.toggle`).on("click", function() {
 	}
 });
 
-app.navActive = function() {
+app.navActive = function () {
 	if (window.innerWidth <= 1025) {
 		app.mobileNavActive();
 	} else {
@@ -96,31 +107,39 @@ app.navActive = function() {
 	}
 };
 
-app.init = function() {
+app.init = function () {
 	app.navActive();
 
-	$("aside a").on("click", function(e) {
+	$("aside a").on("click", function (e) {
 		e.preventDefault();
 		app.anchorNav(this);
 	});
 
-	$("main").on("scroll", function() {
+	$("main").on("scroll", function () {
 		setTimeout(() => {
 			app.navActive();
 		}, 300);
 	});
 
-	$(window).on("resize", function() {
+	$(window).on("resize", function () {
 		app.anchorNav(".activeNav a");
 		app.navActive();
 	});
 
-	$("h3").on("click", function() {
+	$("h3").on("click", function () {
 		$(".resume h3").removeClass("activeResume");
 		$(this).addClass("activeResume");
 	});
+
+	$("button.hamburgerMenu").on("click", function () {
+		app.showMobile();
+	});
+
+	$("nav li").on("click", function () {
+		app.changeBackground(this);
+	});
 };
 
-$(function() {
+$(function () {
 	app.init();
 });

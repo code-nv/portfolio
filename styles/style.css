@@ -480,6 +480,10 @@ aside span {
   margin: 5px;
 }
 
+aside .hamburgerMenu {
+  display: none;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1307,7 +1311,8 @@ footer div {
           align-items: center;
 }
 
-button {
+button,
+.social {
   width: 50px;
   height: 50px;
   font-size: 1.4rem;
@@ -1319,18 +1324,42 @@ button {
   transition: box-shadow 0.2s, transform 0.2s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
 }
 
-button.lightTheme {
+button.lightTheme,
+.social.lightTheme {
   -webkit-box-shadow: 0 0 10px 2px #ccdce3;
           box-shadow: 0 0 10px 2px #ccdce3;
   background: #2e2e2e;
 }
 
-button.darkTheme {
+button.darkTheme,
+.social.darkTheme {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-button:active {
+.social {
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social.lightTheme {
+  background: #6ea9f2;
+}
+
+button:active,
+.social:active {
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transform: translateY(2.5px);
@@ -1349,42 +1378,46 @@ button:active {
   font-size: 1.7rem;
 }
 
-button.social {
-  background: #6ea9f2;
-}
-
 .lightTheme.download,
 .darkTheme.download {
   border-radius: 0 0 20px 0;
   bottom: 10vh;
 }
 
-button:hover {
+button:hover,
+.social:hover {
   font-size: 1.7rem;
 }
 
-button:hover i.fa-sun, button:hover.twitter {
+button:hover i.fa-sun, button:hover.twitter,
+.social:hover i.fa-sun,
+.social:hover.twitter {
   font-size: 2rem;
 }
 
-button:hover.linkedIn {
+button:hover.linkedIn,
+.social:hover.linkedIn {
   font-size: 2rem;
 }
 
-button i {
+button i,
+.social i {
   -webkit-transition: font-size 0.4s;
   transition: font-size 0.4s;
 }
 
-button i.show {
+button i.show,
+.social i.show {
   display: inline;
 }
 
-button i.hide {
+button i.hide,
+.social i.hide {
   display: none;
 }
 
-button i.fa-sun {
+button i.fa-sun,
+.social i.fa-sun {
   font-size: 1.6rem;
 }
 
@@ -1591,8 +1624,7 @@ button i.fa-sun {
             box-shadow: none;
   }
   section {
-    padding-top: 64.5px;
-    padding-bottom: 54.5px;
+    padding: 60px 0;
     width: 100%;
     margin: 0;
     height: auto;
@@ -1775,6 +1807,9 @@ button i.fa-sun {
   section.skills h3 {
     font-size: 2rem;
   }
+  .resume {
+    padding: 60px 0;
+  }
   .resume h3 {
     margin: 0 auto;
     border-radius: 5px;
@@ -1803,7 +1838,7 @@ button i.fa-sun {
     line-height: 1.25;
   }
   section.contact {
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
   footer {
     height: auto;
@@ -1815,7 +1850,7 @@ button i.fa-sun {
     width: 100%;
     left: 0;
     bottom: 0;
-    margin: 0;
+    margin-top: 0;
     right: initial;
   }
   footer.lightTheme {
@@ -1853,8 +1888,11 @@ button i.fa-sun {
   footer button:hover {
     font-size: 2rem;
   }
-  footer button.social {
+  footer .social,
+  footer .social.lightTheme {
     background: inherit;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   footer .utilitiesContainer {
     width: 240px;
@@ -1869,6 +1907,60 @@ button i.fa-sun {
 }
 
 @media (max-width: 620px) {
+  aside nav {
+    display: none;
+  }
+  aside ul {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  aside li {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 5px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  aside li.activeNav:after {
+    display: none;
+  }
+  aside li:last-of-type {
+    border-radius: 5px;
+  }
+  aside nav.show {
+    display: block;
+    height: 100vh;
+  }
+  button.hamburgerMenu {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    display: block;
+    z-index: 2;
+    background: none;
+    font-size: 1rem;
+    display: block;
+  }
+  button.hamburgerMenu:hover {
+    font-size: 1rem;
+  }
+  button.hamburgerMenu .bar {
+    width: 80%;
+    height: 5px;
+    margin: 0 auto;
+    background: #2e2e2e;
+    border-radius: 5px;
+  }
   section.skills li {
     width: calc(50% - 40px);
     margin: 10px 20px;

@@ -204,8 +204,10 @@
 	}
 
 	section {
-		padding-top: 64.5px;
-		padding-bottom: 54.5px;
+		// padding-top: 64.5px;
+		// padding-bottom: 54.5px;
+
+		padding: 60px 0;
 		width: 100%;
 		margin: 0;
 		height: auto;
@@ -388,6 +390,7 @@
 	}
 
 	.resume {
+		padding: 60px 0;
 		h3 {
 			margin: 0 auto;
 			border-radius: 5px;
@@ -421,7 +424,7 @@
 	}
 
 	section.contact {
-		margin-bottom: 0;
+		margin-bottom: 20px;
 	}
 	footer {
 		height: auto;
@@ -430,7 +433,7 @@
 		width: 100%;
 		left: 0;
 		bottom: 0;
-		margin: 0;
+		margin-top: 0;
 		right: initial;
 
 		&.lightTheme {
@@ -468,8 +471,10 @@
 			}
 		}
 
-		button.social {
+		.social,
+		.social.lightTheme {
 			background: inherit;
+			box-shadow: none;
 		}
 
 		.utilitiesContainer {
@@ -485,6 +490,62 @@
 }
 
 @include maxWidth620 {
+	aside {
+		nav {
+			display: none;
+		}
+
+		ul {
+			height: 100%;
+			width: 80%;
+			margin: 0 auto;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		li {
+			box-shadow: none;
+			border-radius: 5px;
+			width: 100%;
+			margin: 20px 0;
+			&.activeNav:after {
+				display: none;
+			}
+			&:last-of-type {
+				border-radius: 5px;
+			}
+		}
+
+		nav.show {
+			display: block;
+			height: 100vh;
+		}
+	}
+
+	button.hamburgerMenu {
+		position: fixed;
+		top: 20px;
+		right: 10px;
+		height: 50px;
+		width: 50px;
+		display: block;
+		z-index: 2;
+		background: none;
+		font-size: 1rem;
+		display: block;
+
+		&:hover {
+			font-size: 1rem;
+		}
+
+		.bar {
+			width: 80%;
+			height: 5px;
+			margin: 0 auto;
+			background: $black;
+			border-radius: 5px;
+		}
+	}
 	section.skills {
 		li {
 			width: calc(50% - 40px);
