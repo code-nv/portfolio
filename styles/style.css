@@ -683,8 +683,6 @@ section p {
   text-align: left;
   width: 100%;
   margin: 20px auto;
-  border-bottom: 1px solid grey;
-  padding-bottom: 20px;
 }
 
 .aboutMe .blurb span {
@@ -695,6 +693,8 @@ section p {
 .aboutMe h3 {
   font-size: 1.8rem;
   margin: 20px auto 10px;
+  border-top: 1px solid grey;
+  padding-top: 20px;
 }
 
 .aboutMe ul {
@@ -1861,7 +1861,6 @@ button i.fa-sun,
   }
   footer .toggle {
     position: fixed;
-    bottom: 0;
     right: 0;
     border-radius: 0;
   }
@@ -1907,6 +1906,9 @@ button i.fa-sun,
 }
 
 @media (max-width: 620px) {
+  header .decoration {
+    height: 5px;
+  }
   aside nav {
     display: none;
   }
@@ -1960,6 +1962,22 @@ button i.fa-sun,
     margin: 0 auto;
     background: #2e2e2e;
     border-radius: 5px;
+  }
+  section {
+    padding: 30px 0;
+  }
+  section.aboutMe h1 {
+    float: right;
+    margin: 57.25px 0;
+    width: calc(100% - 170px);
+  }
+  section.aboutMe .imgContainerMobile {
+    width: 150px;
+  }
+  section.aboutMe .blurb {
+    float: none;
+    clear: both;
+    width: 100%;
   }
   section.skills li {
     width: calc(50% - 40px);

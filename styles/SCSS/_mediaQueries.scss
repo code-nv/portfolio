@@ -445,7 +445,7 @@
 
 		.toggle {
 			position: fixed;
-			bottom: 0;
+			// bottom: 0;
 			right: 0;
 			border-radius: 0;
 		}
@@ -490,6 +490,11 @@
 }
 
 @include maxWidth620 {
+	header{
+		.decoration {
+			height: 5px;
+		}
+	}
 	aside {
 		nav {
 			display: none;
@@ -545,6 +550,24 @@
 			background: $black;
 			border-radius: 5px;
 		}
+	}
+section {
+	padding: 30px 0;
+}
+	section.aboutMe {
+		h1 {
+			float: right;
+			margin: 57.25px 0;
+			width: calc(100% - 170px);
+		}
+.imgContainerMobile {
+	width: 150px;
+}
+.blurb {
+	float: none;
+	clear: both;
+	width: 100%;
+}
 	}
 	section.skills {
 		li {
