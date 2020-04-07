@@ -41,6 +41,9 @@
 			box-shadow: none;
 			position: relative;
 		}
+		&.darkTheme li {
+			background: inherit;
+		}
 	}
 }
 
@@ -204,9 +207,6 @@
 	}
 
 	section {
-		// padding-top: 64.5px;
-		// padding-bottom: 54.5px;
-
 		padding: 60px 0;
 		width: 100%;
 		margin: 0;
@@ -326,6 +326,7 @@
 			width: 100%;
 			height: auto;
 			border-radius: 5px;
+			overflow: hidden;
 
 			&.projectOne {
 				background: $color1;
@@ -366,6 +367,12 @@
 			&:hover img {
 				transform: none;
 			}
+		}
+
+		h3,
+		p,
+		ul {
+			margin: 10px 0;
 		}
 	}
 	section.skills {
@@ -445,7 +452,6 @@
 
 		.toggle {
 			position: fixed;
-			// bottom: 0;
 			right: 0;
 			border-radius: 0;
 		}
@@ -475,6 +481,7 @@
 		.social.lightTheme {
 			background: inherit;
 			box-shadow: none;
+			font-size: 2rem;
 		}
 
 		.utilitiesContainer {
@@ -490,7 +497,7 @@
 }
 
 @include maxWidth620 {
-	header{
+	header {
 		.decoration {
 			height: 5px;
 		}
@@ -551,28 +558,88 @@
 			border-radius: 5px;
 		}
 	}
-section {
-	padding: 30px 0;
-}
+	section {
+		padding: 30px 0;
+	}
+
 	section.aboutMe {
 		h1 {
 			float: right;
 			margin: 57.25px 0;
 			width: calc(100% - 170px);
 		}
-.imgContainerMobile {
-	width: 150px;
-}
-.blurb {
-	float: none;
-	clear: both;
-	width: 100%;
-}
+		.imgContainerMobile {
+			width: 150px;
+		}
+		.blurb {
+			float: none;
+			clear: both;
+			width: 100%;
+		}
 	}
+
+	.portfolio {
+		.projectContainer {
+			display: block;
+
+			.imgContainer {
+				margin: 0 auto;
+				width: 300px;
+			}
+
+			.infoContainer {
+				width: 80%;
+				margin: 0 auto;
+				padding: 0 0 20px 0;
+			}
+		}
+	}
+
 	section.skills {
+		ul {
+			width: 80%;
+			margin: 0 auto;
+		}
 		li {
 			width: calc(50% - 40px);
-			margin: 10px 20px;
+			margin: 10px;
+			padding: 0;
+
+			div {
+				padding: 20px 0;
+			}
+		}
+	}
+}
+
+@include maxWidth400 {
+	section.aboutMe {
+		.imgContainerMobile {
+			float: none;
+			margin: 10px auto;
+		}
+		h1 {
+			text-align: center;
+			float: none;
+			margin: 10px;
+			width: 100%;
+		}
+		h3 {
+			text-align: center;
+			font-size: 2rem;
+		}
+		ul {
+			margin: 0 auto;
+			width: 80%;
+
+			li {
+				width: 100%;
+				text-align: center;
+				font-size: 1.8rem;
+			}
+			i {
+				display: none;
+			}
 		}
 	}
 }

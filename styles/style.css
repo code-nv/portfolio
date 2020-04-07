@@ -1464,6 +1464,9 @@ button i.fa-sun,
             box-shadow: none;
     position: relative;
   }
+  section.skills.darkTheme li {
+    background: inherit;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -1749,6 +1752,7 @@ button i.fa-sun,
     width: 100%;
     height: auto;
     border-radius: 5px;
+    overflow: hidden;
   }
   .portfolio .projectContainer.projectOne {
     background: #fe5e41;
@@ -1788,6 +1792,11 @@ button i.fa-sun,
   .portfolio .projectContainer:hover img {
     -webkit-transform: none;
             transform: none;
+  }
+  .portfolio h3,
+  .portfolio p,
+  .portfolio ul {
+    margin: 10px 0;
   }
   section.skills li {
     width: calc(33.33% - 15px);
@@ -1892,6 +1901,7 @@ button i.fa-sun,
     background: inherit;
     -webkit-box-shadow: none;
             box-shadow: none;
+    font-size: 2rem;
   }
   footer .utilitiesContainer {
     width: 240px;
@@ -1979,8 +1989,57 @@ button i.fa-sun,
     clear: both;
     width: 100%;
   }
+  .portfolio .projectContainer {
+    display: block;
+  }
+  .portfolio .projectContainer .imgContainer {
+    margin: 0 auto;
+    width: 300px;
+  }
+  .portfolio .projectContainer .infoContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+  }
+  section.skills ul {
+    width: 80%;
+    margin: 0 auto;
+  }
   section.skills li {
     width: calc(50% - 40px);
-    margin: 10px 20px;
+    margin: 10px;
+    padding: 0;
+  }
+  section.skills li div {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  section.aboutMe .imgContainerMobile {
+    float: none;
+    margin: 10px auto;
+  }
+  section.aboutMe h1 {
+    text-align: center;
+    float: none;
+    margin: 10px;
+    width: 100%;
+  }
+  section.aboutMe h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  section.aboutMe ul {
+    margin: 0 auto;
+    width: 80%;
+  }
+  section.aboutMe ul li {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  section.aboutMe ul i {
+    display: none;
   }
 }

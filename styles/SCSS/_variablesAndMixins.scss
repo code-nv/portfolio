@@ -58,8 +58,8 @@ $mainStack: "Roboto", sans-serif;
 	}
 }
 
-@mixin maxWidth500 {
-	@media (max-width: 500px) {
+@mixin maxWidth400 {
+	@media (max-width: 400px) {
 		@content;
 	}
 }
