@@ -935,8 +935,8 @@ section p {
   visibility: visible;
 }
 
-.portfolio .projectContainer:hover .imgContainer
-.projectContainer:focus .imgContainer,
+.portfolio .projectContainer:hover .imgContainer,
+.portfolio .projectContainer:focus .imgContainer,
 .portfolio .projectContainer:focus-within .imgContainer {
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);

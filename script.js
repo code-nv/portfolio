@@ -2,7 +2,7 @@ app = {};
 
 // scroll to appropriate section
 app.anchorNav = function (linkClicked) {
-	let anchor = $(linkClicked).attr("href");
+	anchor = $(linkClicked).attr("href");
 	let scrollParent;
 	window.innerWidth <= 1025 ? (scrollParent = "html") : (scrollParent = "main");
 
@@ -44,6 +44,7 @@ app.navActive = function () {
 		app.mobileNavActive();
 	} else {
 		let scrolled = $("main").scrollTop();
+		console.log(scrolled + 'end')
 		$("li").removeClass("activeNav");
 		if (scrolled > 3.5 * window.innerHeight) {
 			$(".nav5").addClass("activeNav");
@@ -58,6 +59,13 @@ app.navActive = function () {
 		}
 	}
 };
+
+app.safariScrollFix = function () {
+	window.innerWidth <= 1025 ? (scrollParent = "html") : (scrollParent = "main");
+	$("main").scrollTop(0);
+	$("li").removeClass("activeNav");
+	$(".nav1").addClass("activeNav");
+}
 
 // determine which nav should display active stylings on mobile
 app.checkCurrentMobile = function (scrolled, windowHeight) {
@@ -101,6 +109,7 @@ $(`button.toggle`).on("click", function () {
 });
 
 app.init = function () {
+	app.safariScrollFix();
 	app.navActive();
 
 	$("aside a").on("click", function (e) {

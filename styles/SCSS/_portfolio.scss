@@ -99,7 +99,7 @@
 		visibility: visible;
 	}
 
-	.projectContainer:hover .imgContainer
+	.projectContainer:hover .imgContainer,
 	.projectContainer:focus .imgContainer,
 	.projectContainer:focus-within .imgContainer {
 		transform: rotateX(90deg);
