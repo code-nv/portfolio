@@ -70,20 +70,15 @@ app.changeBackground = function (activeLink) {
 
 $(`button.toggle`).on("click", function () {
 	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
-	$("body").toggleClass("lightThemeBody darkThemeBody");
 	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
 	$(".toggle i").toggleClass("hide show");
 
-	if ($("body").hasClass("darkThemeBody") === true) {
+	if ($("body").hasClass("darkTheme") === true) {
 		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
-		$("p").css("color", "#AAAAAA");
-		$("section li, h4").css("color", "#eee");
-		$("h4 + p").removeAttr("style");
 	} else {
 		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
 		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
-		$("p, section li, h4").removeAttr("style");
 	}
 });
 

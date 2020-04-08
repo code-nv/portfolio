@@ -53,14 +53,22 @@ body {
 	background: #212121;
 	box-shadow: none;
 	transition: background 0.5s, box-shadow 0.5s;
+	p {
+		color: #aaa;
+	}
+
+	section li,
+	h4 {
+		color: #eee;
+	}
 }
 
-.lightThemeBody {
+body.lightTheme {
 	background: $lightBackground;
 	transition: background 0.5s;
 }
 
-.darkThemeBody {
+body.darkTheme {
 	background: $darkBackground;
 	transition: background 0.5s;
 }

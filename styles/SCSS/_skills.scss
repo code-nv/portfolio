@@ -1,6 +1,6 @@
 .skills {
 	ul {
-		margin: 20px;
+		margin: 10px;
 		@include flexRow(center, center);
 		flex-wrap: wrap;
 		text-align: center;
@@ -24,47 +24,62 @@
 	li {
 		width: calc(20% - 10px);
 		margin: 5px;
-		padding: 10px;
+		padding: 0px;
 		height: 40%;
 		transition: background 0.5s, box-shadow 0.5s;
 
 		div {
-			width: 100%;
+			width: 85%;
 			padding: 10px 0;
-			margin-bottom: 10px;
+			margin: 7.5%;
 		}
 
 		i {
-			font-size: 7rem;
+			font-size: 6rem;
 			background: transparent;
 			color: $white;
+			text-shadow: 1px 1px 1px black;
 		}
 
 		img {
-			height: 70px;
+			height: 60px;
 			width: auto;
 			margin: 0 auto;
+			filter: drop-shadow(1px 1px 1px black);
 		}
 	}
 	h3 {
-		font-size: 1.6rem;
+		font-size: 1.7rem;
 		background: transparent;
-		text-shadow: 0px 0px 1px #ccdce3;
+		text-shadow: 1px 1px 1px black;
+		color: $white;
+	}
 
-		&.skill1 {
-			color: $color1;
+	&.darkTheme {
+		li {
+			i {
+				text-shadow: none;
+			}
+			img {
+				filter: none;
+			}
 		}
-		&.skill2 {
-			color: $color2;
-		}
-		&.skill3 {
-			color: $color3;
-		}
-		&.skill4 {
-			color: $color4;
-		}
-		&.skill5 {
-			color: $color5;
+		h3 {
+			&.skill1 {
+				color: $color1;
+			}
+			&.skill2 {
+				color: $color2;
+			}
+			&.skill3 {
+				color: $color3;
+			}
+			&.skill4 {
+				color: $color4;
+			}
+			&.skill5 {
+				color: $color5;
+			}
 		}
 	}
 }

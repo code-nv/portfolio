@@ -24,22 +24,26 @@
 		width: calc(80%);
 	}
 	section.skills {
+		div {
+			width: 100%;
+			margin:0 0 5px;
+		}
 		ul {
-			margin: 0;
+			margin: 0 auto;
+			width: calc(100% - 20px);
 		}
 		li {
-			width: 20%;
-			margin: 5px 0;
+			@include flexCol(space-evenly, center);
+			width: calc(20% - 20px);
+			margin: 5px 10px;
+			padding: 0;
+
 			i {
 				font-size: calc(1rem + 4vw);
 			}
 			img {
 				height: calc(1rem + 4vw);
 			}
-		}
-		&.lightTheme li {
-			box-shadow: none;
-			position: relative;
 		}
 		&.darkTheme li {
 			background: inherit;
@@ -84,7 +88,7 @@
 
 		&.darkTheme {
 			nav {
-				background: $darkBackground;
+				background: #212121;
 			}
 
 			.activeNav,
@@ -137,7 +141,6 @@
 				top: 100%;
 				left: 3px;
 				width: calc(100% - 6px);
-				// transition: height 0.3s, top 0.3s;
 				transition: all 0.3s;
 				transition-timing-function: linear;
 				border-radius: 5px 5px 0 0;
@@ -152,7 +155,6 @@
 			}
 			&.activeNav {
 				color: black;
-				// transition: height 0.3s, margin-top 0.3s;
 				transition: all 0.3s;
 				overflow-y: hidden;
 
@@ -202,7 +204,7 @@
 		box-shadow: 0 0 10px 5px #ccdce3;
 	}
 
-	.darkThemeBody main {
+	.darkTheme main {
 		box-shadow: none;
 	}
 
@@ -212,7 +214,7 @@
 		margin: 0;
 		height: auto;
 		&.darkTheme {
-			background: $darkBackground;
+			background: #212121;
 		}
 
 		h2 {
