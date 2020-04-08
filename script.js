@@ -1,6 +1,6 @@
 app = {};
-// let dynamicOffset = 0.05 * window.innerHeight;
 
+// scroll to appropriate section
 app.anchorNav = function (linkClicked) {
 	let anchor = $(linkClicked).attr("href");
 	let scrollParent;
@@ -27,6 +27,7 @@ app.postScroll = function () {
 	$("main").css("scroll-snap-type", "y mandatory");
 };
 
+// due to styling, scroll parents need to be altered
 app.mobileNavActive = function () {
 	let scrolled = $(window).scrollTop();
 	let windowHeight = 0.75 * window.innerHeight;
@@ -37,51 +38,7 @@ app.mobileNavActive = function () {
 	});
 };
 
-app.checkCurrentMobile = function (scrolled, windowHeight) {
-	$("li").removeClass("activeNav");
-	let a = $(".aboutMe").offset();
-	let b = $(".portfolio").offset();
-	let c = $(".skills").offset();
-	let d = $(".resume").offset();
-	if (scrolled >= d.top + 0.5 * windowHeight) {
-		$(".nav5").addClass("activeNav");
-	} else if (scrolled >= c.top + windowHeight) {
-		$(".nav4").addClass("activeNav");
-	} else if (scrolled >= b.top + windowHeight) {
-		$(".nav3").addClass("activeNav");
-	} else if (scrolled >= a.top + windowHeight) {
-		$(".nav2").addClass("activeNav");
-	} else if (scrolled >= 0) {
-		$(".nav1").addClass("activeNav");
-	}
-};
-
-app.showMobile = function () {
-	$("nav").toggleClass("show");
-	app.changeBackground('nav li.activeNav');
-};
-
-app.changeBackground = function (activeLink) {
-	// if (window.innerWidth < 620 ){
-	// 	const activeColor = $(activeLink).css('background-color');
-	// 	$('nav').css('background', activeColor);
-	// } else {null}
-};
-
-$(`button.toggle`).on("click", function () {
-	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
-	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
-	$(".toggle i").toggleClass("hide show");
-
-	if ($("body").hasClass("darkTheme") === true) {
-		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
-		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
-	} else {
-		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
-		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
-	}
-});
-
+// determine which nav should display active stylings on desktop
 app.navActive = function () {
 	if (window.innerWidth <= 1025) {
 		app.mobileNavActive();
@@ -102,6 +59,47 @@ app.navActive = function () {
 	}
 };
 
+// determine which nav should display active stylings on mobile
+app.checkCurrentMobile = function (scrolled, windowHeight) {
+	$("li").removeClass("activeNav");
+	let a = $(".aboutMe").offset();
+	let b = $(".portfolio").offset();
+	let c = $(".skills").offset();
+	let d = $(".resume").offset();
+	if (scrolled >= d.top + 0.5 * windowHeight) {
+		$(".nav5").addClass("activeNav");
+	} else if (scrolled >= c.top + windowHeight) {
+		$(".nav4").addClass("activeNav");
+	} else if (scrolled >= b.top + windowHeight) {
+		$(".nav3").addClass("activeNav");
+	} else if (scrolled >= a.top + windowHeight) {
+		$(".nav2").addClass("activeNav");
+	} else if (scrolled >= 0) {
+		$(".nav1").addClass("activeNav");
+	}
+};
+
+// hamburger menu toggle
+app.showMobile = function () {
+	$("nav").toggleClass("show");
+	app.changeBackground('nav li.activeNav');
+};
+
+// dark mode toggle
+$(`button.toggle`).on("click", function () {
+	$(".lightTheme, .darkTheme").toggleClass("darkTheme lightTheme");
+	$("nav li").toggleClass("lightThemeAfter darkThemeAfter");
+	$(".toggle i").toggleClass("hide show");
+
+	if ($("body").hasClass("darkTheme") === true) {
+		$(".firebaseSVG").attr("src", "./assets/firebaseDarkMode.svg");
+		$(".responsiveSVG").attr("src", "./assets/responsiveDesignDarkMode.svg");
+	} else {
+		$(".firebaseSVG").attr("src", "./assets/firebase.svg");
+		$(".responsiveSVG").attr("src", "./assets/responsiveDesign.svg");
+	}
+});
+
 app.init = function () {
 	app.navActive();
 
@@ -121,7 +119,7 @@ app.init = function () {
 		app.navActive();
 	});
 
-	$("h3").on("click", function () {
+	$(".resume h3").on("click, focus", function () {
 		$(".resume h3").removeClass("activeResume");
 		$(this).addClass("activeResume");
 	});
@@ -138,3 +136,57 @@ app.init = function () {
 $(function () {
 	app.init();
 });
+
+app.changeBackground = function (activeLink) {
+	// if (window.innerWidth < 620 ){
+	// 	const activeColor = $(activeLink).css('background-color');
+	// 	$('nav').css('background', activeColor);
+	// } else {null}
+};
+
+
+// // emailForm redirectconst $form = $('form');
+// const $name = $('#name');
+// const $email = $('#email');
+// const $message = $('#message')
+// const emailApp = {}
+// $form.on('submit', (e) => {
+//     e.preventDefault();
+//     if ($name.val() === '' || $email.val() === '' || $message.val() === '') {
+//         swal({
+//             icon: 'error',
+//             title: 'Sorry!',
+//             text: 'Please leave your name, email and message so I can get back to you!'
+//         })
+//     } else {
+//         emailApp.postEmail();
+//         emailApp.clearFields();
+//         swal({
+//             icon: 'success',
+//             buttons: false,
+//             timer: 1850,
+//             text: 'Thank you! I will respond as soon as possible!'
+//         })
+//     }
+// })
+// emailApp.clearFields = () => {
+//     $name.val('');
+//     $email.val('');
+//     $message.val('');
+// }
+// emailApp.postEmail = () => {
+//     $.ajax({
+//         url: 'https://formspree.io/xjvevydo',
+//         method: 'POST',
+//         data: {
+//             email: $email.val(),
+//             name: $name.val(),
+//             message: $message.val(),
+//         },
+//         dataType: 'json'
+//     })
+// }
+// emailApp.init = () => {
+//     emailApp.clearFields();
+// }
+// emailApp.init();

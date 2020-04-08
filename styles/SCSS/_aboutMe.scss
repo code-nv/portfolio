@@ -9,7 +9,7 @@
 		padding: 0 20px 20px;
 	}
 	h1 {
-		font-size: 3rem;
+		font-size: 3.5rem;
 		margin: 20px 0;
 		text-align: center;
 	}
@@ -26,10 +26,12 @@
 	}
 
 	h3 {
-		font-size: 1.8rem;
+		font-size: 2.5rem;
 		margin: 20px auto 10px;
 		border-top: 1px solid grey;
-		padding-top:20px;
+		padding-top: 20px;
+		text-align: center;
+		color: $color5;
 	}
 
 	ul {
@@ -41,9 +43,18 @@
 		li {
 			width: calc(50% - 20px);
 			margin: 5px 10px 5px 0;
+			color: #414141;
+			font-size: 2rem;
+			&:nth-of-type(odd) {
+				text-align: right;
+				i {
+					display: none;
+				}
+			}
 		}
 		i {
-			margin-right: 5px;
+			margin-right: 10px;
+			color: $color5;
 		}
 
 		span:nth-child(odd) {

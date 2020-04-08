@@ -15,17 +15,14 @@
 		perspective: 1000px;
 		background: transparent;
 
-		img {
-			transition: all 0.3s linear;
-			transition-delay: 0.3s;
-			border-radius: 5px;
-		}
 	}
 	.imgContainer {
 		position: relative;
 		height: 100%;
-		perspective: 1000px;
-		background:transparent;
+		transition: all 0.3s linear;
+		transition-delay: 0.3s;
+		padding: 20px;
+		border-radius: 5px;
 	}
 
 	.infoContainer {
@@ -75,32 +72,36 @@
 		a {
 			font-size: 1.8rem;
 			padding: 10px;
-			box-shadow: 0px 0px 2px black;
+			box-shadow: 0px 0px 1px #8f8f8f;
+			border-bottom: 1px solid #8f8f8f;
 			border-radius: 5px;
 			background:$white;
 			margin: 10px 10px;
 			width: calc(50% - 20px);
-			transition: box-shadow 0.2s;
-			&:hover {
-				box-shadow: 0 2px 2px 0 black;
+			transition: box-shadow 0.2s, margin 0.2s;
+			&:hover,
+			&:focus {
+				box-shadow: 0 2px 1px #8f8f8f;
+				margin: 8px 10px 12px;
 			}
 			&:active {
-				margin-top: 12px;
-				margin-bottom: 8px;
+				margin: 10px;
 				box-shadow: none;
 			}
 		}
 
 	}
-
-	// set this back to a hover pseudo
-	.projectContainer:hover .infoContainer {
+	.projectContainer:hover .infoContainer,
+	.projectContainer:focus .infoContainer,
+	.projectContainer:focus-within .infoContainer {
 		transform: translateX(0);
 		transition-delay: 0.3s;
 		visibility: visible;
 	}
 
-	.projectContainer:hover img {
+	.projectContainer:hover .imgContainer
+	.projectContainer:focus .imgContainer,
+	.projectContainer:focus-within .imgContainer {
 		transform: rotateX(90deg);
 		transform-origin: center;
 		transition-delay: 0s;

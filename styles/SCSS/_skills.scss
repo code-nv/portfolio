@@ -10,15 +10,17 @@
 		box-shadow: 0 0 10px 2px #ccdce3;
 	}
 	&.darkTheme li {
-		background: $black;
-		box-shadow: none;
-
-		h3 {
-			text-shadow: none;
+		img {
+			filter: drop-shadow(1px 1px 1px #525252);
 		}
 
 		i {
 			color: $black;
+			text-shadow: 1px 1px 1px #525252;
+		}
+		h3 {
+			color: $black;
+			text-shadow: 1px 1px 1px #525252;
 		}
 	}
 	li {
@@ -53,33 +55,5 @@
 		background: transparent;
 		text-shadow: 1px 1px 1px black;
 		color: $white;
-	}
-
-	&.darkTheme {
-		li {
-			i {
-				text-shadow: none;
-			}
-			img {
-				filter: none;
-			}
-		}
-		h3 {
-			&.skill1 {
-				color: $color1;
-			}
-			&.skill2 {
-				color: $color2;
-			}
-			&.skill3 {
-				color: $color3;
-			}
-			&.skill4 {
-				color: $color4;
-			}
-			&.skill5 {
-				color: $color5;
-			}
-		}
 	}
 }

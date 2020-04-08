@@ -27,7 +27,7 @@
 
 	input,
 	textarea {
-		border-radius: 5px;
+		border-radius: 0px;
 		padding: 10px;
 		border: none;
 		border: 2px solid $color5;
@@ -42,7 +42,7 @@
 	}
 
 	form.darkTheme {
-		input,
+		input:not([type="submit"]),
 		textarea {
 			color: $white;
 			background: #555;

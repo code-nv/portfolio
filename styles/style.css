@@ -280,7 +280,8 @@ a {
   color: inherit;
 }
 
-p {
+p,
+.aboutMe li {
   color: #414141;
 }
 
@@ -315,8 +316,18 @@ body {
   transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
-.darkTheme p {
+.darkTheme p,
+.darkTheme .aboutMe li {
   color: #aaa;
+}
+
+.darkTheme h1 {
+  color: #fe5e41;
+}
+
+.darkTheme .aboutMe h3,
+.darkTheme .aboutMe ul i {
+  color: #fe5e41;
 }
 
 .darkTheme section li,
@@ -687,7 +698,7 @@ section p {
 }
 
 .aboutMe h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 20px 0;
   text-align: center;
 }
@@ -705,10 +716,12 @@ section p {
 }
 
 .aboutMe h3 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin: 20px auto 10px;
   border-top: 1px solid grey;
   padding-top: 20px;
+  text-align: center;
+  color: #6ea9f2;
 }
 
 .aboutMe ul {
@@ -734,10 +747,21 @@ section p {
 .aboutMe ul li {
   width: calc(50% - 20px);
   margin: 5px 10px 5px 0;
+  color: #414141;
+  font-size: 2rem;
+}
+
+.aboutMe ul li:nth-of-type(odd) {
+  text-align: right;
+}
+
+.aboutMe ul li:nth-of-type(odd) i {
+  display: none;
 }
 
 .aboutMe ul i {
-  margin-right: 5px;
+  margin-right: 10px;
+  color: #6ea9f2;
 }
 
 .aboutMe ul span:nth-child(odd) {
@@ -789,20 +813,15 @@ section p {
   background: transparent;
 }
 
-.portfolio .projectContainer img {
+.portfolio .imgContainer {
+  position: relative;
+  height: 100%;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  padding: 20px;
   border-radius: 5px;
-}
-
-.portfolio .imgContainer {
-  position: relative;
-  height: 100%;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  background: transparent;
 }
 
 .portfolio .infoContainer {
@@ -881,31 +900,34 @@ section p {
 .portfolio .infoContainer a {
   font-size: 1.8rem;
   padding: 10px;
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0px 0px 1px #8f8f8f;
+          box-shadow: 0px 0px 1px #8f8f8f;
+  border-bottom: 1px solid #8f8f8f;
   border-radius: 5px;
   background: #fafafa;
   margin: 10px 10px;
   width: calc(50% - 20px);
-  -webkit-transition: -webkit-box-shadow 0.2s;
-  transition: -webkit-box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  -webkit-transition: margin 0.2s, -webkit-box-shadow 0.2s;
+  transition: margin 0.2s, -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s, margin 0.2s;
+  transition: box-shadow 0.2s, margin 0.2s, -webkit-box-shadow 0.2s;
 }
 
-.portfolio .infoContainer a:hover {
-  -webkit-box-shadow: 0 2px 2px 0 black;
-          box-shadow: 0 2px 2px 0 black;
+.portfolio .infoContainer a:hover, .portfolio .infoContainer a:focus {
+  -webkit-box-shadow: 0 2px 1px #8f8f8f;
+          box-shadow: 0 2px 1px #8f8f8f;
+  margin: 8px 10px 12px;
 }
 
 .portfolio .infoContainer a:active {
-  margin-top: 12px;
-  margin-bottom: 8px;
+  margin: 10px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.portfolio .projectContainer:hover .infoContainer {
+.portfolio .projectContainer:hover .infoContainer,
+.portfolio .projectContainer:focus .infoContainer,
+.portfolio .projectContainer:focus-within .infoContainer {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition-delay: 0.3s;
@@ -913,7 +935,9 @@ section p {
   visibility: visible;
 }
 
-.portfolio .projectContainer:hover img {
+.portfolio .projectContainer:hover .imgContainer
+.projectContainer:focus .imgContainer,
+.portfolio .projectContainer:focus-within .imgContainer {
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
   -webkit-transform-origin: center;
@@ -971,18 +995,19 @@ section p {
           box-shadow: 0 0 10px 2px #ccdce3;
 }
 
-.skills.darkTheme li {
-  background: #2e2e2e;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.skills.darkTheme li h3 {
-  text-shadow: none;
+.skills.darkTheme li img {
+  -webkit-filter: drop-shadow(1px 1px 1px #525252);
+          filter: drop-shadow(1px 1px 1px #525252);
 }
 
 .skills.darkTheme li i {
   color: #2e2e2e;
+  text-shadow: 1px 1px 1px #525252;
+}
+
+.skills.darkTheme li h3 {
+  color: #2e2e2e;
+  text-shadow: 1px 1px 1px #525252;
 }
 
 .skills li {
@@ -1022,35 +1047,6 @@ section p {
   background: transparent;
   text-shadow: 1px 1px 1px black;
   color: #fafafa;
-}
-
-.skills.darkTheme li i {
-  text-shadow: none;
-}
-
-.skills.darkTheme li img {
-  -webkit-filter: none;
-          filter: none;
-}
-
-.skills.darkTheme h3.skill1 {
-  color: #fe5e41;
-}
-
-.skills.darkTheme h3.skill2 {
-  color: #ff9f1c;
-}
-
-.skills.darkTheme h3.skill3 {
-  color: #ffbf69;
-}
-
-.skills.darkTheme h3.skill4 {
-  color: #44f0c2;
-}
-
-.skills.darkTheme h3.skill5 {
-  color: #6ea9f2;
 }
 
 .dropDown {
@@ -1252,7 +1248,7 @@ section p {
 
 .contact input,
 .contact textarea {
-  border-radius: 5px;
+  border-radius: 0px;
   padding: 10px;
   border: none;
   border: 2px solid #6ea9f2;
@@ -1269,7 +1265,7 @@ section p {
           box-shadow: none;
 }
 
-.contact form.darkTheme input,
+.contact form.darkTheme input:not([type="submit"]),
 .contact form.darkTheme textarea {
   color: #fafafa;
   background: #555;
@@ -1409,8 +1405,6 @@ button:active,
 .lightTheme.download,
 .darkTheme.download {
   border-radius: 0 0 20px 0;
-  bottom: 10vh;
-  margin: 2.5px 0 0 0;
 }
 
 button:hover,
@@ -1506,9 +1500,6 @@ button i.fa-sun,
   }
   section.skills li img {
     height: calc(1rem + 4vw);
-  }
-  section.skills.darkTheme li {
-    background: inherit;
   }
 }
 
@@ -1623,6 +1614,7 @@ button i.fa-sun,
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     overflow-y: hidden;
+    text-shadow: none;
   }
   aside li.activeNav:before {
     content: "";
@@ -1832,7 +1824,7 @@ button i.fa-sun,
     visibility: visible;
     position: relative;
   }
-  .portfolio .projectContainer:hover img {
+  .portfolio .projectContainer:hover .imgContainer {
     -webkit-transform: none;
             transform: none;
   }
@@ -1954,7 +1946,7 @@ button i.fa-sun,
     font-size: 2rem;
   }
   footer .utilitiesContainer {
-    width: 240px;
+    width: 130px;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;

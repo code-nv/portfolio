@@ -28,7 +28,8 @@ a {
 	color: inherit;
 }
 
-p {
+p,
+.aboutMe li {
 	color: #414141;
 }
 
@@ -53,8 +54,18 @@ body {
 	background: #212121;
 	box-shadow: none;
 	transition: background 0.5s, box-shadow 0.5s;
-	p {
+	p,
+	.aboutMe li {
 		color: #aaa;
+	}
+
+	h1 {
+		color: $color1;
+	}
+
+	.aboutMe h3,
+	.aboutMe ul i {
+		color: $color1;
 	}
 
 	section li,
