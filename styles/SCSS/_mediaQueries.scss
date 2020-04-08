@@ -26,7 +26,7 @@
 	section.skills {
 		div {
 			width: 100%;
-			margin:0 0 5px;
+			margin: 0 0 5px;
 		}
 		ul {
 			margin: 0 auto;
@@ -402,9 +402,13 @@
 		padding: 60px 0;
 		h3 {
 			margin: 0 auto;
-			border-radius: 5px;
+			width: calc(100% - 40px);
+			border-radius: 0 5px 5px 0;
 			font-size: 2.5rem;
 			padding: 7.5px 20px;
+			&:first-of-type {
+				border-radius: 5px 5px 5px 0;
+			}
 		}
 		h3 + .resumeInfo,
 		h3.activeResume + .resumeInfo {
@@ -429,6 +433,10 @@
 		p {
 			font-size: 1.8rem;
 			line-height: 1.25;
+		}
+
+		.bulletPoint:before {
+			top: 3.5px;
 		}
 	}
 
