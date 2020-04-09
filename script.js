@@ -2,21 +2,33 @@ app = {};
 
 // scroll to appropriate section
 app.anchorNav = function (linkClicked) {
-	anchor = $(linkClicked).attr("href");
-	let scrollParent;
-	window.innerWidth <= 1025 ? (scrollParent = "html") : (scrollParent = "main");
+	const anchor = $(linkClicked).attr("href");
 
-	$.smoothScroll({
-		beforeScroll: function () {
-			app.preScroll();
-		},
-		afterScroll: function () {
-			app.postScroll();
-		},
-		scrollElement: $(scrollParent),
-		scrollTarget: anchor,
-	});
-	return false;
+	if (window.innerWidth > 700) {
+		const scrollParent = "main";
+		$.smoothScroll({
+			beforeScroll: function () {
+				// need to determine this because of a smooth scroll quirk with safari
+				if (navigator.userAgent.indexOf("Safari") != -1) {
+					null;
+				} else {
+					app.preScroll();
+				}
+			},
+			afterScroll: function () {
+				if (navigator.userAgent.indexOf("Safari") != -1) {
+					null;
+				} else {
+					app.postScroll();
+				}
+			},
+			scrollElement: $(scrollParent),
+			scrollTarget: anchor,
+		});
+		console.log(anchor);
+	} else {
+		null;
+	}
 };
 
 app.preScroll = function () {
@@ -44,7 +56,6 @@ app.navActive = function () {
 		app.mobileNavActive();
 	} else {
 		let scrolled = $("main").scrollTop();
-		console.log(scrolled + 'end')
 		$("li").removeClass("activeNav");
 		if (scrolled > 3.5 * window.innerHeight) {
 			$(".nav5").addClass("activeNav");
@@ -59,13 +70,6 @@ app.navActive = function () {
 		}
 	}
 };
-
-app.safariScrollFix = function () {
-	window.innerWidth <= 1025 ? (scrollParent = "html") : (scrollParent = "main");
-	$("main").scrollTop(0);
-	$("li").removeClass("activeNav");
-	$(".nav1").addClass("activeNav");
-}
 
 // determine which nav should display active stylings on mobile
 app.checkCurrentMobile = function (scrolled, windowHeight) {
@@ -90,7 +94,7 @@ app.checkCurrentMobile = function (scrolled, windowHeight) {
 // hamburger menu toggle
 app.showMobile = function () {
 	$("nav").toggleClass("show");
-	app.changeBackground('nav li.activeNav');
+	app.changeBackground("nav li.activeNav");
 };
 
 // dark mode toggle
@@ -109,11 +113,9 @@ $(`button.toggle`).on("click", function () {
 });
 
 app.init = function () {
-	app.safariScrollFix();
 	app.navActive();
 
-	$("aside a").on("click", function (e) {
-		e.preventDefault();
+	$("aside a").on("click", function () {
 		app.anchorNav(this);
 	});
 
@@ -152,7 +154,6 @@ app.changeBackground = function (activeLink) {
 	// 	$('nav').css('background', activeColor);
 	// } else {null}
 };
-
 
 // // emailForm redirectconst $form = $('form');
 // const $name = $('#name');
