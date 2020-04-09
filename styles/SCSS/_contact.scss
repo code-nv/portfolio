@@ -1,18 +1,23 @@
 
 .contact {
-	@include flexCol(space-between, flex-start);
-	padding: 20px 0;
-
+	@include flexRow(flex-start, center);
+	flex-wrap: wrap;
+	padding: 20px 0 65.3px;
+h2 {
+align-self: flex-start;
+}
 	form {
 		@include flexRow(center, center);
 		flex-wrap: wrap;
 		font-size: 2rem;
 		margin: 20px;
+		width: 100%;
 	}
 
 	input {
 		width: calc(50% - 10px);
 		margin: 0;
+		transition: background-color 0.5s;
 
 		&:first-of-type {
 			margin-right: 20px;
@@ -23,6 +28,7 @@
 		width: 100%;
 		height: 200px;
 		resize: none;
+		transition: background-color 0.5s;
 	}
 
 	input,

@@ -636,6 +636,7 @@ nav li.activeNav {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 
 main {
@@ -1011,10 +1012,22 @@ section p {
 }
 
 .skills li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: calc(20% - 10px);
   margin: 5px;
-  padding: 0px;
-  height: 40%;
+  padding: 20px 0px;
   -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, box-shadow 0.5s;
@@ -1198,17 +1211,24 @@ section p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 20px 0;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0 65.3px;
+}
+
+.contact h2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .contact form {
@@ -1229,11 +1249,14 @@ section p {
       flex-wrap: wrap;
   font-size: 2rem;
   margin: 20px;
+  width: 100%;
 }
 
 .contact input {
   width: calc(50% - 10px);
   margin: 0;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
 .contact input:first-of-type {
@@ -1244,6 +1267,8 @@ section p {
   width: 100%;
   height: 200px;
   resize: none;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
 .contact input,
@@ -1307,7 +1332,7 @@ footer {
           align-items: center;
   height: 80vh;
   margin-top: 10vh;
-  position: fixed;
+  position: absolute;
   right: 10%;
   z-index: 2;
 }
@@ -1334,8 +1359,8 @@ footer div {
           align-items: center;
 }
 
-button,
-.social {
+footer button,
+footer a {
   width: 50px;
   height: 50px;
   font-size: 1.4rem;
@@ -1345,22 +1370,6 @@ button,
   transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: box-shadow 0.2s, transform 0.2s;
   transition: box-shadow 0.2s, transform 0.2s, -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
-}
-
-button.lightTheme,
-.social.lightTheme {
-  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
-          box-shadow: 0 0 10px 2px #ccdce3;
-  background: #2e2e2e;
-}
-
-button.darkTheme,
-.social.darkTheme {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.social {
   display: inline-block;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1377,70 +1386,84 @@ button.darkTheme,
           align-items: center;
 }
 
-.social.lightTheme {
+footer button.lightTheme,
+footer a.lightTheme {
+  -webkit-box-shadow: 0 0 10px 2px #ccdce3;
+          box-shadow: 0 0 10px 2px #ccdce3;
+  background: #2e2e2e;
+}
+
+footer button.darkTheme,
+footer a.darkTheme {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+footer .social.lightTheme {
   background: #6ea9f2;
 }
 
-button:active,
-.social:active {
+footer button:active,
+footer a:active {
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transform: translateY(2.5px);
           transform: translateY(2.5px);
 }
 
-.toggle {
+footer .toggle {
   border-radius: 0 20px 0 0;
   margin: 0;
 }
 
-.twitter {
+footer .twitter {
   font-size: 1.5rem;
 }
 
-.linkedIn {
+footer .linkedIn {
   font-size: 1.7rem;
 }
 
-.lightTheme.download,
-.darkTheme.download {
+footer .lightTheme.download,
+footer .darkTheme.download {
   border-radius: 0 0 20px 0;
+  margin: 0;
 }
 
-button:hover,
-.social:hover {
+footer button:hover,
+footer a:hover {
   font-size: 1.7rem;
 }
 
-button:hover i.fa-sun, button:hover.twitter,
-.social:hover i.fa-sun,
-.social:hover.twitter {
+footer button:hover i.fa-sun, footer button:hover.twitter,
+footer a:hover i.fa-sun,
+footer a:hover.twitter {
   font-size: 2rem;
 }
 
-button:hover.linkedIn,
-.social:hover.linkedIn {
+footer button:hover.linkedIn,
+footer a:hover.linkedIn {
   font-size: 2rem;
 }
 
-button i,
-.social i {
+footer button i,
+footer a i {
   -webkit-transition: font-size 0.4s;
   transition: font-size 0.4s;
 }
 
-button i.show,
-.social i.show {
+footer button i.show,
+footer a i.show {
   display: inline;
 }
 
-button i.hide,
-.social i.hide {
+footer button i.hide,
+footer a i.hide {
   display: none;
 }
 
-button i.fa-sun,
-.social i.fa-sun {
+footer button i.fa-sun,
+footer a i.fa-sun {
   font-size: 1.6rem;
 }
 
@@ -1478,22 +1501,8 @@ button i.fa-sun,
     width: calc(100% - 20px);
   }
   section.skills li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: calc(20% - 20px);
     margin: 5px 10px;
-    padding: 0;
   }
   section.skills li i {
     font-size: calc(1rem + 4vw);
@@ -1742,13 +1751,8 @@ button i.fa-sun,
        object-fit: contain;
   }
   section.aboutMe h1 {
-    float: right;
     margin: 20px 0 20px 30%;
     text-align: left;
-    width: 70%;
-  }
-  section.aboutMe .blurb {
-    float: right;
     width: 70%;
   }
   section.aboutMe h3 {
@@ -1810,13 +1814,17 @@ button i.fa-sun,
     width: 40%;
   }
   .portfolio .projectContainer .infoContainer,
-  .portfolio .projectContainer:hover .infoContainer {
+  .portfolio .projectContainer:hover .infoContainer,
+  .portfolio .projectContainer:focus .infoContainer,
+  .portfolio .projectContainer:focus-within .infoContainer {
     -webkit-transform: none;
             transform: none;
     visibility: visible;
     position: relative;
   }
-  .portfolio .projectContainer:hover .imgContainer {
+  .portfolio .projectContainer:hover .imgContainer,
+  .portfolio .projectContainer:focus .imgContainer,
+  .portfolio .projectContainer:focus-within .imgContainer {
     -webkit-transform: none;
             transform: none;
   }
@@ -1913,21 +1921,25 @@ button i.fa-sun,
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  footer button {
+  footer button,
+  footer a {
     height: 40px;
     width: 80px;
     margin: 0;
     border: none;
     font-size: 2rem;
   }
-  footer button.lightTheme {
+  footer button.lightTheme,
+  footer a.lightTheme {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  footer button.darkTheme {
+  footer button.darkTheme,
+  footer a.darkTheme {
     background: #2e2e2e;
   }
-  footer button:hover {
+  footer button:hover,
+  footer a:hover {
     font-size: 2rem;
   }
   footer .social,
@@ -1938,7 +1950,7 @@ button i.fa-sun,
     font-size: 2rem;
   }
   footer .utilitiesContainer {
-    width: 130px;
+    width: 160px;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -1983,12 +1995,13 @@ button i.fa-sun,
   }
   aside nav.show {
     display: block;
-    height: 100vh;
+    height: calc(100vh - 5px);
+    margin-top: 5px;
   }
   button.hamburgerMenu {
     position: fixed;
     top: 20px;
-    right: 10px;
+    right: 12px;
     height: 50px;
     width: 50px;
     display: block;
@@ -2001,11 +2014,36 @@ button i.fa-sun,
     font-size: 1rem;
   }
   button.hamburgerMenu .bar {
-    width: 80%;
+    width: 90%;
     height: 5px;
     margin: 0 auto;
-    background: #2e2e2e;
+    background: #454545;
     border-radius: 5px;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  }
+  button.hamburgerMenu .barOne,
+  button.hamburgerMenu .barThree {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  button.hamburgerMenu.showingMenu .barOne {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    margin: 2px auto 0;
+  }
+  button.hamburgerMenu.showingMenu .barTwo {
+    opacity: 0;
+  }
+  button.hamburgerMenu.showingMenu .barThree {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    margin: 0 auto 2px;
   }
   section {
     padding: 30px 0;
@@ -2019,16 +2057,24 @@ button i.fa-sun,
     width: 150px;
   }
   section.aboutMe .blurb {
-    float: none;
     clear: both;
+  }
+  section.aboutMe li,
+  section.aboutMe li:nth-of-type(odd) {
     width: 100%;
+    text-align: center;
+    margin: 2.5px auto;
+  }
+  section.aboutMe li i,
+  section.aboutMe li:nth-of-type(odd) i {
+    display: none;
   }
   .portfolio .projectContainer {
     display: block;
   }
   .portfolio .projectContainer .imgContainer {
     margin: 0 auto;
-    width: 300px;
+    width: 75%;
   }
   .portfolio .projectContainer .infoContainer {
     width: 80%;
@@ -2042,14 +2088,46 @@ button i.fa-sun,
   section.skills li {
     width: calc(50% - 40px);
     margin: 10px;
-    padding: 0;
   }
   section.skills li div {
-    padding: 20px 0;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  section.skills li i {
+    font-size: 7rem;
+  }
+  section.skills li img {
+    height: 70.5px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 520px) {
+  section.aboutMe h1 {
+    font-size: 4rem;
+    margin: 29px 0;
+  }
+  section.aboutMe h1 span {
+    display: inline-block;
+    width: 100%;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 1.6rem;
+  }
+  .contact [type="submit"] {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  section h2 {
+    font-size: 3.5rem;
+  }
+  section h2:after {
+    font-size: 5rem;
+    letter-spacing: 0;
+    opacity: 0.2;
+  }
   section.aboutMe .imgContainerMobile {
     float: none;
     margin: 10px auto;
@@ -2057,8 +2135,16 @@ button i.fa-sun,
   section.aboutMe h1 {
     text-align: center;
     float: none;
-    margin: 10px;
+    margin: 10px auto;
     width: 100%;
+    font-size: 3rem;
+  }
+  section.aboutMe h1 span {
+    width: auto;
+  }
+  section.aboutMe .blurb {
+    font-size: 1.8rem;
+    margin-top: 0;
   }
   section.aboutMe h3 {
     text-align: center;
@@ -2075,5 +2161,62 @@ button i.fa-sun,
   }
   section.aboutMe ul i {
     display: none;
+  }
+  section.skills ul {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 20px;
+  }
+  section.skills li {
+    margin: 10px 0;
+    width: calc(50% - 10px);
+  }
+  .resume h3,
+  .resume h3:first-of-type {
+    font-size: 2.1rem;
+    border-radius: 5px;
+  }
+  .resume h4 {
+    font-size: 1.8rem;
+  }
+  .resume h4 span {
+    font-size: 1.6rem;
+  }
+  .resume .employment ul,
+  .resume .education ul,
+  .resume .communityInvolvement ul {
+    border-left: none;
+    padding: 20px 0;
+  }
+  .resume .bulletPoint:before {
+    display: none;
+  }
+  .resume p {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .resume p.duration {
+    margin: 0;
+  }
+  .resume .education .duration {
+    margin-bottom: 20px;
+  }
+  .portfolio .projectContainer .imgContainer {
+    width: 100%;
+  }
+  .contact input {
+    width: 100%;
+  }
+  .contact input:first-of-type {
+    margin-right: 0;
+  }
+  footer a,
+  footer .toggle {
+    width: 64px;
+  }
+  footer .utilitiesContainer {
+    width: 128px;
   }
 }

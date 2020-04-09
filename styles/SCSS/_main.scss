@@ -3,6 +3,7 @@
 	max-width: 1500px;
 	margin: 0 auto;
 	@include flexRow(center, flex-start);
+	position: relative;
 }
 
 main {

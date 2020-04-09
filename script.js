@@ -39,17 +39,6 @@ app.postScroll = function () {
 	$("main").css("scroll-snap-type", "y mandatory");
 };
 
-// due to styling, scroll parents need to be altered
-app.mobileNavActive = function () {
-	let scrolled = $(window).scrollTop();
-	let windowHeight = 0.75 * window.innerHeight;
-	app.checkCurrentMobile(scrolled, windowHeight);
-	$(window).on("scroll resize", function () {
-		scrolled = $(window).scrollTop();
-		app.checkCurrentMobile(scrolled, windowHeight);
-	});
-};
-
 // determine which nav should display active stylings on desktop
 app.navActive = function () {
 	if (window.innerWidth <= 1025) {
@@ -69,6 +58,17 @@ app.navActive = function () {
 			$(".nav1").addClass("activeNav");
 		}
 	}
+};
+
+// due to styling, scroll parents need to be altered
+app.mobileNavActive = function () {
+	let scrolled = $(window).scrollTop();
+	let windowHeight = 0.75 * window.innerHeight;
+	app.checkCurrentMobile(scrolled, windowHeight);
+	$(window).on("scroll resize", function () {
+		scrolled = $(window).scrollTop();
+		app.checkCurrentMobile(scrolled, windowHeight);
+	});
 };
 
 // determine which nav should display active stylings on mobile
@@ -94,7 +94,10 @@ app.checkCurrentMobile = function (scrolled, windowHeight) {
 // hamburger menu toggle
 app.showMobile = function () {
 	$("nav").toggleClass("show");
-	app.changeBackground("nav li.activeNav");
+	$(".hamburgerMenu").toggleClass("showingMenu");
+};
+app.closeHamburger = function () {
+	$("nav").removeClass("show");
 };
 
 // dark mode toggle
@@ -112,8 +115,58 @@ $(`button.toggle`).on("click", function () {
 	}
 });
 
+//prevent formspree redirect
+
+app.formSubmission = function () {
+	$("form").on("submit", (e) => {
+		e.preventDefault();
+		if ($('form input:not([type="submit"])').val() === "" || $("form textarea").val() === "") {
+			console.log("no dice");
+			swal({
+				icon: "error",
+				title: "Uh Oh!",
+				text: "Please fill out all the fields so that I can get back to you!",
+			});
+		} else {
+			app.postEmail();
+			console.log("sent off");
+			swal({
+				icon: "success",
+				buttons: false,
+				timer: 1800,
+				text: `Message sent, Thanks!`,
+			});
+		}
+	});
+};
+
+app.postEmail = function () {
+	console.log("function called");
+	$.ajax({
+		url: "https://formspree.io/xnqbvrqw",
+		method: "POST",
+		data: {
+			email: $("#email").val(),
+			name: $("#name").val(),
+			message: $("#message").val(),
+		},
+		dataType: "json",
+	})
+		.then(function () {
+			$('form input:not([type="submit"]), textarea').val("");
+		})
+		.catch(() => {
+			swal({
+				icon: "error",
+				title: "Oh Oh!",
+				text: "Something has gone wrong with the form spree servers, feel free to reach me at nickrenoe@gmail.com!",
+			});
+		});
+};
+
 app.init = function () {
 	app.navActive();
+	app.formSubmission();
 
 	$("aside a").on("click", function () {
 		app.anchorNav(this);
@@ -140,63 +193,10 @@ app.init = function () {
 	});
 
 	$("nav li").on("click", function () {
-		app.changeBackground(this);
+		app.closeHamburger();
 	});
 };
 
 $(function () {
 	app.init();
 });
-
-app.changeBackground = function (activeLink) {
-	// if (window.innerWidth < 620 ){
-	// 	const activeColor = $(activeLink).css('background-color');
-	// 	$('nav').css('background', activeColor);
-	// } else {null}
-};
-
-// // emailForm redirectconst $form = $('form');
-// const $name = $('#name');
-// const $email = $('#email');
-// const $message = $('#message')
-// const emailApp = {}
-// $form.on('submit', (e) => {
-//     e.preventDefault();
-//     if ($name.val() === '' || $email.val() === '' || $message.val() === '') {
-//         swal({
-//             icon: 'error',
-//             title: 'Sorry!',
-//             text: 'Please leave your name, email and message so I can get back to you!'
-//         })
-//     } else {
-//         emailApp.postEmail();
-//         emailApp.clearFields();
-//         swal({
-//             icon: 'success',
-//             buttons: false,
-//             timer: 1850,
-//             text: 'Thank you! I will respond as soon as possible!'
-//         })
-//     }
-// })
-// emailApp.clearFields = () => {
-//     $name.val('');
-//     $email.val('');
-//     $message.val('');
-// }
-// emailApp.postEmail = () => {
-//     $.ajax({
-//         url: 'https://formspree.io/xjvevydo',
-//         method: 'POST',
-//         data: {
-//             email: $email.val(),
-//             name: $name.val(),
-//             message: $message.val(),
-//         },
-//         dataType: 'json'
-//     })
-// }
-// emailApp.init = () => {
-//     emailApp.clearFields();
-// }
-// emailApp.init();

@@ -4,8 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Document</title>
+		<title>Nick Reyno</title>
+		<!-- favicon -->
+		<link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+		<!-- font awesome icons -->
 		<script src="https://kit.fontawesome.com/8ffef1b7fa.js" crossorigin="anonymous"></script>
+
+	<!-- sweet alerts --> 
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 		<!-- jquery -->
 		<script
@@ -35,7 +42,7 @@
 		<div class="wrapper">
 			<aside class="lightTheme">
 				<div class="imgContainer">
-					<img src="./assets/profileZoom.png" alt="profile picture of Nick Reyno" />
+					<img src="./assets/profilePhoto.png" alt="profile picture of Nick Reyno" />
 				</div>
 				<button class="hamburgerMenu">
 					<span class="srOnly">Menu</span>
@@ -73,40 +80,15 @@
 					</ul>
 				</nav>
 			</aside>
-			<footer class="buttonContainer lightTheme">
-				<button class="toggle lightTheme">
-					<i class="fas fa-sun hide" aria-hidden="true"><span class="srOnly">Toggle from light more do dark mode</span></i>
-					<i class="fas fa-moon show" aria-hidden="true"><span class="srOnly"> toggle from dark mode to light mode</span></i>
-				</button>
-				<div class="socialContainer">
-					<a class="social twitter lightTheme" href="https://twitter.com/nickreyno" rel="noopener">
-						<i class="fab fa-twitter" aria-hidden="true"><span class="srOnly">link to my twitter</span></i>
-					</a>
-					<a class="social linkedIn lightTheme" href="https://www.linkedin.com/in/nickreyno/" rel="noopener">
-						<i class="target fab fa-linkedin-in" aria-hidden="true"> <span class="srOnly">link to my linked in</span> </i>
-					</a>
-					<a class="social facebook lightTheme" href="https://www.facebook.com/itsnickrenoe" rel="noopener">
-						<i class="fab fa-facebook-f" aria-hidden="true"><span class="srOnly">link to my facebook</span></i>
-					</a>
-				</div>
-				<div class="utilitiesContainer">
-					<!-- <button class="print lightTheme">
-						<i class="fas fa-print"></i>
-					</button> -->
-					<button class="download lightTheme">
-						<i class="fas fa-download"></i>
-					</button>
-				</div>
-			</footer>
 			<main>
 				<!-- <div class="content"> -->
 				<section class="section aboutMe lightTheme" id="aboutMe">
 					<h2 class="header1"><i class="fas fa-address-card"></i> about me</h2>
 					<div class="aboutMeContainer clearfix">
+						<div class="imgContainerMobile">
+							<img src="./assets/profilePhoto.png" alt="profile picture of Nick Reyno" />
+						</div>
 						<h1>Hey, I'm <span>Nick Reyno</span></h1>
-							<div class="imgContainerMobile">
-								<img src="./assets/profileZoom.png" alt="profile picture of Nick Reyno" />
-							</div>
 						<p class="blurb">
 							I'm a <span>front-end developer</span> near Toronto Ontario. I'm bringing the <span>creativity</span> of
 							the music industry and the <span>precision</span> of journalism to a webpage near you. Coding has become a
@@ -367,17 +349,41 @@
 					<h2 class="header5"><i class="fas fa-envelope"></i> contact</h2>
 					<form class="lightTheme" action="https://formspree.io/xnqbvrqw" method="POST" name="contact">
 						<label class="srOnly" for="name">name</label>
-						<input type="text" name="name" id="name" placeholder="name" />
+						<input type="text" name="name" id="name" placeholder="Nick Reyno"  />
 						<label class="srOnly" for="email">email</label>
-						<input type="email" name="email" id="email" placeholder="email" />
+						<input type="email" name="email" id="email" placeholder="nickrenoe@gmail.com"  />
 						<label class="srOnly" for="message">your message</label>
-						<textarea name="message" id="message" placeholder="test"></textarea>
+						<textarea name="message" id="message" placeholder="Hey Nick,"  ></textarea>
 						<input type="submit" value="send" />
 					</form>
 				</section>
 				<!-- </div> -->
 			</main>
-			<footer></footer>
+			<footer class="buttonContainer lightTheme">
+				<button class="toggle lightTheme">
+					<i class="fas fa-sun hide" aria-hidden="true"><span class="srOnly">Toggle from light more do dark mode</span></i>
+					<i class="fas fa-moon show" aria-hidden="true"><span class="srOnly"> toggle from dark mode to light mode</span></i>
+				</button>
+				<div class="socialContainer">
+					<a class="social twitter lightTheme" href="https://twitter.com/nickreyno" rel="noopener">
+						<i class="fab fa-twitter" aria-hidden="true"><span class="srOnly">link to my twitter</span></i>
+					</a>
+					<a class="social linkedIn lightTheme" href="https://www.linkedin.com/in/nickreyno/" rel="noopener">
+						<i class="target fab fa-linkedin-in" aria-hidden="true"> <span class="srOnly">link to my linked in</span> </i>
+					</a>
+					<a class="social facebook lightTheme" href="https://www.facebook.com/itsnickrenoe" rel="noopener">
+						<i class="fab fa-facebook-f" aria-hidden="true"><span class="srOnly">link to my facebook</span></i>
+					</a>
+				</div>
+				<div class="utilitiesContainer">
+					<!-- <button class="print lightTheme">
+						<i class="fas fa-print"></i>
+					</button> -->
+					<a href="./assets/nick-reyno-web-developer-resume.pdf" class="download lightTheme">
+						<i class="fas fa-download"></i>
+					</a>
+				</div>
+			</footer>
 		</div>
 		<!-- end of wrapper -->
 

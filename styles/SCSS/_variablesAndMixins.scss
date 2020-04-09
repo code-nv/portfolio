@@ -46,33 +46,20 @@ $mainStack: "Roboto", sans-serif;
 	}
 }
 
-// major break
-@mixin maxWidth840 {
-	@media (max-width: 840px) {
-		@content;
-	}
-}
-
 @mixin maxWidth620 {
 	@media (max-width: 620px) {
 		@content;
 	}
 }
 
-@mixin maxWidth400 {
-	@media (max-width: 400px) {
+@mixin maxWidth520 {
+	@media (max-width: 520px) {
 		@content;
 	}
 }
 
-@mixin maxHeight630 {
-	@media (max-height: 630px) {
-		@content;
-	}
-}
-
-@mixin maxWidth840maxHeight590 {
-	@media (max-width: 840px), (max-height: 590px) {
+@mixin maxWidth425 {
+	@media (max-width: 425px) {
 		@content;
 	}
 }
