@@ -562,24 +562,29 @@
 			border-radius: 5px;
 			opacity: 1;
 			transform: rotate(0deg);
-			transition: transform 0.3s, opacity 0.3s;
+			transition: all 0.3s;
 		}
-		.barOne,
-		.barThree {
+		.barOne {
+			margin: 10px 0;
 			transform-origin: left;
 		}
+				.barThree {
+					margin: 10px 0;
+					bottom:0;
+					transform-origin: left;
+				}
 
 		&.showingMenu {
 			.barOne {
 				transform: rotate(45deg);
-				margin: 2px auto 0;
+				margin: 10px 0;
 			}
 			.barTwo {
 				opacity: 0;
 			}
 			.barThree {
 				transform: rotate(-45deg);
-				margin: 0 auto 2px;
+				margin: 0;
 			}
 		}
 	}

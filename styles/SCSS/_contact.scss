@@ -2,9 +2,17 @@
 .contact {
 	@include flexRow(flex-start, center);
 	flex-wrap: wrap;
-	padding: 20px 0 65.3px;
+	padding: 20px 0;
 h2 {
 align-self: flex-start;
+}
+
+p {
+	width: 100%;
+	text-align: center;
+	a {
+		text-decoration: underline;
+	}
 }
 	form {
 		@include flexRow(center, center);
