@@ -1833,6 +1833,7 @@ footer a i.fa-sun {
     background: transparent;
     border-radius: 0;
     width: 40%;
+    height: auto;
   }
   .portfolio .projectContainer .infoContainer,
   .portfolio .projectContainer:hover .infoContainer,
@@ -1860,7 +1861,6 @@ footer a i.fa-sun {
   section.skills li {
     width: calc(33.33% - 20px);
     margin: 10px;
-    height: 50%;
     border-radius: 5px;
   }
   section.skills li div {
@@ -2101,6 +2101,7 @@ footer a i.fa-sun {
   .portfolio .projectContainer {
     display: block;
     max-height: none;
+    height: auto;
   }
   .portfolio .projectContainer .imgContainer {
     margin: 0 auto;
@@ -2110,6 +2111,7 @@ footer a i.fa-sun {
     width: 80%;
     margin: 0 auto;
     padding: 0 0 20px 0;
+    height: auto;
   }
   section.skills ul {
     width: 100%;
@@ -2118,6 +2120,7 @@ footer a i.fa-sun {
   section.skills li {
     width: calc(50% - 40px);
     margin: 20px;
+    height: auto;
   }
   section.skills li div {
     padding: 0;

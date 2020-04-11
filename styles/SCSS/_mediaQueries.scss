@@ -352,6 +352,7 @@
 				background: transparent;
 				border-radius: 0;
 				width: 40%;
+				height:auto;
 			}
 
 			.infoContainer,
@@ -383,7 +384,6 @@
 		li {
 			width: calc(33.33% - 20px);
 			margin: 10px;
-			height: 50%;
 			border-radius: 5px;
 			div {
 				border-radius: 5px;
@@ -631,6 +631,7 @@
 		.projectContainer {
 			display: block;
 			max-height: none;
+			height: auto;
 
 			.imgContainer {
 				margin: 0 auto;
@@ -641,6 +642,7 @@
 				width: 80%;
 				margin: 0 auto;
 				padding: 0 0 20px 0;
+				height: auto;
 			}
 		}
 	}
@@ -653,6 +655,7 @@
 		li {
 			width: calc(50% - 40px);
 			margin: 20px;
+			height: auto;
 
 			div {
 				padding: 0;
