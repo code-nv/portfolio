@@ -1774,11 +1774,17 @@ footer a i.fa-sun {
   }
   .portfolioContainer {
     margin-bottom: 0;
+    height: auto;
   }
   .portfolio .projectContainer,
   .portfolio .imgContainer {
     -webkit-perspective: none;
             perspective: none;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .portfolio img {
+    height: auto;
   }
   .portfolio .projectContainer {
     display: -webkit-box;
@@ -1795,7 +1801,8 @@ footer a i.fa-sun {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    height: auto;
+    min-height: 220px;
+    max-height: 280px;
     border-radius: 5px;
     overflow: hidden;
   }
@@ -1847,9 +1854,12 @@ footer a i.fa-sun {
   .portfolio ul {
     margin: 10px 0;
   }
+  section.skills ul {
+    height: auto;
+  }
   section.skills li {
-    width: calc(33.33% - 15px);
-    margin: 7.5px;
+    width: calc(33.33% - 20px);
+    margin: 10px;
     height: 50%;
     border-radius: 5px;
   }
@@ -1888,6 +1898,7 @@ footer a i.fa-sun {
   }
   .resume .resumeInfo > ul {
     padding: 30px 0 30px 20px;
+    height: auto;
   }
   .resume h4 {
     font-size: 2rem;
@@ -2089,6 +2100,7 @@ footer a i.fa-sun {
   }
   .portfolio .projectContainer {
     display: block;
+    max-height: none;
   }
   .portfolio .projectContainer .imgContainer {
     margin: 0 auto;
@@ -2100,12 +2112,12 @@ footer a i.fa-sun {
     padding: 0 0 20px 0;
   }
   section.skills ul {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   section.skills li {
     width: calc(50% - 40px);
-    margin: 10px;
+    margin: 20px;
   }
   section.skills li div {
     padding: 0;

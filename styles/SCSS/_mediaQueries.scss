@@ -305,16 +305,23 @@
 	.portfolio {
 		&Container {
 			margin-bottom: 0;
+			height: auto;
 		}
 		.projectContainer,
 		.imgContainer {
 			perspective: none;
+			transform: none;
+		}
+
+		img {
+			height: auto;
 		}
 
 		.projectContainer {
 			@include flexRow(center, center);
 			width: 100%;
-			height: auto;
+			min-height: 220px;
+			max-height: 280px;
 			border-radius: 5px;
 			overflow: hidden;
 
@@ -370,9 +377,12 @@
 		}
 	}
 	section.skills {
+		ul {
+			height: auto;
+		}
 		li {
-			width: calc(33.33% - 15px);
-			margin: 7.5px;
+			width: calc(33.33% - 20px);
+			margin: 10px;
 			height: 50%;
 			border-radius: 5px;
 			div {
@@ -414,6 +424,7 @@
 
 		.resumeInfo > ul {
 			padding: 30px 0 30px 20px;
+			height: auto;
 		}
 
 		h4 {
@@ -568,11 +579,11 @@
 			margin: 10px 0;
 			transform-origin: left;
 		}
-				.barThree {
-					margin: 10px 0;
-					bottom:0;
-					transform-origin: left;
-				}
+		.barThree {
+			margin: 10px 0;
+			bottom: 0;
+			transform-origin: left;
+		}
 
 		&.showingMenu {
 			.barOne {
@@ -619,6 +630,7 @@
 	.portfolio {
 		.projectContainer {
 			display: block;
+			max-height: none;
 
 			.imgContainer {
 				margin: 0 auto;
@@ -635,12 +647,12 @@
 
 	section.skills {
 		ul {
-			width: 80%;
+			width: 100%;
 			margin: 0 auto;
 		}
 		li {
 			width: calc(50% - 40px);
-			margin: 10px;
+			margin: 20px;
 
 			div {
 				padding: 0;
