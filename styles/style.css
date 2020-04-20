@@ -1425,6 +1425,10 @@ footer .toggle {
   margin: 0;
 }
 
+footer .toggle:hover {
+  cursor: pointer;
+}
+
 footer .twitter {
   font-size: 1.5rem;
 }
@@ -1448,11 +1452,15 @@ footer a:hover {
   font-size: 1.7rem;
 }
 
-footer button:hover i.fa-sun, footer button:hover.twitter, footer button:hover.github,
+footer button:hover i.fa-sun, footer button:hover.twitter,
 footer a:hover i.fa-sun,
-footer a:hover.twitter,
-footer a:hover.github {
+footer a:hover.twitter {
   font-size: 2rem;
+}
+
+footer button:hover .github,
+footer a:hover .github {
+  font-size: 2.2rem;
 }
 
 footer button:hover.linkedIn,
@@ -1966,6 +1974,10 @@ footer a i.fa-sun {
   footer button:hover,
   footer a:hover {
     font-size: 2rem;
+  }
+  footer button:hover .github,
+  footer a:hover .github {
+    font-size: 1.7rem;
   }
   footer .social,
   footer .social.lightTheme {
