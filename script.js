@@ -1,9 +1,9 @@
 app = {};
 
-// scroll to appropriate section
+// scroll to appropriate section from nav bar
 app.anchorNav = function (linkClicked) {
 	const anchor = $(linkClicked).attr("href");
-
+// parent container changes on resize, this determines which parent to target
 	if (window.innerWidth > 700) {
 		const scrollParent = "main";
 		$.smoothScroll({
