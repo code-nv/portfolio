@@ -2063,12 +2063,12 @@ footer a i.fa-sun {
     transition: all 0.3s;
   }
   button.hamburgerMenu .barOne {
-    margin: 10px 0;
+    margin: 5px 0;
     -webkit-transform-origin: left;
             transform-origin: left;
   }
   button.hamburgerMenu .barThree {
-    margin: 10px 0;
+    margin: 5px 0;
     bottom: 0;
     -webkit-transform-origin: left;
             transform-origin: left;
@@ -2076,7 +2076,7 @@ footer a i.fa-sun {
   button.hamburgerMenu.showingMenu .barOne {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    margin: 10px 0;
+    margin: 11px 0 11px 1px;
   }
   button.hamburgerMenu.showingMenu .barTwo {
     opacity: 0;
