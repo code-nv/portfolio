@@ -555,9 +555,9 @@
 	button.hamburgerMenu {
 		position: fixed;
 		top: 20px;
-		right: 12px;
-		height: 50px;
-		width: 50px;
+		right: 20px;
+		height: 40px;
+		width: 40px;
 		display: block;
 		z-index: 2;
 		background: none;
@@ -569,37 +569,48 @@
 		}
 
 		.bar {
-			width: 90%;
+			width: 100%;
 			height: 5px;
-			margin: 0 auto;
+			margin: 0;
 			background: #454545;
 			border-radius: 5px;
 			opacity: 1;
 			transform: rotate(0deg);
-			transition: all 0.3s;
+			transition: all 0.2s;
+			position: absolute;
+			left:0;
 		}
 		.barOne {
-			margin: 5px 0;
+			top:5px;
+			// margin: 5px 0;
+			transform-origin: top left;
+		}
+
+		.barTwo {
+			top: 17.5px;
 			transform-origin: left;
+			transition: opacity 0.2s transform 0.3s
 		}
 		.barThree {
-			margin: 5px 0;
-			bottom: 0;
-			transform-origin: left;
+			// margin: 5px 0;
+			bottom:5px;
+			transform-origin: bottom left;
 		}
 
 		&.showingMenu {
 			.barOne {
-				transform: rotate(45deg);
-
-				margin:11px 0 11px 1px;
+				transform: rotateZ(45deg);
+				top: 4px;
+				margin: 0 0 0 7px;
 			}
 			.barTwo {
 				opacity: 0;
+				transform: rotateY(90deg)
 			}
 			.barThree {
-				transform: rotate(-45deg);
-				margin: 0;
+				transform: rotateZ(-45deg);
+				margin: 0 0 0 7px;
+				bottom: 4px;
 			}
 		}
 	}
